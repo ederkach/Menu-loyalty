@@ -135,6 +135,9 @@ lib/generated_plugin_registrant.dart
 # Obfuscation related
 app.*.map.json
 
+*.freezed.dart
+*.g.dart
+
 
 ### --------------------------- Dart.gitignore ------------------------- ###
 

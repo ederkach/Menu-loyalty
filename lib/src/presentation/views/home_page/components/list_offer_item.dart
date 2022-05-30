@@ -19,23 +19,23 @@ class ListOfferItem extends StatelessWidget {
       child: Stack(
         children: [
           Positioned(
-            bottom: 40.h,
-            left: 10.w,
+            bottom: 38.h,
+            left: 15.w,
             child: SizedBox(
-              height: 40.h,
-              width: 96.w,
+              height: 36.h,
+              width: 110.w,
               child: Text(
                 'Cooked with egg Sweet Cookies',
                 maxLines: 2,
                 style: Theme.of(context).textTheme.bodyMedium?.copyWith(
                     color: Theme.of(context).scaffoldBackgroundColor,
-                    fontSize: 15.sp),
+                    fontSize: 13.sp),
               ),
             ),
           ),
           Positioned(
             bottom: 10.h,
-            left: 10.w,
+            left: 15.w,
             child: Text(
               '\$51',
               style: Theme.of(context).textTheme.bodyMedium?.copyWith(

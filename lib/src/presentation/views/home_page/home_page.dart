@@ -63,14 +63,14 @@ class HomePage extends StatelessWidget {
                   ),
                   const CategoryOffer(),
                   SizedBox(
-                    height: 20.h,
+                    height: 22.h,
                   ),
                 ],
               ),
             ),
             Container(
               child: Padding(
-                padding: EdgeInsets.only(top: 16.0.h),
+                padding: EdgeInsets.only(top: 22.0.h),
                 child: Column(
                   children: const [
                     ButtonUpDark(),

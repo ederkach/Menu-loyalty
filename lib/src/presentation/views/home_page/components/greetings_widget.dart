@@ -18,7 +18,7 @@ class GreetingsWidget extends StatelessWidget {
               Theme.of(context).textTheme.headline6?.copyWith(fontSize: 19.sp),
         ),
         SizedBox(
-          height: 2.h,
+          height: 10.h,
         ),
         Text(
           'Want to order delicious food?',

@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
 
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:menu_loyalty/src/config/theme/colors.dart';
-
-import '../../injector.dart';
 
 class MainButtonNabBar extends StatelessWidget {
   const MainButtonNabBar({
@@ -17,13 +14,22 @@ class MainButtonNabBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    DesignData designData = sl<DesignData>();
     return Container(
       width: 120.w,
       height: 49.h,
       decoration: BoxDecoration(
-          color: designData.secondaryColor,
-          borderRadius: BorderRadius.all(Radius.circular(24.r))),
+          color: Theme.of(context).colorScheme.secondary,
+          borderRadius: BorderRadius.all(
+            Radius.circular(24.r),
+          ),
+          boxShadow: const [
+            BoxShadow(
+              color: Colors.grey,
+              blurRadius: 2.0,
+              spreadRadius: 0.0,
+              offset: Offset(2.0, 2.0), // shadow direction: bottom right
+            )
+          ]),
       child: Padding(
         padding: EdgeInsets.only(left: 10.w, right: 10.w),
         child: Row(
@@ -31,12 +37,14 @@ class MainButtonNabBar extends StatelessWidget {
           children: [
             Icon(
               evaIcons,
-              color: designData.whiteColor,
+              color: Theme.of(context).scaffoldBackgroundColor,
               size: 24.sp,
             ),
             Text(
               'Home',
-              style: TextStyle(fontSize: 15.sp, color: designData.whiteColor),
+              style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                  color: Theme.of(context).scaffoldBackgroundColor,
+                  fontSize: 15.sp),
             ),
           ],
         ),

@@ -1,6 +1,6 @@
 # Menu loyalty
 
-+ Online menu app for restaurant and loyalty system
+# Online menu app for restaurant and loyalty system
 
 <span color="red">Project in progress.....</span>
 

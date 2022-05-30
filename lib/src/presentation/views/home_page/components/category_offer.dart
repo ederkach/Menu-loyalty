@@ -35,15 +35,12 @@ class _CategoryOfferState extends State<CategoryOffer> {
                 width: 17.w,
               ),
           itemBuilder: (BuildContext context, int index) {
-            return Padding(
-              padding: const EdgeInsets.symmetric(vertical: 2),
-              child: GestureDetector(
-                  onTap: (() {
-                    selectIndex(index);
-                  }),
-                  child: CategoryOfferItem(
-                      isSelected: (index == _selectedIndex) ? true : false)),
-            );
+            return GestureDetector(
+                onTap: (() {
+                  selectIndex(index);
+                }),
+                child: CategoryOfferItem(
+                    isSelected: (index == _selectedIndex) ? true : false));
           }),
     );
   }

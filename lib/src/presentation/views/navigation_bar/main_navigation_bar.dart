@@ -5,6 +5,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../widgets/icon_button_nav_bar.dart';
 import '../../widgets/main_button_nav_bar.dart';
+import '../home_page/home_page.dart';
 
 class MainNavBar extends StatefulWidget {
   const MainNavBar({Key? key}) : super(key: key);
@@ -17,7 +18,7 @@ class _MainNavBarState extends State<MainNavBar> {
   int pageIndex = 0;
 
   final pages = [
-    const Center(),
+    const HomePage(),
     const Center(),
     const Center(),
     const Center(),
@@ -32,7 +33,9 @@ class _MainNavBarState extends State<MainNavBar> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: pages[pageIndex],
+      extendBody: true,
+      resizeToAvoidBottomInset: true,
+      body: Stack(children: [pages[pageIndex]]),
       bottomNavigationBar: buildMyNavBar(context),
     );
   }
@@ -41,7 +44,7 @@ class _MainNavBarState extends State<MainNavBar> {
     return Container(
       height: 104.h,
       decoration: BoxDecoration(
-        color: Theme.of(context).backgroundColor,
+        color: Theme.of(context).scaffoldBackgroundColor,
         borderRadius: BorderRadius.only(
           topLeft: Radius.circular(40.r),
           topRight: Radius.circular(40.r),

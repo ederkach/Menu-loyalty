@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:menu_loyalty/src/config/theme/colors.dart';
 
-import '../../injector.dart';
+import 'dot_widget.dart';
 
 class IconButtonNabBar extends StatelessWidget {
   const IconButtonNabBar(
@@ -21,7 +20,6 @@ class IconButtonNabBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    DesignData designData = sl<DesignData>();
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
@@ -31,18 +29,13 @@ class IconButtonNabBar extends StatelessWidget {
           },
           icon: Icon(
             evaIcons,
-            color: designData.greyColor,
             size: 24.sp,
           ),
         ),
         if (pageIndex == currentIndex)
-          Container(
-            height: 7.h,
-            width: 7.w,
-            decoration: BoxDecoration(
-              shape: BoxShape.circle,
-              color: designData.secondaryColor,
-            ),
+          const DotWidget(
+            green: true,
+            withOpacity: 1,
           ),
       ],
     );

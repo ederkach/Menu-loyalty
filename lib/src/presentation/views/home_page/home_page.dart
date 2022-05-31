@@ -12,9 +12,17 @@ import 'components/greetings_widget.dart';
 import 'components/list_offer.dart';
 
 class HomePage extends StatelessWidget {
+  static const String routeName = 'HomePage';
+
   const HomePage({
     Key? key,
   }) : super(key: key);
+
+  static Route route() {
+    return PageRouteBuilder(
+        settings: const RouteSettings(name: routeName),
+        pageBuilder: (_, __, ___) => const HomePage());
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -29,7 +37,7 @@ class HomePage extends StatelessWidget {
           child: CircleAvatar(
             radius: 32.r,
             backgroundImage: const NetworkImage(
-                'https://www.mockofun.com/wp-content/uploads/2019/12/circle-photo.jpg'), //AssetImage loads image URL.
+                'https://t4.ftcdn.net/jpg/03/85/50/01/360_F_385500115_T8QiYsPeliQ5tE3npwOuJNUfunqFBo1U.jpg'), //AssetImage loads image URL.
           ),
         ),
         actions: [

@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class ListOfferItem extends StatelessWidget {
-  const ListOfferItem({
+class DishItem extends StatelessWidget {
+  const DishItem({
     required this.isSelected,
     Key? key,
   }) : super(key: key);

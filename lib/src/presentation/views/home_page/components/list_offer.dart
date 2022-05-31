@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import 'list_offer_item.dart';
+import '../../../widgets/dish_item.dart';
 
 class ListOffer extends StatefulWidget {
   const ListOffer({
@@ -40,11 +40,12 @@ class _ListOfferState extends State<ListOffer> {
             return Padding(
               padding: const EdgeInsets.symmetric(vertical: 2),
               child: GestureDetector(
-                  onTap: (() {
-                    selectIndex(index);
-                  }),
-                  child: ListOfferItem(
-                      isSelected: (index == _selectedIndex) ? true : false)),
+                onTap: (() {
+                  selectIndex(index);
+                }),
+                child: DishItem(
+                    isSelected: (index == _selectedIndex) ? true : false),
+              ),
             );
           },
         ),

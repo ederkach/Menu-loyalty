@@ -23,16 +23,15 @@ class LabelWidget extends StatelessWidget {
         ),
         Row(
           children: [
-            const DotWidget(
-              green: true,
-              withOpacity: 1,
+            DotWidget(
+              dotColor: Theme.of(context).colorScheme.secondary,
             ),
             SizedBox(
               width: 8.w,
             ),
-            const DotWidget(
-              green: true,
-              withOpacity: 0.5,
+            DotWidget(
+              dotColor:
+                  Theme.of(context).colorScheme.secondary.withOpacity(0.5),
             ),
           ],
         ),

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import 'dot_widget.dart';
+import '../../../widgets/dot_widget.dart';
 
 class IconButtonNabBar extends StatelessWidget {
   const IconButtonNabBar(
@@ -33,9 +33,8 @@ class IconButtonNabBar extends StatelessWidget {
           ),
         ),
         if (pageIndex == currentIndex)
-          const DotWidget(
-            green: true,
-            withOpacity: 1,
+          DotWidget(
+            dotColor: Theme.of(context).colorScheme.onSecondary,
           ),
       ],
     );

@@ -2,15 +2,17 @@ import 'package:flutter/material.dart';
 
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../../widgets/dot_widget.dart';
+import 'dot_widget.dart';
 
-class CategoryOfferItem extends StatelessWidget {
-  const CategoryOfferItem({
+class IconMenuButton extends StatelessWidget {
+  const IconMenuButton({
     required this.isSelected,
+    required this.dotColor,
     Key? key,
   }) : super(key: key);
 
   final bool isSelected;
+  final Color dotColor;
 
   @override
   Widget build(BuildContext context) {
@@ -25,9 +27,8 @@ class CategoryOfferItem extends StatelessWidget {
             Positioned(
                 top: 5.h,
                 right: 15.w,
-                child: const DotWidget(
-                  green: false,
-                  withOpacity: 1,
+                child: DotWidget(
+                  dotColor: dotColor,
                 )),
           Column(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,

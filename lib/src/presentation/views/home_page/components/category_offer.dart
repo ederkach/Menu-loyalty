@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import 'category_offer_item.dart';
+import '../../../widgets/icon_menu_button.dart';
 
 class CategoryOffer extends StatefulWidget {
   const CategoryOffer({
@@ -39,7 +39,8 @@ class _CategoryOfferState extends State<CategoryOffer> {
                 onTap: (() {
                   selectIndex(index);
                 }),
-                child: CategoryOfferItem(
+                child: IconMenuButton(
+                    dotColor: Theme.of(context).colorScheme.onSecondary,
                     isSelected: (index == _selectedIndex) ? true : false));
           }),
     );

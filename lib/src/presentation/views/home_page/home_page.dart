@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:eva_icons_flutter/eva_icons_flutter.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import '../../widgets/bottom_panel.dart';
 import '../../widgets/button_up_dark.dart';
 import '../../widgets/label_widget.dart';
 import '../../widgets/search_input_widget.dart';
@@ -17,6 +18,10 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    List<Widget> bottomPanelListWidgets = [
+      const ButtonUpDark(),
+      const ListOffer()
+    ];
     return Scaffold(
       appBar: AppBar(
         leading: Padding(
@@ -68,26 +73,10 @@ class HomePage extends StatelessWidget {
                 ],
               ),
             ),
-            Container(
-              child: Padding(
-                padding: EdgeInsets.only(top: 22.0.h),
-                child: Column(
-                  children: const [
-                    ButtonUpDark(),
-                    ListOffer(),
-                  ],
-                ),
-              ),
-              width: 375.w,
-              height: 404.h,
-              decoration: BoxDecoration(
-                color: Theme.of(context).colorScheme.primary,
-                borderRadius: BorderRadius.only(
-                  topLeft: Radius.circular(40.r),
-                  topRight: Radius.circular(40.r),
-                ),
-              ),
-            )
+            BottomPanel(
+                width: 375,
+                height: 404,
+                bottomPanelListWidgets: bottomPanelListWidgets)
           ],
         ),
       ),

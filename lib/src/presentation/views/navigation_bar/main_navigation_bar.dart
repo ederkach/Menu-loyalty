@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:eva_icons_flutter/eva_icons_flutter.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../widgets/icon_button_nav_bar.dart';
-import '../../widgets/main_button_nav_bar.dart';
+import 'components/icon_button_nav_bar.dart';
+import 'components/main_button_nav_bar.dart';
 import '../home_page/home_page.dart';
 
 class MainNavBar extends StatefulWidget {
@@ -62,7 +62,7 @@ class _MainNavBarState extends State<MainNavBar> {
           ),
           IconButtonNabBar(
               pageIndex: pageIndex,
-              evaIcons: EvaIcons.creditCardOutline,
+              evaIcons: EvaIcons.shoppingBagOutline,
               selectedIndex: selectedIndex,
               currentIndex: 1),
           IconButtonNabBar(

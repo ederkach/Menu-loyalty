@@ -25,10 +25,12 @@ class IconMenuButton extends StatelessWidget {
         children: [
           if (isSelected == true)
             Positioned(
-                top: 5.h,
-                right: 15.w,
+                top: 7.h,
+                right: 17.w,
                 child: DotWidget(
                   dotColor: dotColor,
+                  sizeheight: 9,
+                  sizewidth: 9,
                 )),
           Column(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,

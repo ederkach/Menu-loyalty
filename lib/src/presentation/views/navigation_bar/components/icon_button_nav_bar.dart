@@ -34,7 +34,9 @@ class IconButtonNabBar extends StatelessWidget {
         ),
         if (pageIndex == currentIndex)
           DotWidget(
-            dotColor: Theme.of(context).colorScheme.onSecondary,
+            dotColor: Theme.of(context).colorScheme.secondary,
+            sizeheight: 7,
+            sizewidth: 7,
           ),
       ],
     );

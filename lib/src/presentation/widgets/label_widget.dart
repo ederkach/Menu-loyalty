@@ -25,6 +25,8 @@ class LabelWidget extends StatelessWidget {
           children: [
             DotWidget(
               dotColor: Theme.of(context).colorScheme.secondary,
+              sizeheight: 7,
+              sizewidth: 7,
             ),
             SizedBox(
               width: 8.w,
@@ -32,6 +34,8 @@ class LabelWidget extends StatelessWidget {
             DotWidget(
               dotColor:
                   Theme.of(context).colorScheme.secondary.withOpacity(0.5),
+              sizeheight: 7,
+              sizewidth: 7,
             ),
           ],
         ),

@@ -16,6 +16,7 @@ ThemeData customTheme() {
         onPrimaryContainer: const Color(0xFFffffff),
         background: const Color(0xFFffffff),
         secondary: const Color(0xFF71B24D)),
+    errorColor: const Color(0xFFD61B0A),
     fontFamily: 'DMSans',
     elevatedButtonTheme: ElevatedButtonThemeData(
       style: ElevatedButton.styleFrom(

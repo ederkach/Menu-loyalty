@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import 'src/config/app_router.dart';
 import 'src/injector.dart' as di;
-import 'src/presentation/views/navigation_bar/main_navigation_bar.dart';
 import 'src/config/theme/theme.dart';
+import 'src/presentation/views/pages.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -24,7 +25,8 @@ class MyApp extends StatelessWidget {
           return MaterialApp(
             title: 'PORIS FOOD APP',
             theme: customTheme(),
-            home: const MainNavBar(),
+            onGenerateRoute: AppRouter.onGenerateRoute,
+            initialRoute: MainNavBar.routeName,
           );
         });
   }

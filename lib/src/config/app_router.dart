@@ -19,8 +19,8 @@ class AppRouter {
         return ProfilePage.route();
       case CartPage.routeName:
         return CartPage.route();
-      case ChatPage.routeName:
-        return ChatPage.route();
+      case ChatsPage.routeName:
+        return ChatsPage.route();
       default:
         return _errorRoute();
     }

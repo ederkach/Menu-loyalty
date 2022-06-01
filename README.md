@@ -3,7 +3,7 @@
 
 <h4>Stack</h4> 
 
-![Flutter](https://img.shields.io/badge/flutter-%23039BE5.svg?style=for-the-badge&logo=flutter&logoColor=black&style=plastic)
+![Flutter](https://img.shields.io/badge/flutter-%23039BE5.svg?style=for-the-badge&logo=flutter&logoColor=white&style=plastic)
 ![BLOC](https://img.shields.io/badge/BLOC-State%20managment-brightgreen&style=plastic)
 ![Firebase](https://img.shields.io/badge/firebase-%23039BE5.svg?style=for-the-badge&logo=firebase&style=plastic)
 
@@ -11,39 +11,41 @@
 
 <h4>Progect progress:</h4> 
 
-![Progress](https://img.shields.io/badge/Progress-13%25-orange&style=plastic)
+![Progress](https://img.shields.io/badge/Progress-15%25-orange&style=plastic)
 
 The project is based on the design PORIS https://ui8.net/ayokerja/products/poris-app-ui-kit but with minor UI adjustments to improve the UX.
 
+## 🎥 Promo Video
+
+Watch the promo video <a href="">here.</a>
+
+## 📱 Screen Shots
+
+<img src='/screens/UI_1.png' width='500'>
+
 ## 🎯 Features Updated
 
-✅ Project Structure 🆚
+✅ Project Structure 
 
-🔴 Design Home, Profile, Cart, Chat
+✅ Design Home, Profile, Cart, Chats
 
-⏹ Design Item card, Payment, Orders history
-
-⏹ Design Filters, Support screen & widgets
+🔴 Design Menu, Item card, Payment, Orders history
 
 ⏹ Integration Firebase, Base entity model
 
 ⏹ Repository, CRUD operations Firebase
+
+⏹ Design Filters, Chat, Support screen & widgets
+
+⏹ Application logic
+
+⏹ Localization
 
 ⏹ Design Maps
 
 ⏹ PUSH notification
 
 ⏹ Other fixes & refactoring.
-
-
-## 🎥 Promo Video
-
-Watch the promo video <a href="">here.</a>
-
-
-## 📱 Screen Shots
-
-<img src='/screens/UI_1.png' width='500'>
 
 ## 💻 Installation steps
 

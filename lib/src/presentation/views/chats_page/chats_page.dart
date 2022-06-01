@@ -3,15 +3,17 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:eva_icons_flutter/eva_icons_flutter.dart';
 
-class ChatPage extends StatelessWidget {
-  static const String routeName = 'ChatPage';
+import 'components/chats_list.dart';
 
-  const ChatPage({Key? key}) : super(key: key);
+class ChatsPage extends StatelessWidget {
+  static const String routeName = 'ChatsPage';
+
+  const ChatsPage({Key? key}) : super(key: key);
 
   static Route route() {
     return PageRouteBuilder(
         settings: const RouteSettings(name: routeName),
-        pageBuilder: (_, __, ___) => const ChatPage());
+        pageBuilder: (_, __, ___) => const ChatsPage());
   }
 
   @override
@@ -37,14 +39,9 @@ class ChatPage extends StatelessWidget {
         ),
         centerTitle: true,
       ),
-      body: SingleChildScrollView(
-        child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 24.w),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: const [],
-          ),
-        ),
+      body: Padding(
+        padding: EdgeInsets.symmetric(horizontal: 24.w),
+        child: const ChatsList(),
       ),
     );
   }

@@ -38,7 +38,7 @@ class _MainNavBarState extends State<MainNavBar> {
     } else if (index == 1) {
       Navigator.pushNamed(context, 'CartPage');
     } else if (index == 2) {
-      Navigator.pushNamed(context, 'ChatPage');
+      Navigator.pushNamed(context, 'ChatsPage');
     } else if (index == 3) {
       Navigator.pushNamed(context, 'ProfilePage');
     }

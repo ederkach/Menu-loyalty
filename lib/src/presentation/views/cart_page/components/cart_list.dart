@@ -23,24 +23,21 @@ class _CartListState extends State<CartList> {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: EdgeInsets.only(top: 40.0.h),
-      child: ListView.separated(
-        scrollDirection: Axis.vertical,
-        itemCount: 10,
-        separatorBuilder: (BuildContext context, int index) => Divider(
-          color: Theme.of(context).colorScheme.background,
-          height: 30.w,
-        ),
-        itemBuilder: (BuildContext context, int index) {
-          return GestureDetector(
-            onTap: (() {
-              selectIndex(index);
-            }),
-            child: const CartListItem(),
-          );
-        },
+    return ListView.separated(
+      scrollDirection: Axis.vertical,
+      itemCount: 10,
+      separatorBuilder: (BuildContext context, int index) => Divider(
+        color: Theme.of(context).colorScheme.background,
+        height: 30.w,
       ),
+      itemBuilder: (BuildContext context, int index) {
+        return GestureDetector(
+          onTap: (() {
+            selectIndex(index);
+          }),
+          child: const CartListItem(),
+        );
+      },
     );
   }
 }

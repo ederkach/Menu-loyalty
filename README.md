@@ -38,17 +38,12 @@ The project is based on the design PORIS https://ui8.net/ayokerja/products/poris
 
 ## 🎥 Promo Video
 
-Watch the promo video 
-https://user-images.githubusercontent.com/83706093/171443067-b81eaaea-6801-4be4-b068-c7a2ac87693a.mp4
+Watch the promo video <a href="">here.</a>
+
 
 ## 📱 Screen Shots
 
 <img src='/screens/UI_1.png' width='500'>
-
-## 📱 Screen Shots
-
-<img src='/screens/UI_1.png' width='500'>
-
 
 ## 💻 Installation steps
 

@@ -13,6 +13,7 @@ class CartListItem extends StatelessWidget {
       width: 327.w,
       height: 74.h,
       child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Container(
             child: Padding(
@@ -62,21 +63,71 @@ class CartListItem extends StatelessWidget {
           SizedBox(
             width: 35.w,
           ),
-          Container(
-            child: Center(
-              child: Text(
-                '10',
-                style: Theme.of(context).textTheme.bodyMedium!.copyWith(
-                    fontSize: 20.sp,
-                    fontWeight: FontWeight.bold,
-                    color: Theme.of(context).colorScheme.background),
+          Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Container(
+                child: Center(
+                  child: Text(
+                    '-',
+                    style: Theme.of(context).textTheme.bodyMedium!.copyWith(
+                          fontSize: 15.sp,
+                          fontWeight: FontWeight.bold,
+                        ),
+                  ),
+                ),
+                height: 24.h,
+                width: 24.w,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.all(
+                    Radius.circular(5.r),
+                  ),
+                  color: Theme.of(context).colorScheme.secondaryContainer,
+                  boxShadow: const [
+                    BoxShadow(
+                      color: Colors.grey,
+                      blurRadius: 1.0,
+                      spreadRadius: 0.0,
+                      offset: Offset(1.0, 1.0),
+                    )
+                  ],
+                ),
               ),
-            ),
-            height: 32.h,
-            width: 32.w,
-            decoration: BoxDecoration(
-                shape: BoxShape.circle,
-                color: Theme.of(context).colorScheme.secondary),
+              Text(
+                '100.5',
+                style: Theme.of(context).textTheme.bodyMedium!.copyWith(
+                    fontSize: 17.sp,
+                    fontWeight: FontWeight.bold,
+                    color: Theme.of(context).colorScheme.onSecondary),
+              ),
+              Container(
+                child: Center(
+                  child: Text(
+                    '+',
+                    style: Theme.of(context).textTheme.bodyMedium!.copyWith(
+                          fontSize: 15.sp,
+                          fontWeight: FontWeight.bold,
+                        ),
+                  ),
+                ),
+                height: 24.h,
+                width: 24.w,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.all(
+                    Radius.circular(5.r),
+                  ),
+                  color: Theme.of(context).colorScheme.secondary,
+                  boxShadow: const [
+                    BoxShadow(
+                      color: Colors.grey,
+                      blurRadius: 1.0,
+                      spreadRadius: 0.0,
+                      offset: Offset(1.0, 1.0),
+                    ),
+                  ],
+                ),
+              ),
+            ],
           ),
         ],
       ),

@@ -53,23 +53,23 @@ class CartPage extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+            SizedBox(height: 10.h),
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 24.w),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  SizedBox(height: 10.h),
-                  const LabelWidget(
-                    label: 'Item to order',
-                    darkWhite: DarkWhite.dark,
-                  ),
-                  SizedBox(
-                      width: 316.w, height: 350.h, child: const CartList()),
-                ],
+              child: const LabelWidget(
+                label: 'Item to order',
+                darkWhite: DarkWhite.dark,
               ),
             ),
+            SizedBox(height: 20.h),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                SizedBox(width: 375.w, height: 350.h, child: const CartList()),
+              ],
+            ),
             BottomPanel(
-                width: 375,
+                width: 375.w,
                 height: 335.h,
                 bottomPanelListWidgets: bottomPanelListWidgets)
           ],

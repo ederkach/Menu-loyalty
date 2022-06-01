@@ -7,10 +7,12 @@ class MainButtonNabBar extends StatelessWidget {
     Key? key,
     required this.pageIndex,
     required this.evaIcons,
+    required this.title,
   }) : super(key: key);
 
   final int pageIndex;
   final IconData evaIcons;
+  final String title;
 
   @override
   Widget build(BuildContext context) {
@@ -27,7 +29,7 @@ class MainButtonNabBar extends StatelessWidget {
               color: Colors.grey,
               blurRadius: 2.0,
               spreadRadius: 0.0,
-              offset: Offset(2.0, 2.0), // shadow direction: bottom right
+              offset: Offset(2.0, 2.0),
             )
           ]),
       child: Padding(
@@ -41,7 +43,7 @@ class MainButtonNabBar extends StatelessWidget {
               size: 24.sp,
             ),
             Text(
-              'Home',
+              title,
               style: Theme.of(context).textTheme.bodyMedium?.copyWith(
                   color: Theme.of(context).scaffoldBackgroundColor,
                   fontSize: 15.sp),

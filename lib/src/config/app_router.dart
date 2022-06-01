@@ -11,10 +11,16 @@ class AppRouter {
         return MainNavBar.route();
       case MainNavBar.routeName:
         return MainNavBar.route();
+      case MapNavBar.routeName:
+        return MapNavBar.route();
       case HomePage.routeName:
         return HomePage.route();
       case ProfilePage.routeName:
         return ProfilePage.route();
+      case CartPage.routeName:
+        return CartPage.route();
+      case ChatPage.routeName:
+        return ChatPage.route();
       default:
         return _errorRoute();
     }

@@ -70,7 +70,7 @@ class IconMenuButton extends StatelessWidget {
                   color: Colors.grey,
                   blurRadius: 2.0,
                   spreadRadius: 0.0,
-                  offset: Offset(2.0, 2.0), // shadow direction: bottom right
+                  offset: Offset(2.0, 2.0),
                 )
               ]
             : null,

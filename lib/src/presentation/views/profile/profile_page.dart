@@ -112,12 +112,12 @@ class ProfilePage extends StatelessWidget {
                       decoration: BoxDecoration(
                         color: Theme.of(context).colorScheme.secondary,
                         borderRadius: BorderRadius.all(
-                          Radius.circular(24.r),
+                          Radius.circular(16.r),
                         ),
                       ),
                       child: Icon(
                         EvaIcons.arrowIosForwardOutline,
-                        color: Theme.of(context).colorScheme.onSecondary,
+                        color: Theme.of(context).colorScheme.background,
                       )),
                 ),
               ]),

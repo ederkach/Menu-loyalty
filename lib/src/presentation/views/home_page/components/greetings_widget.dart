@@ -13,7 +13,7 @@ class GreetingsWidget extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
-          'Hi, Heldan 👋',
+          'Hi, Katharina 👋',
           style:
               Theme.of(context).textTheme.headline6?.copyWith(fontSize: 19.sp),
         ),

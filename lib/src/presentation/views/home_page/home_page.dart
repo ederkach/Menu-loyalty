@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'package:eva_icons_flutter/eva_icons_flutter.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:menu_loyalty/src/constants/enums.dart';
 
 import '../../widgets/bottom_panel.dart';
 import '../../widgets/button_up_dark.dart';
@@ -70,6 +71,7 @@ class HomePage extends StatelessWidget {
                   ),
                   const LabelWidget(
                     label: 'Category offer',
+                    darkWhite: DarkWhite.dark,
                   ),
                   SizedBox(
                     height: 20.h,

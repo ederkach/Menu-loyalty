@@ -15,6 +15,6 @@
 
 The project is based on the design PORIS https://ui8.net/ayokerja/products/poris-app-ui-kit but with minor UI adjustments to improve the UX.
 
-<img src='/screens/UI1.png' width='250'>
+<img src='/screens/UI_1.png' width='250'>
 
 # Menu loyalty

@@ -15,6 +15,51 @@
 
 The project is based on the design PORIS https://ui8.net/ayokerja/products/poris-app-ui-kit but with minor UI adjustments to improve the UX.
 
+## 🎯 Features Updated
+
+✅ Project Structure 🆚
+
+🔴 Design Home, Profile, Cart, Chat
+
+⏹ Design Item card, Payment, Orders history
+
+⏹ Design Filters, Support screen & widgets
+
+⏹ Integration Firebase, Base entity model
+
+⏹ Repository, CRUD operations Firebase
+
+⏹ Design Maps
+
+⏹ PUSH notification
+
+⏹ Other fixes & refactoring.
+
+
+## 🎥 Promo Video
+
+Watch the promo video <a href="">here.</a>
+
+
+## 📱 Screen Shots
+
 <img src='/screens/UI_1.png' width='500'>
+
+## 💻 Installation steps
+
+- Updated to `Flutter 3.0.1` Now!
+- Dart SDK `2.17.1` with Sound Null Safety!
+
+Open CMD where you want to clone the project & run the following commands
+
+```
+git clone https://github.com/ederkach/Menu-loyalty.git
+cd Menu-loyalty
+flutter packages get
+flutter run
+```
+
+## 🔑 License
+- This project is licensed under the MIT License - see the [LICENSE](LICENSE.md) file for details
 
 # Menu loyalty

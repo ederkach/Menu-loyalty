@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import '../../constants/enums.dart';
 import 'dot_widget.dart';
 
 class LabelWidget extends StatelessWidget {
-  const LabelWidget({
-    Key? key,
-    required this.label,
-  }) : super(key: key);
+  const LabelWidget({Key? key, required this.label, required this.darkWhite})
+      : super(key: key);
 
   final String label;
+  final Enum darkWhite;
 
   @override
   Widget build(BuildContext context) {
@@ -18,15 +18,18 @@ class LabelWidget extends StatelessWidget {
       children: [
         Text(
           label,
-          style:
-              Theme.of(context).textTheme.headline6!.copyWith(fontSize: 16.sp),
+          style: (darkWhite == DarkWhite.dark)
+              ? Theme.of(context).textTheme.headline6!.copyWith(fontSize: 16.sp)
+              : Theme.of(context).textTheme.headline6!.copyWith(
+                  fontSize: 16.sp,
+                  color: Theme.of(context).colorScheme.onPrimary),
         ),
         Row(
           children: [
             DotWidget(
               dotColor: Theme.of(context).colorScheme.secondary,
-              sizeheight: 7,
-              sizewidth: 7,
+              sizeheight: 8,
+              sizewidth: 8,
             ),
             SizedBox(
               width: 8.w,
@@ -34,8 +37,8 @@ class LabelWidget extends StatelessWidget {
             DotWidget(
               dotColor:
                   Theme.of(context).colorScheme.secondary.withOpacity(0.5),
-              sizeheight: 7,
-              sizewidth: 7,
+              sizeheight: 8,
+              sizewidth: 8,
             ),
           ],
         ),

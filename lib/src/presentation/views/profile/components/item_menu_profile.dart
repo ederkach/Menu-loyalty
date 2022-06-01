@@ -65,8 +65,11 @@ class ItemMenuProfile extends StatelessWidget {
                   subTitle,
                   style: (!redColor)
                       ? Theme.of(context).textTheme.bodyMedium?.copyWith(
-                            fontSize: 13.sp,
-                          )
+                          fontSize: 13.sp,
+                          color: Theme.of(context)
+                              .colorScheme
+                              .onSecondary
+                              .withOpacity(0.5))
                       : Theme.of(context).textTheme.bodyMedium?.copyWith(
                           fontSize: 13.sp,
                           color: Theme.of(context).colorScheme.error),

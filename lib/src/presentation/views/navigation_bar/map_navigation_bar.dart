@@ -5,28 +5,27 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'components/icon_button_nav_bar.dart';
 import 'components/main_button_nav_bar.dart';
-import '../home_page/home_page.dart';
 
-class MainNavBar extends StatefulWidget {
-  static const String routeName = 'MainNavBar';
+class MapNavBar extends StatefulWidget {
+  static const String routeName = 'MapNavBar';
 
-  const MainNavBar({Key? key}) : super(key: key);
+  const MapNavBar({Key? key}) : super(key: key);
 
   static Route route() {
     return PageRouteBuilder(
         settings: const RouteSettings(name: routeName),
-        pageBuilder: (_, __, ___) => const MainNavBar());
+        pageBuilder: (_, __, ___) => const MapNavBar());
   }
 
   @override
-  _MainNavBarState createState() => _MainNavBarState();
+  _MapNavBarState createState() => _MapNavBarState();
 }
 
-class _MainNavBarState extends State<MainNavBar> {
+class _MapNavBarState extends State<MapNavBar> {
   int pageIndex = 0;
 
   final pages = [
-    const HomePage(),
+    const Center(),
     const Center(),
     const Center(),
     const Center(),
@@ -34,11 +33,10 @@ class _MainNavBarState extends State<MainNavBar> {
 
   selectedIndex(int index) {
     if (index == 0) {
-      Navigator.pushNamedAndRemoveUntil(context, 'MapNavBar', (route) => false);
+      Navigator.pushNamedAndRemoveUntil(
+          context, 'MainNavBar', (route) => false);
     } else if (index == 1) {
-      Navigator.pushNamed(context, 'CartPage');
     } else if (index == 2) {
-      Navigator.pushNamed(context, 'ChatPage');
     } else if (index == 3) {
       Navigator.pushNamed(context, 'ProfilePage');
     }
@@ -72,18 +70,20 @@ class _MainNavBarState extends State<MainNavBar> {
               selectedIndex(0);
             },
             child: MainButtonNabBar(
-                title: 'Home', pageIndex: pageIndex, evaIcons: EvaIcons.home),
+                title: 'Maps',
+                pageIndex: pageIndex,
+                evaIcons: EvaIcons.gridOutline),
           ),
           IconButtonNabBar(
             pageIndex: pageIndex,
-            evaIcons: EvaIcons.shoppingBagOutline,
+            evaIcons: EvaIcons.optionsOutline,
             selectedIndex: selectedIndex,
             currentIndex: 1,
             showDot: false,
           ),
           IconButtonNabBar(
             pageIndex: pageIndex,
-            evaIcons: EvaIcons.messageCircleOutline,
+            evaIcons: EvaIcons.navigation2Outline,
             selectedIndex: selectedIndex,
             currentIndex: 2,
             showDot: true,

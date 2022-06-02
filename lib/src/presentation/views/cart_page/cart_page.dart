@@ -61,11 +61,11 @@ class CartPage extends StatelessWidget {
                 darkWhite: DarkWhite.dark,
               ),
             ),
-            SizedBox(height: 20.h),
+            SizedBox(height: 10.h),
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                SizedBox(width: 375.w, height: 350.h, child: const CartList()),
+                SizedBox(width: 375.w, height: 370.h, child: const CartList()),
               ],
             ),
             BottomPanel(

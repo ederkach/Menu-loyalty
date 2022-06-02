@@ -21,7 +21,7 @@ Watch the promo video <a href="https://user-images.githubusercontent.com/8370609
 
 ## 📱 Screen Shots
 
-![2022-06-01-211713](https://user-images.githubusercontent.com/83706093/171546072-bfbfedfa-196d-4872-aad6-728cbef702e5.gif)
+<img src="https://user-images.githubusercontent.com/83706093/171546072-bfbfedfa-196d-4872-aad6-728cbef702e5.gif" alt="Showcase gif" title="Showcase gif" width="250"/>
 <img src='/screens/UI1.png' width='500'>
 <img src='/screens/UI2.png' width='500'>
 

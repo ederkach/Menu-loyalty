@@ -15,6 +15,8 @@ class AppRouter {
         return MapNavBar.route();
       case HomePage.routeName:
         return HomePage.route();
+      case MenuPage.routeName:
+        return MenuPage.route();
       case ProfilePage.routeName:
         return ProfilePage.route();
       case CartPage.routeName:

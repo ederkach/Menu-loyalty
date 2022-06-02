@@ -52,7 +52,7 @@ Watch the promo video <a href="">here.</a>
 - Updated to `Flutter 3.0.1` Now!
 - Dart SDK `2.17.1` with Sound Null Safety!
 
-Open CMD where you want to clone the project & run the following commands
+Open terminal where you want to clone the project & run the following commands
 
 ```
 git clone https://github.com/ederkach/Menu-loyalty.git

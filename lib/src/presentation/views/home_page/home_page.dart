@@ -28,7 +28,11 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     List<Widget> bottomPanelListWidgets = [
-      const ButtonUpDark(),
+      GestureDetector(
+          onTap: () {
+            Navigator.pushNamed(context, 'MenuPage');
+          },
+          child: const ButtonUpDark()),
       const ListOffer()
     ];
     return Scaffold(

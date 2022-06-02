@@ -39,6 +39,16 @@ class ProfilePage extends StatelessWidget {
               fontSize: 17.sp),
         ),
         centerTitle: true,
+        actions: [
+          Padding(
+            padding: EdgeInsets.only(right: 24.w),
+            child: IconButton(
+                onPressed: () {},
+                icon: const Icon(
+                  EvaIcons.settingsOutline,
+                )),
+          )
+        ],
       ),
       body: SingleChildScrollView(
         child: Padding(

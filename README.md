@@ -21,7 +21,8 @@ Watch the promo video <a href="">here.</a>
 
 ## 📱 Screen Shots
 
-<img src='/screens/UI_1.png' width='500'>
+<img src='/screens/UI1.png' width='500'>
+<img src='/screens/UI2.png' width='500'>
 
 ## 🎯 Features Updated
 

@@ -25,7 +25,11 @@ class _MapNavBarState extends State<MapNavBar> {
   int pageIndex = 0;
 
   final pages = [
-    const Center(),
+    const Center(
+      child: Center(
+        child: Text('TODO: Add map'),
+      ),
+    ),
     const Center(),
     const Center(),
     const Center(),

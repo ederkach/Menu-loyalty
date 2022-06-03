@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:eva_icons_flutter/eva_icons_flutter.dart';
 
-import '../../../config/theme/size_config.dart';
+import '../../../config/size_config.dart';
 import 'components/description.dart';
 import 'components/qty.dart';
 import 'components/spec.dart';

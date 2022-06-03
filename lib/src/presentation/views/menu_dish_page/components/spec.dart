@@ -21,7 +21,7 @@ class SpecDishWidget extends StatelessWidget {
           height: 126.h,
           width: 72.w,
           child: Padding(
-            padding: const EdgeInsets.all(8.0),
+            padding: EdgeInsets.all(8.0.w),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [

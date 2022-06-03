@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'package:eva_icons_flutter/eva_icons_flutter.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:menu_loyalty/src/config/theme/size_config.dart';
+import 'package:menu_loyalty/src/config/size_config.dart';
 
 class TotalWithButtonWidget extends StatelessWidget {
   const TotalWithButtonWidget({

@@ -63,7 +63,7 @@ class DishItem extends StatelessWidget {
             child: Image.network(
               'https://firebasestorage.googleapis.com/v0/b/menubonus.appspot.com/o/Replace%20images4.png?alt=media&token=9c18bdee-5c4d-40ce-8d05-4ee61caa7a68',
               width: 116.w,
-              height: 116.w,
+              height: 116.h,
             ),
           ),
         ],

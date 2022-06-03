@@ -75,7 +75,7 @@ class _MenuPageState extends State<MenuPage> {
             )),
       ),
       floatingActionButton: Container(
-        height: 72.h,
+        height: 72.w,
         width: 72.w,
         child: TextButton(
           onPressed: () {

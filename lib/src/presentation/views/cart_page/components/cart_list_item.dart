@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import '../../../widgets/qty_button.dart';
+
 class CartListItem extends StatelessWidget {
   const CartListItem({
     Key? key,
@@ -66,32 +68,9 @@ class CartListItem extends StatelessWidget {
           Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Container(
-                child: Center(
-                  child: Text(
-                    '-',
-                    style: Theme.of(context).textTheme.bodyMedium!.copyWith(
-                          fontSize: 15.sp,
-                          fontWeight: FontWeight.bold,
-                        ),
-                  ),
-                ),
-                height: 24.h,
-                width: 24.w,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.all(
-                    Radius.circular(5.r),
-                  ),
-                  color: Theme.of(context).colorScheme.secondaryContainer,
-                  boxShadow: const [
-                    BoxShadow(
-                      color: Colors.grey,
-                      blurRadius: 1.0,
-                      spreadRadius: 0.0,
-                      offset: Offset(1.0, 1.0),
-                    )
-                  ],
-                ),
+              QtyButton(
+                title: '+',
+                background: Theme.of(context).colorScheme.secondary,
               ),
               Text(
                 '100.5',
@@ -100,32 +79,9 @@ class CartListItem extends StatelessWidget {
                     fontWeight: FontWeight.bold,
                     color: Theme.of(context).colorScheme.onSecondary),
               ),
-              Container(
-                child: Center(
-                  child: Text(
-                    '+',
-                    style: Theme.of(context).textTheme.bodyMedium!.copyWith(
-                          fontSize: 15.sp,
-                          fontWeight: FontWeight.bold,
-                        ),
-                  ),
-                ),
-                height: 24.h,
-                width: 24.w,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.all(
-                    Radius.circular(5.r),
-                  ),
-                  color: Theme.of(context).colorScheme.secondary,
-                  boxShadow: const [
-                    BoxShadow(
-                      color: Colors.grey,
-                      blurRadius: 1.0,
-                      spreadRadius: 0.0,
-                      offset: Offset(1.0, 1.0),
-                    ),
-                  ],
-                ),
+              QtyButton(
+                title: '-',
+                background: Theme.of(context).colorScheme.secondaryContainer,
               ),
             ],
           ),

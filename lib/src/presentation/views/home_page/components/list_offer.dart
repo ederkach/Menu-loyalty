@@ -42,6 +42,7 @@ class _ListOfferState extends State<ListOffer> {
               child: GestureDetector(
                 onTap: (() {
                   selectIndex(index);
+                  Navigator.pushNamed(context, 'MenuDishPage');
                 }),
                 child: DishItem(
                     isSelected: (index == _selectedIndex) ? true : false),

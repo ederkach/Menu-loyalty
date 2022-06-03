@@ -26,6 +26,7 @@ Watch the promo video <a href="https://user-images.githubusercontent.com/8370609
 <img src='/screens/UI2.png' width='500'>
 
 Adaptive design
+
 <img src='/screens/AdaptiveDesign.png' width='700'>
 
 ## 🎯 Features Updated

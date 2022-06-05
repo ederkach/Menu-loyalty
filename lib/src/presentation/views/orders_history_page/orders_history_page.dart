@@ -5,8 +5,8 @@ import 'package:eva_icons_flutter/eva_icons_flutter.dart';
 import 'package:menu_loyalty/src/constants/enums.dart';
 import 'package:menu_loyalty/src/presentation/widgets/label_widget.dart';
 
-import 'components/badge_status_order.dart';
-import 'components/order_detail.dart';
+import 'components/completed_orders_list.dart';
+import 'components/last_orders_list.dart';
 
 class OrdersHistoryPage extends StatelessWidget {
   static const String routeName = 'OrdersHistoryPage';
@@ -68,44 +68,7 @@ class OrdersHistoryPage extends StatelessWidget {
             SizedBox(
               height: 20.h,
             ),
-            SizedBox(
-              height: 264.h,
-              child: ListView.separated(
-                  scrollDirection: Axis.horizontal,
-                  itemCount: 3,
-                  separatorBuilder: (BuildContext context, int index) =>
-                      VerticalDivider(
-                        color: Theme.of(context).colorScheme.onPrimary,
-                        width: 17.w,
-                      ),
-                  itemBuilder: (BuildContext context, int index) {
-                    return GestureDetector(
-                      onTap: (() {}),
-                      child: Container(
-                        height: 264.h,
-                        width: 327.w,
-                        child: Padding(
-                          padding: EdgeInsets.symmetric(
-                              horizontal: 10.w, vertical: 20.h),
-                          child: Stack(
-                            children: const [
-                              BadgeStatusOrder(
-                                statusOrder: StatusOrder.onGoing,
-                              ),
-                              OrderDetail(),
-                            ],
-                          ),
-                        ),
-                        decoration: BoxDecoration(
-                          color: Theme.of(context).colorScheme.onPrimary,
-                          borderRadius: BorderRadius.all(
-                            Radius.circular(16.r),
-                          ),
-                        ),
-                      ),
-                    );
-                  }),
-            ),
+            const LastOrdersList(),
             SizedBox(
               height: 20.h,
             ),
@@ -116,46 +79,7 @@ class OrdersHistoryPage extends StatelessWidget {
             SizedBox(
               height: 20.h,
             ),
-            Expanded(
-              child: ListView.separated(
-                  scrollDirection: Axis.vertical,
-                  itemCount: 3,
-                  separatorBuilder: (BuildContext context, int index) =>
-                      Divider(
-                        color: Theme.of(context).colorScheme.onPrimary,
-                        height: 17.h,
-                      ),
-                  itemBuilder: (BuildContext context, int index) {
-                    return GestureDetector(
-                      onTap: (() {}),
-                      child: SizedBox(
-                        height: 264,
-                        child: Container(
-                          height: 264.h,
-                          width: 327.w,
-                          child: Padding(
-                            padding: EdgeInsets.symmetric(
-                                horizontal: 10.w, vertical: 20.h),
-                            child: Stack(
-                              children: const [
-                                BadgeStatusOrder(
-                                  statusOrder: StatusOrder.complete,
-                                ),
-                                OrderDetail(),
-                              ],
-                            ),
-                          ),
-                          decoration: BoxDecoration(
-                            color: Theme.of(context).colorScheme.onPrimary,
-                            borderRadius: BorderRadius.all(
-                              Radius.circular(16.r),
-                            ),
-                          ),
-                        ),
-                      ),
-                    );
-                  }),
-            ),
+            const CompletedOrdersList(),
           ],
         ),
       ),

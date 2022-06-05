@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:eva_icons_flutter/eva_icons_flutter.dart';
 
 import '../../../config/size_config.dart';
@@ -25,13 +24,14 @@ class MenuDishPage extends StatelessWidget {
   Widget build(BuildContext context) {
     var designColorScheme = Theme.of(context).colorScheme;
     var designStyleText = Theme.of(context).textTheme;
+    var sizer = MediaQuery.of(context);
 
     return Scaffold(
       backgroundColor: designColorScheme.primary,
       appBar: AppBar(
         backgroundColor: designColorScheme.primary,
         leading: Padding(
-          padding: EdgeInsets.only(left: 10.w),
+          padding: EdgeInsets.only(left: sizer.getProportionateScreenWidth(10)),
           child: IconButton(
             onPressed: () {
               Navigator.of(context).pop();
@@ -51,7 +51,8 @@ class MenuDishPage extends StatelessWidget {
             ),
           ),
           Padding(
-            padding: EdgeInsets.only(right: 24.w),
+            padding:
+                EdgeInsets.only(right: sizer.getProportionateScreenWidth(24)),
             child: IconButton(
               onPressed: () {},
               icon: Icon(
@@ -65,14 +66,12 @@ class MenuDishPage extends StatelessWidget {
       body: Stack(
         children: [
           Positioned(
-            top: MediaQuery.of(context)
-                .getProportionateScreenHeightWithoutTop(72),
-            right: 0.w,
+            top: sizer.getProportionateScreenHeightWithoutTop(72),
+            right: 0,
             child: SizedBox(
-              height: 293.h,
-              //width: 375.w,
+              height: sizer.getProportionateScreenHeightWithoutTop(320),
               child: const Image(
-                image: AssetImage("assets/images/flour.png"),
+                image: AssetImage("assets/images/FlourBackground.png"),
               ),
             ),
           ),
@@ -80,10 +79,13 @@ class MenuDishPage extends StatelessWidget {
               designStyleText: designStyleText,
               designColorScheme: designColorScheme),
           Positioned(
-            bottom: 0.h,
+            bottom: 0,
             child: Container(
               child: Padding(
-                padding: EdgeInsets.only(top: 22.h, left: 24.w, right: 24.w),
+                padding: EdgeInsets.only(
+                    top: sizer.getProportionateScreenHeightWithoutTop(22),
+                    left: sizer.getProportionateScreenWidth(24),
+                    right: sizer.getProportionateScreenWidth(24)),
                 child: Column(
                     mainAxisAlignment: MainAxisAlignment.start,
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -102,26 +104,24 @@ class MenuDishPage extends StatelessWidget {
                           designColorScheme: designColorScheme),
                     ]),
               ),
-              height: MediaQuery.of(context)
-                  .getProportionateScreenHeightWithoutTop(484),
-              width: 375.w,
+              height: sizer.getProportionateScreenHeightWithoutTop(484),
+              width: sizer.getProportionateScreenWidth(375),
               decoration: BoxDecoration(
                 color: designColorScheme.background,
-                borderRadius: BorderRadius.only(
-                  topLeft: Radius.circular(40.r),
-                  topRight: Radius.circular(40.r),
+                borderRadius: const BorderRadius.only(
+                  topLeft: Radius.circular(40),
+                  topRight: Radius.circular(40),
                 ),
               ),
             ),
           ),
           Positioned(
-            left: MediaQuery.of(context).getProportionateScreenWidth(98),
-            top: MediaQuery.of(context)
-                .getProportionateScreenHeightWithoutTop(170),
+            left: sizer.getProportionateScreenWidth(98),
+            top: sizer.getProportionateScreenHeightWithoutTop(170),
             child: Image.network(
               'https://firebasestorage.googleapis.com/v0/b/menubonus.appspot.com/o/Replace%20images4.png?alt=media&token=9c18bdee-5c4d-40ce-8d05-4ee61caa7a68',
-              width: 185.w,
-              height: 185.h,
+              width: sizer.getProportionateScreenWidth(185),
+              height: sizer.getProportionateScreenWidth(185),
             ),
           ),
         ],

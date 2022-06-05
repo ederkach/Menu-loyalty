@@ -48,32 +48,31 @@ class CartPage extends StatelessWidget {
         ),
         centerTitle: true,
       ),
-      body: SingleChildScrollView(
-        physics: const NeverScrollableScrollPhysics(),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            SizedBox(height: 10.h),
-            Padding(
-              padding: EdgeInsets.symmetric(horizontal: 24.w),
-              child: const LabelWidget(
-                label: 'Item to order',
-                darkWhite: DarkWhite.dark,
+      body: Stack(
+        children: [
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              SizedBox(height: 10.h),
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 24.w),
+                child: const LabelWidget(
+                  label: 'Item to order',
+                  darkWhite: DarkWhite.dark,
+                ),
               ),
-            ),
-            SizedBox(height: 10.h),
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                SizedBox(width: 375.w, height: 370.h, child: const CartList()),
-              ],
-            ),
-            BottomPanel(
+              SizedBox(height: 10.h),
+              const Expanded(child: CartList()),
+            ],
+          ),
+          Positioned(
+            bottom: 0,
+            child: BottomPanel(
                 width: 375.w,
                 height: 335.h,
-                bottomPanelListWidgets: bottomPanelListWidgets)
-          ],
-        ),
+                bottomPanelListWidgets: bottomPanelListWidgets),
+          )
+        ],
       ),
     );
   }

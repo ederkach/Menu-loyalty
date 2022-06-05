@@ -116,19 +116,24 @@ class ProfilePage extends StatelessWidget {
                 Positioned(
                   right: 14.h,
                   bottom: 15.w,
-                  child: Container(
-                      width: 59.w,
-                      height: 59.h,
-                      decoration: BoxDecoration(
-                        color: Theme.of(context).colorScheme.secondary,
-                        borderRadius: BorderRadius.all(
-                          Radius.circular(16.r),
+                  child: InkWell(
+                    onTap: () {
+                      Navigator.pushNamed(context, 'OrdersHistoryPage');
+                    },
+                    child: Container(
+                        width: 59.w,
+                        height: 59.h,
+                        decoration: BoxDecoration(
+                          color: Theme.of(context).colorScheme.secondary,
+                          borderRadius: BorderRadius.all(
+                            Radius.circular(16.r),
+                          ),
                         ),
-                      ),
-                      child: Icon(
-                        EvaIcons.arrowIosForwardOutline,
-                        color: Theme.of(context).colorScheme.background,
-                      )),
+                        child: Icon(
+                          EvaIcons.arrowIosForwardOutline,
+                          color: Theme.of(context).colorScheme.background,
+                        )),
+                  ),
                 ),
               ]),
               SizedBox(

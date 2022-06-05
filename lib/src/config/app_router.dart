@@ -19,6 +19,8 @@ class AppRouter {
         return MenuPage.route();
       case MenuDishPage.routeName:
         return MenuDishPage.route();
+      case OrdersHistoryPage.routeName:
+        return OrdersHistoryPage.route();
       case ProfilePage.routeName:
         return ProfilePage.route();
       case CartPage.routeName:

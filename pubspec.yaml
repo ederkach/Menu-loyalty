@@ -38,6 +38,7 @@ dependencies:
   google_fonts: ^3.0.1
   ionicons: ^0.1.2
 
+
   # Architecture
   cloud_firestore: ^3.1.16
   firebase_core: ^1.17.0

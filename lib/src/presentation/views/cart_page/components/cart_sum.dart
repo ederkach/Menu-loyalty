@@ -7,7 +7,9 @@ import '../../../widgets/green_button.dart';
 import '../../../widgets/label_widget.dart';
 
 class CartSum extends StatelessWidget {
-  const CartSum({Key? key}) : super(key: key);
+  const CartSum({required this.payNow, Key? key}) : super(key: key);
+
+  final Function payNow;
 
   @override
   Widget build(BuildContext context) {
@@ -89,7 +91,14 @@ class CartSum extends StatelessWidget {
             ],
           ),
           SizedBox(height: 20.h),
-          const GreenButton()
+          GestureDetector(
+            onTap: (() => {
+                  payNow(),
+                }),
+            child: const GreenButton(
+              title: 'Pay Now',
+            ),
+          )
         ],
       ),
     );

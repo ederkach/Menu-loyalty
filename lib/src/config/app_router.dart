@@ -23,6 +23,8 @@ class AppRouter {
         return OrdersHistoryPage.route();
       case ProfilePage.routeName:
         return ProfilePage.route();
+      case CheckOutPage.routeName:
+        return CheckOutPage.route();
       case CartPage.routeName:
         return CartPage.route();
       case ChatsPage.routeName:

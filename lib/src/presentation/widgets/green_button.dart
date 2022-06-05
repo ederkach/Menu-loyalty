@@ -4,8 +4,11 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class GreenButton extends StatelessWidget {
   const GreenButton({
+    required this.title,
     Key? key,
   }) : super(key: key);
+
+  final String title;
 
   @override
   Widget build(BuildContext context) {
@@ -18,10 +21,9 @@ class GreenButton extends StatelessWidget {
           Radius.circular(28.r),
         ),
       ),
-      child: TextButton(
-        onPressed: () {},
+      child: Center(
         child: Text(
-          'Pay Now',
+          title,
           style: Theme.of(context).textTheme.headline6!.copyWith(
               fontSize: 17.sp, color: Theme.of(context).colorScheme.onPrimary),
         ),

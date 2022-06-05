@@ -1,3 +1,4 @@
+export 'cart_check_out_page/cart_check_out_page.dart';
 export 'cart_page/cart_page.dart';
 export 'chats_page/chats_page.dart';
 export 'home_page/home_page.dart';

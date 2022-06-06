@@ -35,21 +35,21 @@ Adaptive design
 
 ✅ Design Home, Profile, Cart, Chats
 
-🔴 Design Menu, Item card, Payment, Orders history
+✅ Design Menu, Item card, Payment, Orders history
 
-⏹ Integration Firebase, Base entity model
+🔴 Integration Firebase, Base entity model
 
 ⏹ Repository, CRUD operations Firebase
 
 ⏹ Design Filters, Chat, Support screen & widgets
 
-⏹ Application logic
+⏹ Application logic, Localization
 
-⏹ Localization
-
-⏹ Design Maps
+⏹ Design Maps, Connection Google maps
 
 ⏹ PUSH notification
+
+⏹ Loyalty system
 
 ⏹ Other fixes & refactoring.
 

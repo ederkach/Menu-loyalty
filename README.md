@@ -7,11 +7,11 @@
 ![BLOC](https://img.shields.io/badge/BLOC-State%20managment-brightgreen&style=plastic)
 ![Firebase](https://img.shields.io/badge/firebase-%23039BE5.svg?style=for-the-badge&logo=firebase&style=plastic)
 
-<h3>Flutter 3.0, new Theme, BLOC v.8, Freezed, Firebase, Get_it, Screen util </h3> 
+<h3>Flutter 3.0, BLOC v.8, Freezed, Firebase, Get_it, Adaptive design </h3> 
 
 <h4>Progect progress:</h4> 
 
-![Progress](https://img.shields.io/badge/Progress-15%25-orange&style=plastic)
+![Progress](https://img.shields.io/badge/Progress-25%25-orange&style=plastic)
 
 The project is based on the design PORIS https://ui8.net/ayokerja/products/poris-app-ui-kit but with minor UI adjustments to improve the UX.
 

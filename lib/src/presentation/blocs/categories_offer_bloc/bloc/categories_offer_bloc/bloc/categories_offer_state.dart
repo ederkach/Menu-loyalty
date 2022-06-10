@@ -8,5 +8,5 @@ abstract class CategoriesofferState with _$CategoriesofferState {
   const factory CategoriesofferState.categoriesOfferStateLoadFailure(
       ServerException failure) = CategoriesofferStateLoadFailure;
   const factory CategoriesofferState.categoriesOfferLoadSuccess(
-      List<CategoriesOffer> logs) = CategoriesofferLoadSuccess;
+      List<CategoriesOffer> listCategoriesOffer) = CategoriesofferLoadSuccess;
 }

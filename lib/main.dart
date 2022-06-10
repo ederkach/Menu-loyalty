@@ -3,14 +3,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'src/config/app_router.dart';
-import 'src/injector.dart' as di;
 import 'src/config/theme/theme.dart';
 import 'src/presentation/views/pages.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
-  await di.init();
   runApp(const MyApp());
 }
 

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import '../../../../data/repositories/categories_offer/categories_offer_repository.dart';
 import '../../../widgets/icon_menu_button.dart';
 
 class CategoryOffer extends StatefulWidget {
@@ -14,6 +15,18 @@ class CategoryOffer extends StatefulWidget {
 
 class _CategoryOfferState extends State<CategoryOffer> {
   int _selectedIndex = 0;
+
+  @override
+  void initState() {
+    test();
+
+    super.initState();
+  }
+
+  test() async {
+    var list = await CategoriesOfferRepository().getCategoryOffer();
+    print(list);
+  }
 
   void selectIndex(index) {
     setState(() {

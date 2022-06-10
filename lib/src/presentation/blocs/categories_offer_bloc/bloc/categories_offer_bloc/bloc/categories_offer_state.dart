@@ -3,10 +3,10 @@ part of 'categories_offer_bloc.dart';
 @freezed
 abstract class CategoriesofferState with _$CategoriesofferState {
   const factory CategoriesofferState.initial() = _Initial;
-  const factory CategoriesofferState.logsLoading() =
+  const factory CategoriesofferState.categoriesOfferLoading() =
       CategoriesofferStateLoading;
-  const factory CategoriesofferState.CategoriesofferStateLoadFailure(
+  const factory CategoriesofferState.categoriesOfferStateLoadFailure(
       ServerException failure) = CategoriesofferStateLoadFailure;
-  const factory CategoriesofferState.CategoriesofferLoadSuccess(
+  const factory CategoriesofferState.categoriesOfferLoadSuccess(
       List<CategoriesOffer> logs) = CategoriesofferLoadSuccess;
 }

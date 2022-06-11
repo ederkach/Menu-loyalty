@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
-
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../data/models/categories_offer_model/categories_offer_model.dart';
 import '../../../widgets/icon_menu_button.dart';
 
-class EmptyCategoriesOffer extends StatelessWidget {
-  const EmptyCategoriesOffer({required this.nameIcon, Key? key})
+class LoadCategoriesOffer extends StatelessWidget {
+  const LoadCategoriesOffer({required this.nameIcon, Key? key})
       : super(key: key);
 
   final String nameIcon;

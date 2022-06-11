@@ -19,14 +19,12 @@ class CategoriesofferBloc
       _categoriesOfferStreamSubscription;
 
   CategoriesofferBloc(this._categoriesOfferRepository)
-      : super(const CategoriesofferState.initial()) {
-    on<CategoriesofferEvent>((event, emit) {
-      on<Started>(_onLoadCategoriesOffer);
-    });
+      : super(const CategoriesofferState.emptyCategoriesOffer()) {
+    on<FetchCategoriesOffer>(_onLoadCategoriesOffer);
   }
 
   void _onLoadCategoriesOffer(
-      Started event, Emitter<CategoriesofferState> emit) async {
+      FetchCategoriesOffer event, Emitter<CategoriesofferState> emit) async {
     final dataCategoriesOfferRepository =
         await _categoriesOfferRepository.getCategoryOffer();
 
@@ -34,7 +32,9 @@ class CategoriesofferBloc
       dataCategoriesOfferRepository.fold(
         (failure) => CategoriesofferState.categoriesOfferStateLoadFailure(
             ServerException(message: failure.message)),
-        (person) => CategoriesofferState.categoriesOfferLoadSuccess(person),
+        (categoriesOfferList) =>
+            CategoriesofferState.categoriesOfferLoadSuccess(
+                categoriesOfferList),
       ),
     );
   }

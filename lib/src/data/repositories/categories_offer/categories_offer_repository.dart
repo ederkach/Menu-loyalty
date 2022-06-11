@@ -17,6 +17,7 @@ class CategoriesOfferRepository extends BaseCategoriesOfferRepository {
     try {
       final snap = await _firebaseFirestore
           .collection('Categories offer')
+          .orderBy('rank')
           .withConverter<CategoriesOffer>(
               fromFirestore: (snapshot, _) =>
                   CategoriesOffer.fromDocument(snapshot),

@@ -29,7 +29,7 @@ class MyApp extends StatelessWidget {
               BlocProvider(
                   create: (_) =>
                       CategoriesofferBloc(CategoriesOfferRepository())
-                        ..add(const Started())),
+                        ..add(const FetchCategoriesOffer())),
             ],
             child: MaterialApp(
               title: 'PORIS FOOD APP',

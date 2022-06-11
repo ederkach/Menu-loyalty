@@ -2,17 +2,20 @@ import 'package:flutter/material.dart';
 
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import '../../data/models/categories_offer_model/categories_offer_model.dart';
 import 'dot_widget.dart';
 
 class IconMenuButton extends StatelessWidget {
   const IconMenuButton({
     required this.isSelected,
     required this.dotColor,
+    required this.categoriesOffer,
     Key? key,
   }) : super(key: key);
 
   final bool isSelected;
   final Color dotColor;
+  final CategoriesOffer categoriesOffer;
 
   @override
   Widget build(BuildContext context) {
@@ -36,14 +39,14 @@ class IconMenuButton extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               ImageIcon(
-                const AssetImage("assets/icons/hamburger.png"),
+                AssetImage(categoriesOffer.iconPath),
                 color: (isSelected == true)
                     ? Theme.of(context).scaffoldBackgroundColor
                     : Theme.of(context).iconTheme.color,
                 size: 24.sp,
               ),
               Text(
-                'Fast Food',
+                categoriesOffer.name,
                 style: (isSelected == true)
                     ? Theme.of(context).textTheme.bodyMedium?.copyWith(
                         color: Theme.of(context).scaffoldBackgroundColor,

@@ -1,5 +1,3 @@
-import 'dart:async';
-
 import 'package:bloc/bloc.dart';
 import 'package:dartz/dartz.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
@@ -15,8 +13,6 @@ part 'categories_offer_bloc.freezed.dart';
 class CategoriesofferBloc
     extends Bloc<CategoriesofferEvent, CategoriesofferState> {
   final CategoriesOfferRepository _categoriesOfferRepository;
-  StreamSubscription<Either<ServerException, List<CategoriesOffer>>>?
-      _categoriesOfferStreamSubscription;
 
   CategoriesofferBloc(this._categoriesOfferRepository)
       : super(const CategoriesofferState.emptyCategoriesOffer()) {

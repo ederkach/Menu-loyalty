@@ -26,6 +26,7 @@ class CategoriesOfferRepository extends BaseCategoriesOfferRepository {
           .then((value) => value.docs.map((e) => e.data()).toList());
       return Right(snap);
     } on FirebaseException catch (e) {
+      print('Error Firebase');
       return Left(ServerException(message: e.message));
     }
   }

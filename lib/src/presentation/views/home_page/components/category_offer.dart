@@ -4,6 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../blocs/categories_offer_bloc/bloc/blocs.dart';
 import '../../../widgets/icon_menu_button.dart';
+import 'components/empty_categories_offer.dart';
 
 class CategoryOffer extends StatefulWidget {
   const CategoryOffer({
@@ -36,10 +37,12 @@ class _CategoryOfferState extends State<CategoryOffer> {
       child: BlocBuilder<CategoriesofferBloc, CategoriesofferState>(
         builder: (context, state) {
           return state.when(
-            categoriesOfferLoading: () =>
-                const Center(child: CircularProgressIndicator()),
-            emptyCategoriesOffer: () =>
-                const Center(child: CircularProgressIndicator()),
+            categoriesOfferLoading: () => const EmptyCategoriesOffer(
+              nameIcon: 'Load...',
+            ),
+            emptyCategoriesOffer: () => const EmptyCategoriesOffer(
+              nameIcon: 'No data',
+            ),
             categoriesOfferLoadSuccess: (listCategoriesOffer) =>
                 ListView.separated(
               scrollDirection: Axis.horizontal,
@@ -61,7 +64,9 @@ class _CategoryOfferState extends State<CategoryOffer> {
               },
             ),
             categoriesOfferStateLoadFailure: (_itemsBloc) =>
-                const Center(child: CircularProgressIndicator()),
+                const EmptyCategoriesOffer(
+              nameIcon: 'No data',
+            ),
           );
         },
       ),

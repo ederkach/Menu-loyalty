@@ -3,31 +3,13 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../blocs/categories_offer_bloc/bloc/blocs.dart';
-import '../../../widgets/icon_menu_button.dart';
+import 'list_category_offer.dart';
 import 'load_categories_offer.dart';
 
-class CategoryOffer extends StatefulWidget {
+class CategoryOffer extends StatelessWidget {
   const CategoryOffer({
     Key? key,
   }) : super(key: key);
-
-  @override
-  State<CategoryOffer> createState() => _CategoryOfferState();
-}
-
-class _CategoryOfferState extends State<CategoryOffer> {
-  int _selectedIndex = 0;
-
-  @override
-  void initState() {
-    super.initState();
-  }
-
-  void selectIndex(index) {
-    setState(() {
-      _selectedIndex = index;
-    });
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -44,24 +26,8 @@ class _CategoryOfferState extends State<CategoryOffer> {
               nameIcon: 'No data',
             ),
             categoriesOfferLoadSuccess: (listCategoriesOffer) =>
-                ListView.separated(
-              scrollDirection: Axis.horizontal,
-              itemCount: listCategoriesOffer.length,
-              separatorBuilder: (BuildContext context, int index) =>
-                  VerticalDivider(
-                color: Theme.of(context).colorScheme.onPrimary,
-                width: 17.w,
-              ),
-              itemBuilder: (BuildContext context, int index) {
-                return GestureDetector(
-                    onTap: (() {
-                      selectIndex(index);
-                    }),
-                    child: IconMenuButton(
-                        categoriesOffer: listCategoriesOffer[index],
-                        dotColor: Theme.of(context).colorScheme.onSecondary,
-                        isSelected: (index == _selectedIndex) ? true : false));
-              },
+                ListCategoryOffer(
+              listCategoriesOffer: listCategoriesOffer,
             ),
             categoriesOfferStateLoadFailure: (_itemsBloc) =>
                 const LoadCategoriesOffer(

@@ -21,8 +21,10 @@ class OrdersHistoryPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var designColorScheme = Theme.of(context).colorScheme;
+    var designStyleText = Theme.of(context).textTheme;
     return Scaffold(
-      backgroundColor: Theme.of(context).colorScheme.secondaryContainer,
+      backgroundColor: designColorScheme.secondaryContainer,
       appBar: PreferredSize(
         preferredSize: Size.fromHeight(70.0.h),
         child: AppBar(
@@ -54,9 +56,8 @@ class OrdersHistoryPage extends StatelessWidget {
           ],
           title: Text(
             'last orders',
-            style: Theme.of(context).textTheme.headlineMedium?.copyWith(
-                color: Theme.of(context).colorScheme.onSecondary,
-                fontSize: 17.sp),
+            style: designStyleText.headlineMedium?.copyWith(
+                color: designColorScheme.onSecondary, fontSize: 17.sp),
           ),
           centerTitle: true,
         ),

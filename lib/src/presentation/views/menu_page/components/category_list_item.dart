@@ -14,28 +14,24 @@ class CategoryListItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var designColorScheme = Theme.of(context).colorScheme;
+    var designStyleText = Theme.of(context).textTheme;
     return SizedBox(
         width: 108.w,
         child: Column(
           children: [
             Text('Category',
                 style: (isSelected)
-                    ? Theme.of(context)
-                        .textTheme
-                        .bodyMedium!
-                        .copyWith(fontSize: 14.sp)
-                    : Theme.of(context).textTheme.bodyMedium!.copyWith(
+                    ? designStyleText.bodyMedium!.copyWith(fontSize: 14.sp)
+                    : designStyleText.bodyMedium!.copyWith(
                         fontSize: 14.sp,
-                        color: Theme.of(context)
-                            .colorScheme
-                            .onSecondary
-                            .withOpacity(0.5))),
+                        color: designColorScheme.onSecondary.withOpacity(0.5))),
             SizedBox(
               height: 8.h,
             ),
             if (isSelected)
               DotWidget(
-                dotColor: Theme.of(context).colorScheme.secondary,
+                dotColor: designColorScheme.secondary,
                 sizeheight: 7,
                 sizewidth: 7,
               ),

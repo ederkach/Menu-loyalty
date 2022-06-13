@@ -16,11 +16,13 @@ class MainButtonNabBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var designColorScheme = Theme.of(context).colorScheme;
+    var designStyleText = Theme.of(context).textTheme;
     return Container(
       width: 120.w,
       height: 49.h,
       decoration: BoxDecoration(
-          color: Theme.of(context).colorScheme.secondary,
+          color: designColorScheme.secondary,
           borderRadius: BorderRadius.all(
             Radius.circular(24.r),
           ),
@@ -39,14 +41,13 @@ class MainButtonNabBar extends StatelessWidget {
           children: [
             Icon(
               evaIcons,
-              color: Theme.of(context).scaffoldBackgroundColor,
+              color: designColorScheme.onPrimary,
               size: 24.sp,
             ),
             Text(
               title,
-              style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                  color: Theme.of(context).scaffoldBackgroundColor,
-                  fontSize: 15.sp),
+              style: designStyleText.bodyMedium?.copyWith(
+                  color: designColorScheme.onPrimary, fontSize: 15.sp),
             ),
           ],
         ),

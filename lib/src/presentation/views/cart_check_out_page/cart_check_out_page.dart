@@ -23,11 +23,10 @@ class CheckOutPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    List<Widget> bottomPanelListWidgets = [
-      const ChoosePayment(),
-    ];
+    var designColorScheme = Theme.of(context).colorScheme;
+    var designStyleText = Theme.of(context).textTheme;
     return Scaffold(
-      backgroundColor: Theme.of(context).colorScheme.secondaryContainer,
+      backgroundColor: designColorScheme.secondaryContainer,
       appBar: PreferredSize(
         preferredSize: Size.fromHeight(70.0.h),
         child: AppBar(
@@ -49,9 +48,8 @@ class CheckOutPage extends StatelessWidget {
           ),
           title: Text(
             'Confirm Order',
-            style: Theme.of(context).textTheme.headlineMedium?.copyWith(
-                color: Theme.of(context).colorScheme.onSecondary,
-                fontSize: 17.sp),
+            style: designStyleText.headlineMedium?.copyWith(
+                color: designColorScheme.onSecondary, fontSize: 17.sp),
           ),
           centerTitle: true,
         ),
@@ -78,9 +76,7 @@ class CheckOutPage extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text('Items Order',
-                              style: Theme.of(context)
-                                  .textTheme
-                                  .headline6!
+                              style: designStyleText.headline6!
                                   .copyWith(fontSize: 16.sp)),
                           SizedBox(
                             height: 10.h,
@@ -90,7 +86,7 @@ class CheckOutPage extends StatelessWidget {
                       ),
                     ),
                     decoration: BoxDecoration(
-                      color: Theme.of(context).colorScheme.onPrimary,
+                      color: designColorScheme.onPrimary,
                       borderRadius: BorderRadius.all(
                         Radius.circular(16.r),
                       ),
@@ -121,6 +117,8 @@ class CheckOutPage extends StatelessWidget {
   }
 
   Future<dynamic> showBottomPayPanel(BuildContext context) {
+    var designColorScheme = Theme.of(context).colorScheme;
+    var designStyleText = Theme.of(context).textTheme;
     return showDialog(
       context: context,
       builder: (ctx) => AlertDialog(
@@ -148,9 +146,8 @@ class CheckOutPage extends StatelessWidget {
                   ),
                   Text(
                     "Your Ordered Successfully",
-                    style: Theme.of(context).textTheme.headlineMedium?.copyWith(
-                        color: Theme.of(context).colorScheme.onSecondary,
-                        fontSize: 17.sp),
+                    style: designStyleText.headlineMedium?.copyWith(
+                        color: designColorScheme.onSecondary, fontSize: 17.sp),
                   ),
                   SizedBox(
                     height: 10.h,
@@ -158,18 +155,15 @@ class CheckOutPage extends StatelessWidget {
                   Text(
                     "Your successfully place an order. Your order confirm and delivered within 20 minutes.Wish you enjoy the meal.",
                     textAlign: TextAlign.center,
-                    style: Theme.of(context).textTheme.headlineMedium?.copyWith(
-                        color: Theme.of(context)
-                            .colorScheme
-                            .onSecondary
-                            .withOpacity(0.5),
+                    style: designStyleText.headlineMedium?.copyWith(
+                        color: designColorScheme.onSecondary.withOpacity(0.5),
                         fontSize: 12.sp),
                   ),
                 ],
               ),
             ),
             decoration: BoxDecoration(
-              color: Theme.of(context).colorScheme.onPrimary,
+              color: designColorScheme.onPrimary,
               borderRadius: BorderRadius.all(
                 Radius.circular(16.r),
               ),

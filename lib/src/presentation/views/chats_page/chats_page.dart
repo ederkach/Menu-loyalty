@@ -18,6 +18,9 @@ class ChatsPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var designColorScheme = Theme.of(context).colorScheme;
+    var designStyleText = Theme.of(context).textTheme;
+
     return Scaffold(
       appBar: AppBar(
         leading: Padding(
@@ -33,9 +36,8 @@ class ChatsPage extends StatelessWidget {
         ),
         title: Text(
           'Chat',
-          style: Theme.of(context).textTheme.headlineMedium?.copyWith(
-              color: Theme.of(context).colorScheme.onSecondary,
-              fontSize: 17.sp),
+          style: designStyleText.headlineMedium
+              ?.copyWith(color: designColorScheme.onSecondary, fontSize: 17.sp),
         ),
         centerTitle: true,
       ),

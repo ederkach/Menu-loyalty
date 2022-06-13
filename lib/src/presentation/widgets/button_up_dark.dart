@@ -10,16 +10,17 @@ class ButtonUpDark extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var designColorScheme = Theme.of(context).colorScheme;
     return Container(
       child: Icon(
         EvaIcons.arrowheadUp,
-        color: Theme.of(context).colorScheme.onSecondary,
+        color: designColorScheme.onSecondary,
         size: 24.sp,
       ),
       width: 123.w,
       height: 36.h,
       decoration: BoxDecoration(
-        color: Theme.of(context).colorScheme.background.withOpacity(0.1),
+        color: designColorScheme.background.withOpacity(0.1),
         borderRadius: BorderRadius.all(
           Radius.circular(24.r),
         ),

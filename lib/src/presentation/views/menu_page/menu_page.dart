@@ -50,15 +50,16 @@ class _MenuPageState extends State<MenuPage> {
 
   @override
   Widget build(BuildContext context) {
+    var designColorScheme = Theme.of(context).colorScheme;
     return Scaffold(
-      backgroundColor: Theme.of(context).colorScheme.secondaryContainer,
+      backgroundColor: designColorScheme.secondaryContainer,
       body: Padding(
         padding: EdgeInsets.only(top: 50.h),
         child: Container(
             height: 800.h,
             width: 375.w,
             decoration: BoxDecoration(
-              color: Theme.of(context).colorScheme.onPrimary,
+              color: designColorScheme.onPrimary,
               borderRadius: BorderRadius.only(
                 topLeft: Radius.circular(40.r),
                 topRight: Radius.circular(40.r),
@@ -83,11 +84,11 @@ class _MenuPageState extends State<MenuPage> {
           },
           child: Icon(
             EvaIcons.homeOutline,
-            color: Theme.of(context).colorScheme.onPrimary,
+            color: designColorScheme.onPrimary,
           ),
         ),
         decoration: BoxDecoration(
-          color: Theme.of(context).colorScheme.primary,
+          color: designColorScheme.primary,
           borderRadius: BorderRadius.all(
             Radius.circular(26.r),
           ),

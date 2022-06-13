@@ -31,11 +31,12 @@ class _ListCategoryOfferState extends State<ListCategoryOffer> {
 
   @override
   Widget build(BuildContext context) {
+    var designColorScheme = Theme.of(context).colorScheme;
     return ListView.separated(
       scrollDirection: Axis.horizontal,
       itemCount: widget.listCategoriesOffer.length,
       separatorBuilder: (BuildContext context, int index) => VerticalDivider(
-        color: Theme.of(context).colorScheme.onPrimary,
+        color: designColorScheme.onPrimary,
         width: 17.w,
       ),
       itemBuilder: (BuildContext context, int index) {
@@ -45,7 +46,7 @@ class _ListCategoryOfferState extends State<ListCategoryOffer> {
             }),
             child: IconMenuButton(
                 categoriesOffer: widget.listCategoriesOffer[index],
-                dotColor: Theme.of(context).colorScheme.onSecondary,
+                dotColor: designColorScheme.onSecondary,
                 isSelected: (index == _selectedIndex) ? true : false));
       },
     );

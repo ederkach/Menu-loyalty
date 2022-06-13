@@ -13,6 +13,8 @@ class CartSum extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var designColorScheme = Theme.of(context).colorScheme;
+    var designStyleText = Theme.of(context).textTheme;
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: 24.w),
       child: Column(
@@ -29,21 +31,17 @@ class CartSum extends StatelessWidget {
             children: [
               Text(
                 'Subtotal ( 3 items)',
-                style: Theme.of(context).textTheme.bodyText1!.copyWith(
+                style: designStyleText.bodyText1!.copyWith(
                     fontSize: 15.sp,
-                    color: Theme.of(context)
-                        .colorScheme
-                        .secondaryContainer
-                        .withOpacity(0.7)),
+                    color:
+                        designColorScheme.secondaryContainer.withOpacity(0.7)),
               ),
               Text(
                 '\$ 153,00',
-                style: Theme.of(context).textTheme.bodyMedium!.copyWith(
+                style: designStyleText.bodyMedium!.copyWith(
                     fontSize: 15.sp,
-                    color: Theme.of(context)
-                        .colorScheme
-                        .secondaryContainer
-                        .withOpacity(0.7)),
+                    color:
+                        designColorScheme.secondaryContainer.withOpacity(0.7)),
               ),
             ],
           ),
@@ -53,21 +51,17 @@ class CartSum extends StatelessWidget {
             children: [
               Text(
                 'Delivery',
-                style: Theme.of(context).textTheme.bodyMedium!.copyWith(
+                style: designStyleText.bodyMedium!.copyWith(
                     fontSize: 15.sp,
-                    color: Theme.of(context)
-                        .colorScheme
-                        .secondaryContainer
-                        .withOpacity(0.7)),
+                    color:
+                        designColorScheme.secondaryContainer.withOpacity(0.7)),
               ),
               Text(
                 '\$ 10,00',
-                style: Theme.of(context).textTheme.bodyMedium!.copyWith(
+                style: designStyleText.bodyMedium!.copyWith(
                     fontSize: 15.sp,
-                    color: Theme.of(context)
-                        .colorScheme
-                        .secondaryContainer
-                        .withOpacity(0.7)),
+                    color:
+                        designColorScheme.secondaryContainer.withOpacity(0.7)),
               ),
             ],
           ),
@@ -77,16 +71,13 @@ class CartSum extends StatelessWidget {
             children: [
               Text(
                 'Total Prices',
-                style: Theme.of(context).textTheme.headline6!.copyWith(
-                    fontSize: 15.sp,
-                    color: Theme.of(context).colorScheme.onPrimary),
+                style: designStyleText.headline6!.copyWith(
+                    fontSize: 15.sp, color: designColorScheme.onPrimary),
               ),
               Text(
                 '\$ 163,00',
-                style: Theme.of(context)
-                    .textTheme
-                    .titleLarge!
-                    .copyWith(color: Theme.of(context).colorScheme.secondary),
+                style: designStyleText.titleLarge!
+                    .copyWith(color: designColorScheme.secondary),
               ),
             ],
           ),

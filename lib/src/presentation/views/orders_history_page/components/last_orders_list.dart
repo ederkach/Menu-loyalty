@@ -13,6 +13,7 @@ class LastOrdersList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var designColorScheme = Theme.of(context).colorScheme;
     return SizedBox(
       height: 264.h,
       child: ListView.separated(
@@ -20,7 +21,7 @@ class LastOrdersList extends StatelessWidget {
           itemCount: 3,
           separatorBuilder: (BuildContext context, int index) =>
               VerticalDivider(
-                color: Theme.of(context).colorScheme.onPrimary,
+                color: designColorScheme.onPrimary,
                 width: 17.w,
               ),
           itemBuilder: (BuildContext context, int index) {
@@ -42,7 +43,7 @@ class LastOrdersList extends StatelessWidget {
                   ),
                 ),
                 decoration: BoxDecoration(
-                  color: Theme.of(context).colorScheme.onPrimary,
+                  color: designColorScheme.onPrimary,
                   borderRadius: BorderRadius.all(
                     Radius.circular(16.r),
                   ),

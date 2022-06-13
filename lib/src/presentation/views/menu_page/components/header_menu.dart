@@ -18,6 +18,8 @@ class HeaderMenu extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var designStyleText = Theme.of(context).textTheme;
+
     return Column(
       children: [
         SizedBox(
@@ -30,9 +32,7 @@ class HeaderMenu extends StatelessWidget {
         Row(
           children: [
             Text('Category 🌭',
-                style: Theme.of(context)
-                    .textTheme
-                    .displayMedium!
+                style: designStyleText.displayMedium!
                     .copyWith(fontSize: 26, fontWeight: FontWeight.w500)),
           ],
         ),

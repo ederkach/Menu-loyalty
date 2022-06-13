@@ -24,12 +24,13 @@ class _ListPaymentsState extends State<ListPayments> {
 
   @override
   Widget build(BuildContext context) {
+    var designColorScheme = Theme.of(context).colorScheme;
     return ListView.separated(
       padding: EdgeInsets.only(top: 10.h),
       scrollDirection: Axis.vertical,
       itemCount: 3,
       separatorBuilder: (BuildContext context, int index) => Divider(
-        color: Theme.of(context).colorScheme.background,
+        color: designColorScheme.background,
         height: 10.w,
       ),
       itemBuilder: (BuildContext context, int index) {

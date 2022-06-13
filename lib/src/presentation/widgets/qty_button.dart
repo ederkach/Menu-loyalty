@@ -14,14 +14,15 @@ class QtyButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var designStyleText = Theme.of(context).textTheme;
     return Container(
       child: Center(
         child: Text(
           title,
-          style: Theme.of(context).textTheme.bodyMedium!.copyWith(
-                fontSize: 15.sp,
-                fontWeight: FontWeight.bold,
-              ),
+          style: designStyleText.bodyMedium!.copyWith(
+            fontSize: 15.sp,
+            fontWeight: FontWeight.bold,
+          ),
         ),
       ),
       height: 24.h,

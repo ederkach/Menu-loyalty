@@ -55,10 +55,12 @@ class _MainNavBarState extends State<MainNavBar> {
   }
 
   Container buildMyNavBar(BuildContext context) {
+    var designColorScheme = Theme.of(context).colorScheme;
+
     return Container(
       height: 104.h,
       decoration: BoxDecoration(
-        color: Theme.of(context).scaffoldBackgroundColor,
+        color: designColorScheme.onPrimary,
         borderRadius: BorderRadius.only(
           topLeft: Radius.circular(40.r),
           topRight: Radius.circular(40.r),

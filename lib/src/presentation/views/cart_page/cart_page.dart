@@ -37,6 +37,8 @@ class _CartPageState extends State<CartPage> {
   }
 
   void payNow() {
+    var designColorScheme = Theme.of(context).colorScheme;
+    var designStyleText = Theme.of(context).textTheme;
     showMaterialModalBottomSheet(
       context: context,
       enableDrag: false,
@@ -46,7 +48,7 @@ class _CartPageState extends State<CartPage> {
       builder: (context) => Container(
         height: 606.h,
         decoration: BoxDecoration(
-          color: Theme.of(context).colorScheme.background,
+          color: designColorScheme.background,
           borderRadius: BorderRadius.only(
             topLeft: Radius.circular(40.r),
             topRight: Radius.circular(40.r),
@@ -84,11 +86,8 @@ class _CartPageState extends State<CartPage> {
                 children: [
                   Text(
                     'Estimated Arrived',
-                    style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                        color: Theme.of(context)
-                            .colorScheme
-                            .onSecondary
-                            .withOpacity(0.5),
+                    style: designStyleText.bodyMedium?.copyWith(
+                        color: designColorScheme.onSecondary.withOpacity(0.5),
                         fontSize: 15.sp),
                   ),
                   const Text('15-20 MIN')
@@ -112,6 +111,8 @@ class _CartPageState extends State<CartPage> {
 
   @override
   Widget build(BuildContext context) {
+    var designColorScheme = Theme.of(context).colorScheme;
+    var designStyleText = Theme.of(context).textTheme;
     return Scaffold(
       appBar: AppBar(
         leading: Padding(
@@ -127,9 +128,8 @@ class _CartPageState extends State<CartPage> {
         ),
         title: Text(
           'Cart',
-          style: Theme.of(context).textTheme.headlineMedium?.copyWith(
-              color: Theme.of(context).colorScheme.onSecondary,
-              fontSize: 17.sp),
+          style: designStyleText.headlineMedium
+              ?.copyWith(color: designColorScheme.onSecondary, fontSize: 17.sp),
         ),
         centerTitle: true,
       ),

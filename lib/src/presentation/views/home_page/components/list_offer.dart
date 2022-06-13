@@ -27,6 +27,7 @@ class _ListOfferState extends State<ListOffer> {
 
   @override
   Widget build(BuildContext context) {
+    var designColorScheme = Theme.of(context).colorScheme;
     return Padding(
       padding: EdgeInsets.only(top: 20.0.h),
       child: SizedBox(
@@ -37,7 +38,7 @@ class _ListOfferState extends State<ListOffer> {
           itemCount: widget.listMenu.length,
           separatorBuilder: (BuildContext context, int index) =>
               VerticalDivider(
-            color: Theme.of(context).colorScheme.primary,
+            color: designColorScheme.primary,
             width: 17.w,
           ),
           itemBuilder: (BuildContext context, int index) {

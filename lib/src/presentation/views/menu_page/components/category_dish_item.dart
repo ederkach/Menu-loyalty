@@ -9,6 +9,8 @@ class CategoryDishItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var designColorScheme = Theme.of(context).colorScheme;
+    var designStyleText = Theme.of(context).textTheme;
     return SizedBox(
       height: 90.h,
       child: Row(
@@ -24,7 +26,7 @@ class CategoryDishItem extends StatelessWidget {
             width: 155.w,
             height: 90.h,
             decoration: BoxDecoration(
-              color: Theme.of(context).colorScheme.secondaryContainer,
+              color: designColorScheme.secondaryContainer,
               borderRadius: BorderRadius.all(
                 Radius.circular(16.r),
               ),
@@ -36,21 +38,17 @@ class CategoryDishItem extends StatelessWidget {
             children: [
               Text(
                 'Orange Panglazed',
-                style: Theme.of(context)
-                    .textTheme
-                    .bodyMedium!
-                    .copyWith(fontSize: 17.sp),
+                style: designStyleText.bodyMedium!.copyWith(fontSize: 17.sp),
               ),
               Text(
                 'Romano cheese',
-                style: Theme.of(context).textTheme.bodyMedium!.copyWith(
-                    fontSize: 13.sp,
-                    color: Theme.of(context).colorScheme.secondary),
+                style: designStyleText.bodyMedium!.copyWith(
+                    fontSize: 13.sp, color: designColorScheme.secondary),
               ),
               Text(
                 '\$51,00',
-                style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                    color: Theme.of(context).colorScheme.secondary,
+                style: designStyleText.bodyMedium?.copyWith(
+                    color: designColorScheme.secondary,
                     fontSize: 15.sp,
                     fontWeight: FontWeight.bold),
               ),

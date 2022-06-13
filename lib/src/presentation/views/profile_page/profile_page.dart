@@ -19,6 +19,9 @@ class ProfilePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var designColorScheme = Theme.of(context).colorScheme;
+    var designStyleText = Theme.of(context).textTheme;
+
     return Scaffold(
       appBar: AppBar(
         leading: Padding(
@@ -34,9 +37,8 @@ class ProfilePage extends StatelessWidget {
         ),
         title: Text(
           'Profile',
-          style: Theme.of(context).textTheme.headlineMedium?.copyWith(
-              color: Theme.of(context).colorScheme.onSecondary,
-              fontSize: 17.sp),
+          style: designStyleText.headlineMedium
+              ?.copyWith(color: designColorScheme.onSecondary, fontSize: 17.sp),
         ),
         centerTitle: true,
         actions: [
@@ -124,14 +126,14 @@ class ProfilePage extends StatelessWidget {
                         width: 59.w,
                         height: 59.h,
                         decoration: BoxDecoration(
-                          color: Theme.of(context).colorScheme.secondary,
+                          color: designColorScheme.secondary,
                           borderRadius: BorderRadius.all(
                             Radius.circular(16.r),
                           ),
                         ),
                         child: Icon(
                           EvaIcons.arrowIosForwardOutline,
-                          color: Theme.of(context).colorScheme.background,
+                          color: designColorScheme.background,
                         )),
                   ),
                 ),

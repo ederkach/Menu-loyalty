@@ -16,6 +16,8 @@ class DishItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var designColorScheme = Theme.of(context).colorScheme;
+    var designStyleText = Theme.of(context).textTheme;
     return Container(
       height: 206.h,
       width: 155.w,
@@ -31,9 +33,8 @@ class DishItem extends StatelessWidget {
               child: Text(
                 menuModel.name,
                 maxLines: 2,
-                style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                    color: Theme.of(context).scaffoldBackgroundColor,
-                    fontSize: 13.sp),
+                style: designStyleText.bodyMedium?.copyWith(
+                    color: designColorScheme.onPrimary, fontSize: 13.sp),
               ),
             ),
           ),
@@ -42,9 +43,8 @@ class DishItem extends StatelessWidget {
             left: 15.w,
             child: Text(
               '\$51',
-              style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                  color: Theme.of(context).colorScheme.secondary,
-                  fontSize: 15.sp),
+              style: designStyleText.bodyMedium?.copyWith(
+                  color: designColorScheme.secondary, fontSize: 15.sp),
             ),
           ),
           Positioned(
@@ -54,8 +54,8 @@ class DishItem extends StatelessWidget {
               height: 135.h,
               decoration: BoxDecoration(
                 color: (isSelected == true)
-                    ? Theme.of(context).colorScheme.onSecondary.withOpacity(0.1)
-                    : Theme.of(context).colorScheme.background.withOpacity(0.1),
+                    ? designColorScheme.onSecondary.withOpacity(0.1)
+                    : designColorScheme.background.withOpacity(0.1),
                 borderRadius: BorderRadius.all(
                   Radius.circular(24.r),
                 ),

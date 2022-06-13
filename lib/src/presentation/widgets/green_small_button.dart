@@ -14,6 +14,8 @@ class GreenSmallButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var designColorScheme = Theme.of(context).colorScheme;
+    var designStyleText = Theme.of(context).textTheme;
     return Container(
       height: 56.h,
       width: 131.w,
@@ -22,21 +24,17 @@ class GreenSmallButton extends StatelessWidget {
         child: Text(
           title,
           style: (isSelected == true)
-              ? Theme.of(context).textTheme.bodyMedium?.copyWith(
-                  color: Theme.of(context).scaffoldBackgroundColor,
-                  fontSize: 13.sp)
-              : Theme.of(context).textTheme.bodyMedium?.copyWith(
-                  color: Theme.of(context)
-                      .colorScheme
-                      .onSecondary
-                      .withOpacity(0.5),
+              ? designStyleText.bodyMedium?.copyWith(
+                  color: designColorScheme.onPrimary, fontSize: 13.sp)
+              : designStyleText.bodyMedium?.copyWith(
+                  color: designColorScheme.onSecondary.withOpacity(0.5),
                   fontSize: 13.sp),
         ),
       ),
       decoration: BoxDecoration(
         color: (isSelected == true)
-            ? Theme.of(context).colorScheme.secondary
-            : Theme.of(context).colorScheme.secondaryContainer,
+            ? designColorScheme.secondary
+            : designColorScheme.secondaryContainer,
         borderRadius: BorderRadius.all(Radius.circular(32.r)),
         boxShadow: isSelected == true
             ? const [

@@ -4,7 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../blocs/blocs.dart';
 import 'list_category_offer.dart';
-import 'load_categories_offer.dart';
+import 'load_list_categories_offer.dart';
 
 class CategoryOffer extends StatelessWidget {
   const CategoryOffer({

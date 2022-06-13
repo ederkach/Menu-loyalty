@@ -21,13 +21,11 @@ class LoadCategoriesOffer extends StatelessWidget {
         width: 17.w,
       ),
       itemBuilder: (BuildContext context, int index) {
-        return GestureDetector(
-            onTap: (() {}),
-            child: IconMenuButton(
-                categoriesOffer: CategoriesOffer(
-                    name: nameIcon, iconPath: 'assets/icons/loadingIcon.png'),
-                dotColor: designColorScheme.onSecondary,
-                isSelected: (index == 0) ? true : false));
+        return IconMenuButton(
+            categoriesOffer: CategoriesOffer(
+                name: nameIcon, iconPath: 'assets/icons/loadingIcon.png'),
+            dotColor: designColorScheme.onSecondary,
+            isSelected: (index == 0) ? true : false);
       },
     );
   }

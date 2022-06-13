@@ -21,7 +21,6 @@ class BottomPanel extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var designColorScheme = Theme.of(context).colorScheme;
-    var designStyleText = Theme.of(context).textTheme;
     return Container(
       child: Padding(
         padding: EdgeInsets.only(top: 22.0.h),

@@ -24,7 +24,6 @@ class _CheckOutListState extends State<CheckOutList> {
   @override
   Widget build(BuildContext context) {
     var designColorScheme = Theme.of(context).colorScheme;
-    var designStyleText = Theme.of(context).textTheme;
     return Expanded(
       child: ListView.separated(
         scrollDirection: Axis.vertical,

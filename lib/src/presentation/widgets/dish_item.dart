@@ -63,19 +63,16 @@ class DishItem extends StatelessWidget {
             ),
           ),
           Positioned(
-            right: 0,
-            child: (menuModel.imagePath.toString() != '')
-                ? Image.network(
-                    menuModel.imagePath.toString(),
-                    width: 116.w,
-                    height: 116.w,
-                  )
-                : Image.asset(
-                    'assets/images/noImage.png',
-                    width: 116.w,
-                    height: 116.w,
-                  ),
-          ),
+              right: 0,
+              child: (menuModel.imagePath.toString() != '')
+                  ? Image.network(
+                      menuModel.imagePath.toString(),
+                      width: 116.w,
+                      height: 116.w,
+                    )
+                  : CircularProgressIndicator(
+                      color: designColorScheme.onSecondary,
+                    )),
         ],
       ),
     );

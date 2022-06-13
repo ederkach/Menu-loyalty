@@ -7,12 +7,16 @@ class BottomPanel extends StatelessWidget {
     required this.width,
     required this.height,
     required this.bottomPanelListWidgets,
+    required this.supportWidgets,
+    required this.bottomButtonWidgets,
     Key? key,
   }) : super(key: key);
 
   final double width;
   final double height;
-  final List<Widget> bottomPanelListWidgets;
+  final Widget bottomButtonWidgets;
+  final Widget supportWidgets;
+  final Widget bottomPanelListWidgets;
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +24,11 @@ class BottomPanel extends StatelessWidget {
       child: Padding(
         padding: EdgeInsets.only(top: 22.0.h),
         child: Column(
-          children: bottomPanelListWidgets,
+          children: [
+            bottomButtonWidgets,
+            supportWidgets,
+            bottomPanelListWidgets
+          ],
         ),
       ),
       width: width.w,

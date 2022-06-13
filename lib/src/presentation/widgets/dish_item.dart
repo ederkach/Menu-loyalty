@@ -2,13 +2,17 @@ import 'package:flutter/material.dart';
 
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import '../../data/models/menu_model/menu_model.dart';
+
 class DishItem extends StatelessWidget {
   const DishItem({
     required this.isSelected,
+    required this.menuModel,
     Key? key,
   }) : super(key: key);
 
   final bool isSelected;
+  final MenuModel menuModel;
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +29,7 @@ class DishItem extends StatelessWidget {
               height: 36.h,
               width: 110.w,
               child: Text(
-                'Cooked with egg Sweet Cookies',
+                menuModel.name,
                 maxLines: 2,
                 style: Theme.of(context).textTheme.bodyMedium?.copyWith(
                     color: Theme.of(context).scaffoldBackgroundColor,
@@ -60,11 +64,17 @@ class DishItem extends StatelessWidget {
           ),
           Positioned(
             right: 0,
-            child: Image.network(
-              'https://firebasestorage.googleapis.com/v0/b/menubonus.appspot.com/o/Replace%20images4.png?alt=media&token=9c18bdee-5c4d-40ce-8d05-4ee61caa7a68',
-              width: 116.w,
-              height: 116.h,
-            ),
+            child: (menuModel.imagePath.toString() != '')
+                ? Image.network(
+                    menuModel.imagePath.toString(),
+                    width: 116.w,
+                    height: 116.w,
+                  )
+                : Image.asset(
+                    'assets/images/noImage.png',
+                    width: 116.w,
+                    height: 116.w,
+                  ),
           ),
         ],
       ),

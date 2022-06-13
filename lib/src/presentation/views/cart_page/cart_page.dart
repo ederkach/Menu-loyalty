@@ -112,12 +112,6 @@ class _CartPageState extends State<CartPage> {
 
   @override
   Widget build(BuildContext context) {
-    List<Widget> bottomPanelListWidgets = [
-      const ButtonUpDark(),
-      CartSum(
-        payNow: payNow,
-      )
-    ];
     return Scaffold(
       appBar: AppBar(
         leading: Padding(
@@ -159,9 +153,14 @@ class _CartPageState extends State<CartPage> {
           Positioned(
             bottom: 0,
             child: BottomPanel(
-                width: 375.w,
-                height: 335.h,
-                bottomPanelListWidgets: bottomPanelListWidgets),
+              width: 375.w,
+              height: 335.h,
+              bottomButtonWidgets: const ButtonUpDark(),
+              supportWidgets: const SizedBox(),
+              bottomPanelListWidgets: CartSum(
+                payNow: payNow,
+              ),
+            ),
           )
         ],
       ),

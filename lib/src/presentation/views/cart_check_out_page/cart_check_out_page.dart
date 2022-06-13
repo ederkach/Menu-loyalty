@@ -24,16 +24,7 @@ class CheckOutPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     List<Widget> bottomPanelListWidgets = [
-      const ButtonUpDark(),
       const ChoosePayment(),
-      GestureDetector(
-        onTap: (() => {
-              showBottomPayPanel(context)
-            }),
-        child: const GreenButton(
-          title: 'Pay Now',
-        ),
-      )
     ];
     return Scaffold(
       backgroundColor: Theme.of(context).colorScheme.secondaryContainer,
@@ -112,9 +103,17 @@ class CheckOutPage extends StatelessWidget {
           Positioned(
             bottom: 0,
             child: BottomPanel(
-                width: 375.w,
-                height: 317.h,
-                bottomPanelListWidgets: bottomPanelListWidgets),
+              width: 375.w,
+              height: 317.h,
+              bottomButtonWidgets: const ButtonUpDark(),
+              supportWidgets: const ChoosePayment(),
+              bottomPanelListWidgets: GestureDetector(
+                onTap: (() => {showBottomPayPanel(context)}),
+                child: const GreenButton(
+                  title: 'Pay Now',
+                ),
+              ),
+            ),
           )
         ],
       ),
@@ -123,80 +122,72 @@ class CheckOutPage extends StatelessWidget {
 
   Future<dynamic> showBottomPayPanel(BuildContext context) {
     return showDialog(
-              context: context,
-              builder: (ctx) => AlertDialog(
-                insetPadding: EdgeInsets.all(20.w),
-                buttonPadding: EdgeInsets.all(20.w),
-                shape: const RoundedRectangleBorder(
-                    borderRadius: BorderRadius.all(Radius.circular(32.0))),
-                content: Padding(
-                  padding: EdgeInsets.all(30.w),
-                  child: Container(
-                    height: 175.h,
-                    width: 327.w,
-                    child: Center(
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        mainAxisAlignment: MainAxisAlignment.spaceAround,
-                        children: [
-                          Image.asset(
-                            'assets/images/Checkmark.png',
-                            height: 74.w,
-                            width: 74.w,
-                          ),
-                          SizedBox(
-                            height: 10.h,
-                          ),
-                          Text(
-                            "Your Ordered Successfully",
-                            style: Theme.of(context)
-                                .textTheme
-                                .headlineMedium
-                                ?.copyWith(
-                                    color: Theme.of(context)
-                                        .colorScheme
-                                        .onSecondary,
-                                    fontSize: 17.sp),
-                          ),
-                          SizedBox(
-                            height: 10.h,
-                          ),
-                          Text(
-                            "Your successfully place an order. Your order confirm and delivered within 20 minutes.Wish you enjoy the meal.",
-                            textAlign: TextAlign.center,
-                            style: Theme.of(context)
-                                .textTheme
-                                .headlineMedium
-                                ?.copyWith(
-                                    color: Theme.of(context)
-                                        .colorScheme
-                                        .onSecondary
-                                        .withOpacity(0.5),
-                                    fontSize: 12.sp),
-                          ),
-                        ],
-                      ),
-                    ),
-                    decoration: BoxDecoration(
-                      color: Theme.of(context).colorScheme.onPrimary,
-                      borderRadius: BorderRadius.all(
-                        Radius.circular(16.r),
-                      ),
-                    ),
+      context: context,
+      builder: (ctx) => AlertDialog(
+        insetPadding: EdgeInsets.all(20.w),
+        buttonPadding: EdgeInsets.all(20.w),
+        shape: const RoundedRectangleBorder(
+            borderRadius: BorderRadius.all(Radius.circular(32.0))),
+        content: Padding(
+          padding: EdgeInsets.all(30.w),
+          child: Container(
+            height: 175.h,
+            width: 327.w,
+            child: Center(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  Image.asset(
+                    'assets/images/Checkmark.png',
+                    height: 74.w,
+                    width: 74.w,
                   ),
-                ),
-                actions: <Widget>[
-                  GestureDetector(
-                    onTap: () => {
-                      Navigator.pushNamedAndRemoveUntil(
-                          context, 'MainNavBar', (route) => false)
-                    },
-                    child: const GreenButton(
-                      title: 'Keep Browsing',
-                    ),
+                  SizedBox(
+                    height: 10.h,
+                  ),
+                  Text(
+                    "Your Ordered Successfully",
+                    style: Theme.of(context).textTheme.headlineMedium?.copyWith(
+                        color: Theme.of(context).colorScheme.onSecondary,
+                        fontSize: 17.sp),
+                  ),
+                  SizedBox(
+                    height: 10.h,
+                  ),
+                  Text(
+                    "Your successfully place an order. Your order confirm and delivered within 20 minutes.Wish you enjoy the meal.",
+                    textAlign: TextAlign.center,
+                    style: Theme.of(context).textTheme.headlineMedium?.copyWith(
+                        color: Theme.of(context)
+                            .colorScheme
+                            .onSecondary
+                            .withOpacity(0.5),
+                        fontSize: 12.sp),
                   ),
                 ],
               ),
-            );
+            ),
+            decoration: BoxDecoration(
+              color: Theme.of(context).colorScheme.onPrimary,
+              borderRadius: BorderRadius.all(
+                Radius.circular(16.r),
+              ),
+            ),
+          ),
+        ),
+        actions: <Widget>[
+          GestureDetector(
+            onTap: () => {
+              Navigator.pushNamedAndRemoveUntil(
+                  context, 'MainNavBar', (route) => false)
+            },
+            child: const GreenButton(
+              title: 'Keep Browsing',
+            ),
+          ),
+        ],
+      ),
+    );
   }
 }

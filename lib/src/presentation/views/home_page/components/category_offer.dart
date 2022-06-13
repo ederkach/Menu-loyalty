@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../../blocs/categories_offer_bloc/bloc/blocs.dart';
+import '../../../blocs/blocs.dart';
 import 'list_category_offer.dart';
 import 'load_categories_offer.dart';
 
@@ -29,7 +29,7 @@ class CategoryOffer extends StatelessWidget {
                 ListCategoryOffer(
               listCategoriesOffer: listCategoriesOffer,
             ),
-            categoriesOfferStateLoadFailure: (_itemsBloc) =>
+            categoriesOfferStateLoadFailure: (failure) =>
                 const LoadCategoriesOffer(
               nameIcon: 'No data',
             ),

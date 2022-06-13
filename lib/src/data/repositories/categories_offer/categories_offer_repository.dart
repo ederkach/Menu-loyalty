@@ -7,6 +7,7 @@ import 'base_categories_offer_repository.dart';
 
 class CategoriesOfferRepository extends BaseCategoriesOfferRepository {
   final FirebaseFirestore _firebaseFirestore;
+  late List<CategoriesOffer> repositoryCategoriesOffer;
 
   CategoriesOfferRepository({FirebaseFirestore? firebaseFirestore})
       : _firebaseFirestore = firebaseFirestore ?? FirebaseFirestore.instance;
@@ -15,7 +16,7 @@ class CategoriesOfferRepository extends BaseCategoriesOfferRepository {
   Future<Either<ServerException, List<CategoriesOffer>>>
       getCategoryOffer() async {
     try {
-      final snap = await _firebaseFirestore
+      final repositoryCategoriesOffer = await _firebaseFirestore
           .collection('Categories offer')
           .orderBy('rank')
           .withConverter<CategoriesOffer>(
@@ -24,9 +25,8 @@ class CategoriesOfferRepository extends BaseCategoriesOfferRepository {
               toFirestore: (model, _) => model.toJson())
           .get()
           .then((value) => value.docs.map((e) => e.data()).toList());
-      return Right(snap);
+      return Right(repositoryCategoriesOffer);
     } on FirebaseException catch (e) {
-      print('Error Firebase');
       return Left(ServerException(message: e.message));
     }
   }

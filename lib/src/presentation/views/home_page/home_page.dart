@@ -4,13 +4,11 @@ import 'package:eva_icons_flutter/eva_icons_flutter.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:menu_loyalty/src/constants/enums.dart';
 
-import '../../widgets/bottom_panel.dart';
-import '../../widgets/button_up_dark.dart';
 import '../../widgets/label_widget.dart';
 import '../../widgets/search_input_widget.dart';
 import 'components/category_offer.dart';
 import 'components/greetings_widget.dart';
-import 'components/list_offer.dart';
+import 'components/home_bottom_panel.dart';
 
 class HomePage extends StatelessWidget {
   static const String routeName = 'HomePage';
@@ -27,14 +25,6 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    List<Widget> bottomPanelListWidgets = [
-      GestureDetector(
-          onTap: () {
-            Navigator.pushNamed(context, 'MenuPage');
-          },
-          child: const ButtonUpDark()),
-      const ListOffer()
-    ];
     return Scaffold(
       appBar: AppBar(
         leading: Padding(
@@ -87,10 +77,7 @@ class HomePage extends StatelessWidget {
                 ],
               ),
             ),
-            BottomPanel(
-                width: 375,
-                height: 404,
-                bottomPanelListWidgets: bottomPanelListWidgets)
+            const HomeBottomPanel()
           ],
         ),
       ),

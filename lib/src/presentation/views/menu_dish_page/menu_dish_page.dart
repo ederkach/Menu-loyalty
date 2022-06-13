@@ -31,7 +31,7 @@ class MenuDishPage extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: designColorScheme.primary,
         leading: Padding(
-          padding: EdgeInsets.only(left: sizer.getProportionateScreenWidth(10)),
+          padding: EdgeInsets.only(left: sizer.w(10)),
           child: IconButton(
             onPressed: () {
               Navigator.of(context).pop();
@@ -51,8 +51,7 @@ class MenuDishPage extends StatelessWidget {
             ),
           ),
           Padding(
-            padding:
-                EdgeInsets.only(right: sizer.getProportionateScreenWidth(24)),
+            padding: EdgeInsets.only(right: sizer.w(24)),
             child: IconButton(
               onPressed: () {},
               icon: Icon(
@@ -66,10 +65,10 @@ class MenuDishPage extends StatelessWidget {
       body: Stack(
         children: [
           Positioned(
-            top: sizer.getProportionateScreenHeightWithoutTop(72),
+            top: sizer.hwt(72),
             right: 0,
             child: SizedBox(
-              height: sizer.getProportionateScreenHeightWithoutTop(320),
+              height: sizer.hwt(320),
               child: const Image(
                 image: AssetImage("assets/images/FlourBackground.png"),
               ),
@@ -83,9 +82,7 @@ class MenuDishPage extends StatelessWidget {
             child: Container(
               child: Padding(
                 padding: EdgeInsets.only(
-                    top: sizer.getProportionateScreenHeightWithoutTop(22),
-                    left: sizer.getProportionateScreenWidth(24),
-                    right: sizer.getProportionateScreenWidth(24)),
+                    top: sizer.hwt(22), left: sizer.w(24), right: sizer.w(24)),
                 child: Column(
                     mainAxisAlignment: MainAxisAlignment.start,
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -104,8 +101,8 @@ class MenuDishPage extends StatelessWidget {
                           designColorScheme: designColorScheme),
                     ]),
               ),
-              height: sizer.getProportionateScreenHeightWithoutTop(484),
-              width: sizer.getProportionateScreenWidth(375),
+              height: sizer.hwt(484),
+              width: sizer.w(375),
               decoration: BoxDecoration(
                 color: designColorScheme.background,
                 borderRadius: const BorderRadius.only(
@@ -116,12 +113,12 @@ class MenuDishPage extends StatelessWidget {
             ),
           ),
           Positioned(
-            left: sizer.getProportionateScreenWidth(98),
-            top: sizer.getProportionateScreenHeightWithoutTop(170),
+            left: sizer.w(98),
+            top: sizer.hwt(170),
             child: Image.network(
               'https://firebasestorage.googleapis.com/v0/b/menubonus.appspot.com/o/Replace%20images4.png?alt=media&token=9c18bdee-5c4d-40ce-8d05-4ee61caa7a68',
-              width: sizer.getProportionateScreenWidth(185),
-              height: sizer.getProportionateScreenWidth(185),
+              width: sizer.w(185),
+              height: sizer.w(185),
             ),
           ),
         ],

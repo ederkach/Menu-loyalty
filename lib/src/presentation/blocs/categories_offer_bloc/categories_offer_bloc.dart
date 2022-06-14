@@ -10,26 +10,30 @@ part 'categories_offer_event.dart';
 part 'categories_offer_state.dart';
 part 'categories_offer_bloc.freezed.dart';
 
-class CategoriesofferBloc
-    extends Bloc<CategoriesofferEvent, CategoriesofferState> {
+class CategoriesOfferBloc
+    extends Bloc<CategoriesOfferEvent, CategoriesOfferState> {
   final CategoriesOfferRepository _categoriesOfferRepository;
 
-  CategoriesofferBloc(this._categoriesOfferRepository)
-      : super(const CategoriesofferState.emptyCategoriesOffer()) {
+  CategoriesOfferBloc(this._categoriesOfferRepository)
+      : super(const CategoriesOfferState.emptyCategoriesOffer()) {
     on<FetchCategoriesOffer>(_onLoadCategoriesOffer);
   }
 
   void _onLoadCategoriesOffer(
-      FetchCategoriesOffer event, Emitter<CategoriesofferState> emit) async {
+      FetchCategoriesOffer event, Emitter<CategoriesOfferState> emit) async {
+    emit(
+      const CategoriesOfferState.categoriesOfferLoading(),
+    );
+
     final dataCategoriesOfferRepository =
         await _categoriesOfferRepository.getCategoryOffer();
 
     emit(
       dataCategoriesOfferRepository.fold(
-        (failure) => CategoriesofferState.categoriesOfferStateLoadFailure(
+        (failure) => CategoriesOfferState.CategoriesOfferStateLoadFailure(
             ServerException(message: failure.message)),
         (categoriesOfferList) =>
-            CategoriesofferState.categoriesOfferLoadSuccess(
+            CategoriesOfferState.categoriesOfferLoadSuccess(
                 categoriesOfferList),
       ),
     );

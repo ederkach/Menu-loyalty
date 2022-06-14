@@ -1,10 +1,10 @@
 part of 'categories_offer_bloc.dart';
 
 @freezed
-class CategoriesofferEvent with _$CategoriesofferEvent {
-  const factory CategoriesofferEvent.fetchCategoriesOffer() =
+class CategoriesOfferEvent with _$CategoriesOfferEvent {
+  const factory CategoriesOfferEvent.fetchCategoriesOffer() =
       FetchCategoriesOffer;
-  const factory CategoriesofferEvent.categoriesofferEventReceived(
+  const factory CategoriesOfferEvent.CategoriesOfferEventReceived(
       Either<ServerException, List<CategoriesOffer>>
-          failureOrCategoriesOffer) = CategoriesofferEventReceived;
+          failureOrCategoriesOffer) = CategoriesOfferEventReceived;
 }

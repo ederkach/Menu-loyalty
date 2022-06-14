@@ -1,7 +1,4 @@
-import 'dart:async';
-
 import 'package:bloc/bloc.dart';
-import 'package:dartz/dartz.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:menu_loyalty/src/core/error/exception.dart';
 import 'package:menu_loyalty/src/data/repositories/menu/menu_repository.dart';
@@ -19,7 +16,7 @@ class MenuOfferBloc extends Bloc<MenuOfferEvent, MenuOfferState> {
       : _menuRepository = menuRepository,
         super(const MenuOfferState.emptyMenu()) {
     on<FetchMenu>(_onLoadMenu);
-    on<ChoseCategory>(_choseCategory);
+    on<FilterByCategoryOffer>(_choseCategory);
   }
 
   void _onLoadMenu(FetchMenu event, Emitter<MenuOfferState> emit) async {
@@ -33,21 +30,21 @@ class MenuOfferBloc extends Bloc<MenuOfferEvent, MenuOfferState> {
       dataMenuRepository.fold(
         (failure) => MenuOfferState.menuLoadFailure(
             ServerException(message: failure.message)),
-        (menuList) => MenuOfferState.menuFilteredCaregory(menuList),
+        (menuList) => MenuOfferState.menuFilteredCategory(menuList),
       ),
     );
   }
 
-  FutureOr<void> _choseCategory(
-      ChoseCategory event, Emitter<MenuOfferState> emit) {
+  void _choseCategory(
+      FilterByCategoryOffer event, Emitter<MenuOfferState> emit) {
     List<MenuModel> filterCategoryOffer = _menuRepository.repositoryMenu
         .where((e) => e.categoriesOffer!
-            .where((element) => element == event.idCategory)
+            .where((element) => element == event.idCategoryOffer)
             .isNotEmpty)
         .toList();
 
     emit(
-      MenuOfferState.menuFilteredCaregory(filterCategoryOffer),
+      MenuOfferState.menuFilteredCategory(filterCategoryOffer),
     );
   }
 }

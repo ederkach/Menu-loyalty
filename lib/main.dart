@@ -26,7 +26,7 @@ class MyApp extends StatelessWidget {
     return MultiBlocProvider(
       providers: [
         BlocProvider(
-            create: (_) => CategoriesofferBloc(CategoriesOfferRepository())
+            create: (_) => CategoriesOfferBloc(CategoriesOfferRepository())
               ..add(const FetchCategoriesOffer())),
         BlocProvider(
             create: (_) => MenuOfferBloc(

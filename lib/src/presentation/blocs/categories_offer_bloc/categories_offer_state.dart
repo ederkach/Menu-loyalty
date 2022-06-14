@@ -1,13 +1,13 @@
 part of 'categories_offer_bloc.dart';
 
 @freezed
-abstract class CategoriesofferState with _$CategoriesofferState {
-  const factory CategoriesofferState.emptyCategoriesOffer() =
+abstract class CategoriesOfferState with _$CategoriesOfferState {
+  const factory CategoriesOfferState.emptyCategoriesOffer() =
       EmptyCategoriesOffer;
-  const factory CategoriesofferState.categoriesOfferLoading() =
-      CategoriesofferStateLoading;
-  const factory CategoriesofferState.categoriesOfferStateLoadFailure(
-      ServerException failure) = CategoriesofferStateLoadFailure;
-  const factory CategoriesofferState.categoriesOfferLoadSuccess(
+  const factory CategoriesOfferState.categoriesOfferLoading() =
+      CategoriesOfferStateLoading;
+  const factory CategoriesOfferState.CategoriesOfferStateLoadFailure(
+      ServerException failure) = CategoriesOfferStateLoadFailure;
+  const factory CategoriesOfferState.categoriesOfferLoadSuccess(
       List<CategoriesOffer> listCategoriesOffer) = CategoriesofferLoadSuccess;
 }

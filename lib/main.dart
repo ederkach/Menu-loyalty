@@ -6,7 +6,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'src/config/app_router.dart';
 import 'src/config/theme/theme.dart';
 
-import 'src/data/repositories/repositories.dart';
+import 'src/data/datasources/remote/repositories/repositories.dart';
 import 'src/presentation/blocs/blocs.dart';
 import 'src/presentation/views/pages.dart';
 import 'injector.dart' as di;

@@ -45,7 +45,7 @@ class _ListCategoryOfferState extends State<ListCategoryOffer> {
         return GestureDetector(
             onTap: (() {
               selectIndex(index);
-              BlocProvider.of<MenuBloc>(context).add(ChoseCategory(
+              BlocProvider.of<MenuOfferBloc>(context).add(ChoseCategory(
                   widget.listCategoriesOffer[index].id.toString()));
             }),
             child: IconMenuButton(

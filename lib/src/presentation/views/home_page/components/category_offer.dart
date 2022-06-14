@@ -20,7 +20,7 @@ class CategoryOffer extends StatelessWidget {
         listener: (context, state) {
           state.whenOrNull(
             categoriesOfferLoadSuccess: (listCategoriesOffer) =>
-                BlocProvider.of<MenuBloc>(context)
+                BlocProvider.of<MenuOfferBloc>(context)
                   ..add(ChoseCategory(listCategoriesOffer.first.id.toString())),
           );
         },

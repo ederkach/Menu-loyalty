@@ -2,11 +2,11 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:menu_loyalty/src/data/repositories/menu/menu_repository.dart';
 
 import 'src/config/app_router.dart';
 import 'src/config/theme/theme.dart';
-import 'src/data/repositories/categories_offer/categories_offer_repository.dart';
+
+import 'src/data/repositories/repositories.dart';
 import 'src/presentation/blocs/blocs.dart';
 import 'src/presentation/views/pages.dart';
 import 'injector.dart' as di;
@@ -29,7 +29,7 @@ class MyApp extends StatelessWidget {
             create: (_) => CategoriesofferBloc(CategoriesOfferRepository())
               ..add(const FetchCategoriesOffer())),
         BlocProvider(
-            create: (_) => MenuBloc(
+            create: (_) => MenuOfferBloc(
                   menuRepository: MenuRepository(),
                 )..add(const FetchMenu())),
       ],

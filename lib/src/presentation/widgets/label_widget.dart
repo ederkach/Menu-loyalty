@@ -13,21 +13,22 @@ class LabelWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var designColorScheme = Theme.of(context).colorScheme;
+    var designStyleText = Theme.of(context).textTheme;
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         Text(
           label,
           style: (darkWhite == DarkWhite.dark)
-              ? Theme.of(context).textTheme.headline6!.copyWith(fontSize: 16.sp)
-              : Theme.of(context).textTheme.headline6!.copyWith(
-                  fontSize: 16.sp,
-                  color: Theme.of(context).colorScheme.onPrimary),
+              ? designStyleText.headline6!.copyWith(fontSize: 16.sp)
+              : designStyleText.headline6!.copyWith(
+                  fontSize: 16.sp, color: designColorScheme.onPrimary),
         ),
         Row(
           children: [
             DotWidget(
-              dotColor: Theme.of(context).colorScheme.secondary,
+              dotColor: designColorScheme.secondary,
               sizeheight: 8,
               sizewidth: 8,
             ),
@@ -35,8 +36,7 @@ class LabelWidget extends StatelessWidget {
               width: 8.w,
             ),
             DotWidget(
-              dotColor:
-                  Theme.of(context).colorScheme.secondary.withOpacity(0.5),
+              dotColor: designColorScheme.secondary.withOpacity(0.5),
               sizeheight: 8,
               sizewidth: 8,
             ),

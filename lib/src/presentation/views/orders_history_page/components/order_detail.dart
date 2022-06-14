@@ -11,6 +11,8 @@ class OrderDetail extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var designColorScheme = Theme.of(context).colorScheme;
+    var designStyleText = Theme.of(context).textTheme;
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -23,9 +25,8 @@ class OrderDetail extends StatelessWidget {
         Text(
           'Mokaa Cokiees Vanilla',
           maxLines: 1,
-          style: Theme.of(context).textTheme.headline6!.copyWith(
-              fontSize: 18.sp,
-              color: Theme.of(context).colorScheme.onSecondary),
+          style: designStyleText.headline6!
+              .copyWith(fontSize: 18.sp, color: designColorScheme.onSecondary),
         ),
         Row(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -33,10 +34,10 @@ class OrderDetail extends StatelessWidget {
             Text(
               '\$ 15,45',
               maxLines: 2,
-              style: Theme.of(context).textTheme.headline6!.copyWith(
+              style: designStyleText.headline6!.copyWith(
                   fontSize: 13.sp,
                   fontWeight: FontWeight.w600,
-                  color: Theme.of(context).colorScheme.secondary),
+                  color: designColorScheme.secondary),
             ),
             SizedBox(
               width: 20.w,
@@ -44,12 +45,9 @@ class OrderDetail extends StatelessWidget {
             Text(
               'Total Prices',
               maxLines: 2,
-              style: Theme.of(context).textTheme.headline6!.copyWith(
+              style: designStyleText.headline6!.copyWith(
                   fontSize: 13.sp,
-                  color: Theme.of(context)
-                      .colorScheme
-                      .onSecondary
-                      .withOpacity(0.5)),
+                  color: designColorScheme.onSecondary.withOpacity(0.5)),
             ),
           ],
         ),

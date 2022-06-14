@@ -9,6 +9,8 @@ class ChatsListItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var designStyleText = Theme.of(context).textTheme;
+    var designColorScheme = Theme.of(context).colorScheme;
     return SizedBox(
       width: 327.w,
       height: 74.h,
@@ -31,21 +33,16 @@ class ChatsListItem extends StatelessWidget {
                 children: [
                   Text(
                     'Orange Panglazed',
-                    style: Theme.of(context)
-                        .textTheme
-                        .bodyMedium!
-                        .copyWith(fontSize: 17.sp),
+                    style:
+                        designStyleText.bodyMedium!.copyWith(fontSize: 17.sp),
                   ),
                 ],
               ),
               Text(
                 'Romano cheese',
-                style: Theme.of(context).textTheme.bodyMedium!.copyWith(
+                style: designStyleText.bodyMedium!.copyWith(
                     fontSize: 13.sp,
-                    color: Theme.of(context)
-                        .colorScheme
-                        .onSecondary
-                        .withOpacity(0.6)),
+                    color: designColorScheme.onSecondary.withOpacity(0.6)),
               ),
             ],
           ),
@@ -58,12 +55,9 @@ class ChatsListItem extends StatelessWidget {
             children: [
               Text(
                 '11:25 AM',
-                style: Theme.of(context).textTheme.bodyMedium!.copyWith(
+                style: designStyleText.bodyMedium!.copyWith(
                     fontSize: 13.sp,
-                    color: Theme.of(context)
-                        .colorScheme
-                        .onSecondary
-                        .withOpacity(0.6)),
+                    color: designColorScheme.onSecondary.withOpacity(0.6)),
               ),
             ],
           ),

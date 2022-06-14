@@ -15,8 +15,8 @@ abstract class MenuModel implements _$MenuModel {
     final bool? spicy,
     final bool? vegan,
     @Default(0) final int? rank,
-    @Default([]) List<String> categories,
-    @Default([]) List<String> categoriesOffer,
+    @JsonKey(name: 'Categories') List<String>? categories,
+    @JsonKey(name: 'CategoriesOffer') List<String>? categoriesOffer,
   }) = _MenuModel;
 
   factory MenuModel.empty() => const MenuModel(name: '');

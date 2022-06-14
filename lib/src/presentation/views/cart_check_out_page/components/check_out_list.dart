@@ -23,12 +23,13 @@ class _CheckOutListState extends State<CheckOutList> {
 
   @override
   Widget build(BuildContext context) {
+    var designColorScheme = Theme.of(context).colorScheme;
     return Expanded(
       child: ListView.separated(
         scrollDirection: Axis.vertical,
         itemCount: 10,
         separatorBuilder: (BuildContext context, int index) => Divider(
-          color: Theme.of(context).colorScheme.background,
+          color: designColorScheme.background,
           height: 30.w,
         ),
         itemBuilder: (BuildContext context, int index) {

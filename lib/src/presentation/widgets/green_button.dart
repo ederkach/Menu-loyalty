@@ -12,11 +12,13 @@ class GreenButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var designColorScheme = Theme.of(context).colorScheme;
+    var designStyleText = Theme.of(context).textTheme;
     return Container(
       height: 56.h,
       width: 327.w,
       decoration: BoxDecoration(
-        color: Theme.of(context).colorScheme.secondary,
+        color: designColorScheme.secondary,
         borderRadius: BorderRadius.all(
           Radius.circular(28.r),
         ),
@@ -24,8 +26,8 @@ class GreenButton extends StatelessWidget {
       child: Center(
         child: Text(
           title,
-          style: Theme.of(context).textTheme.headline6!.copyWith(
-              fontSize: 17.sp, color: Theme.of(context).colorScheme.onPrimary),
+          style: designStyleText.headline6!
+              .copyWith(fontSize: 17.sp, color: designColorScheme.onPrimary),
         ),
       ),
     );

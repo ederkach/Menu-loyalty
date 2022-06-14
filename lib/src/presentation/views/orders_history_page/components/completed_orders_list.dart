@@ -13,12 +13,13 @@ class CompletedOrdersList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var designColorScheme = Theme.of(context).colorScheme;
     return Expanded(
       child: ListView.separated(
           scrollDirection: Axis.vertical,
           itemCount: 3,
           separatorBuilder: (BuildContext context, int index) => Divider(
-                color: Theme.of(context).colorScheme.onPrimary,
+                color: designColorScheme.onPrimary,
                 height: 17.h,
               ),
           itemBuilder: (BuildContext context, int index) {
@@ -42,7 +43,7 @@ class CompletedOrdersList extends StatelessWidget {
                     ),
                   ),
                   decoration: BoxDecoration(
-                    color: Theme.of(context).colorScheme.onPrimary,
+                    color: designColorScheme.onPrimary,
                     borderRadius: BorderRadius.all(
                       Radius.circular(16.r),
                     ),

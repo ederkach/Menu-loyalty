@@ -24,6 +24,7 @@ class _CategoryListOfferState extends State<CategoryListOffer> {
 
   @override
   Widget build(BuildContext context) {
+    var designColorScheme = Theme.of(context).colorScheme;
     return SizedBox(
       width: 334.w,
       height: 155.h,
@@ -31,7 +32,7 @@ class _CategoryListOfferState extends State<CategoryListOffer> {
         scrollDirection: Axis.horizontal,
         itemCount: 6,
         separatorBuilder: (BuildContext context, int index) => VerticalDivider(
-          color: Theme.of(context).colorScheme.onPrimary,
+          color: designColorScheme.onPrimary,
           width: 15.w,
         ),
         itemBuilder: (BuildContext context, int index) {

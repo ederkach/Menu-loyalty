@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../data/models/categories_offer_model/categories_offer_model.dart';
+import '../../../blocs/blocs.dart';
 import '../../../widgets/icon_menu_button.dart';
 
 class ListCategoryOffer extends StatefulWidget {
@@ -31,21 +33,24 @@ class _ListCategoryOfferState extends State<ListCategoryOffer> {
 
   @override
   Widget build(BuildContext context) {
+    var designColorScheme = Theme.of(context).colorScheme;
     return ListView.separated(
       scrollDirection: Axis.horizontal,
       itemCount: widget.listCategoriesOffer.length,
       separatorBuilder: (BuildContext context, int index) => VerticalDivider(
-        color: Theme.of(context).colorScheme.onPrimary,
+        color: designColorScheme.onPrimary,
         width: 17.w,
       ),
       itemBuilder: (BuildContext context, int index) {
         return GestureDetector(
             onTap: (() {
               selectIndex(index);
+              BlocProvider.of<MenuBloc>(context).add(ChoseCategory(
+                  widget.listCategoriesOffer[index].id.toString()));
             }),
             child: IconMenuButton(
                 categoriesOffer: widget.listCategoriesOffer[index],
-                dotColor: Theme.of(context).colorScheme.onSecondary,
+                dotColor: designColorScheme.onSecondary,
                 isSelected: (index == _selectedIndex) ? true : false));
       },
     );

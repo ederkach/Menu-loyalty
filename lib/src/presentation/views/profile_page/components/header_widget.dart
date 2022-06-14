@@ -9,6 +9,8 @@ class HeaderWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var designColorScheme = Theme.of(context).colorScheme;
+    var designStyleText = Theme.of(context).textTheme;
     return Row(
       children: [
         SizedBox(
@@ -31,9 +33,8 @@ class HeaderWidget extends StatelessWidget {
           child: Text(
             'Hello,\nKatharina Kiddy 👋',
             maxLines: 2,
-            style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                color: Theme.of(context).colorScheme.onSecondary,
-                fontSize: 20.sp),
+            style: designStyleText.bodyMedium?.copyWith(
+                color: designColorScheme.onSecondary, fontSize: 20.sp),
           ),
         ),
       ],

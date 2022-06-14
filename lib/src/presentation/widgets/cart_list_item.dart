@@ -11,6 +11,8 @@ class CartListItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var designColorScheme = Theme.of(context).colorScheme;
+    var designStyleText = Theme.of(context).textTheme;
     return SizedBox(
       width: 327.w,
       height: 74.h,
@@ -27,7 +29,7 @@ class CartListItem extends StatelessWidget {
             width: 88.w,
             height: 72.h,
             decoration: BoxDecoration(
-              color: Theme.of(context).colorScheme.secondaryContainer,
+              color: designColorScheme.secondaryContainer,
               borderRadius: BorderRadius.all(
                 Radius.circular(16.r),
               ),
@@ -42,21 +44,17 @@ class CartListItem extends StatelessWidget {
             children: [
               Text(
                 'Orange Panglazed',
-                style: Theme.of(context)
-                    .textTheme
-                    .bodyMedium!
-                    .copyWith(fontSize: 17.sp),
+                style: designStyleText.bodyMedium!.copyWith(fontSize: 17.sp),
               ),
               Text(
                 'Romano cheese',
-                style: Theme.of(context).textTheme.bodyMedium!.copyWith(
-                    fontSize: 13.sp,
-                    color: Theme.of(context).colorScheme.secondary),
+                style: designStyleText.bodyMedium!.copyWith(
+                    fontSize: 13.sp, color: designColorScheme.secondary),
               ),
               Text(
                 '\$51,00',
-                style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                    color: Theme.of(context).colorScheme.secondary,
+                style: designStyleText.bodyMedium?.copyWith(
+                    color: designColorScheme.secondary,
                     fontSize: 15.sp,
                     fontWeight: FontWeight.bold),
               ),
@@ -70,18 +68,18 @@ class CartListItem extends StatelessWidget {
             children: [
               QtyButton(
                 title: '+',
-                background: Theme.of(context).colorScheme.secondary,
+                background: designColorScheme.secondary,
               ),
               Text(
                 '100.5',
-                style: Theme.of(context).textTheme.bodyMedium!.copyWith(
+                style: designStyleText.bodyMedium!.copyWith(
                     fontSize: 17.sp,
                     fontWeight: FontWeight.bold,
-                    color: Theme.of(context).colorScheme.onSecondary),
+                    color: designColorScheme.onSecondary),
               ),
               QtyButton(
                 title: '-',
-                background: Theme.of(context).colorScheme.secondaryContainer,
+                background: designColorScheme.secondaryContainer,
               ),
             ],
           ),

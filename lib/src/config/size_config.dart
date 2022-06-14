@@ -8,14 +8,12 @@ extension SizeConfig on MediaQueryData {
   static const double layoutWidth = 375.0;
 
   /// Get the proportionate height as per screen size.
-  double getProportionateScreenHeight(double inputHeight) =>
-      (inputHeight / layoutHeight) * size.height;
+  double h(double inputHeight) => (inputHeight / layoutHeight) * size.height;
 
   /// Get the proportionate height as per screen size without top paddinng.
-  double getProportionateScreenHeightWithoutTop(double inputHeight) =>
+  double hwt(double inputHeight) =>
       (inputHeight / layoutHeight) * (size.height - viewPadding.top);
 
   /// Get the proportionate height as per screen size.
-  double getProportionateScreenWidth(double inputWidth) =>
-      (inputWidth / layoutWidth) * size.width;
+  double w(double inputWidth) => (inputWidth / layoutWidth) * size.width;
 }

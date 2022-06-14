@@ -4,26 +4,10 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../data/models/menu_model/menu_model.dart';
 import '../../../widgets/dish_item.dart';
 
-class ListOffer extends StatefulWidget {
-  const ListOffer({
-    required this.listMenu,
-    Key? key,
-  }) : super(key: key);
+class LoadListOffer extends StatelessWidget {
+  const LoadListOffer({required this.name, Key? key}) : super(key: key);
 
-  final List<MenuModel> listMenu;
-
-  @override
-  State<ListOffer> createState() => _ListOfferState();
-}
-
-class _ListOfferState extends State<ListOffer> {
-  int _selectedIndex = 0;
-
-  void selectIndex(index) {
-    setState(() {
-      _selectedIndex = index;
-    });
-  }
+  final String name;
 
   @override
   Widget build(BuildContext context) {
@@ -35,7 +19,7 @@ class _ListOfferState extends State<ListOffer> {
         height: 206.h,
         child: ListView.separated(
           scrollDirection: Axis.horizontal,
-          itemCount: widget.listMenu.length,
+          itemCount: 2,
           separatorBuilder: (BuildContext context, int index) =>
               VerticalDivider(
             color: designColorScheme.primary,
@@ -44,15 +28,9 @@ class _ListOfferState extends State<ListOffer> {
           itemBuilder: (BuildContext context, int index) {
             return Padding(
               padding: const EdgeInsets.symmetric(vertical: 2),
-              child: GestureDetector(
-                onTap: (() {
-                  selectIndex(index);
-                  Navigator.pushNamed(context, 'MenuDishPage');
-                }),
-                child: DishItem(
-                  isSelected: (index == _selectedIndex) ? true : false,
-                  menuModel: widget.listMenu[index],
-                ),
+              child: DishItem(
+                isSelected: (index == 0) ? true : false,
+                menuModel: MenuModel(name: name, imagePath: ''),
               ),
             );
           },

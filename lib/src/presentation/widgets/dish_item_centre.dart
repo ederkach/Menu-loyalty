@@ -12,6 +12,8 @@ class DishItemCentre extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var designColorScheme = Theme.of(context).colorScheme;
+    var designStyleText = Theme.of(context).textTheme;
     return Container(
       height: 155.h,
       width: 155.w,
@@ -30,16 +32,16 @@ class DishItemCentre extends StatelessWidget {
                       Text(
                         'Cooked with egg Sweet Cookies dr r rjk mjrm jkr',
                         maxLines: 2,
-                        style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                        style: designStyleText.bodyMedium?.copyWith(
                             color: (isSelected == true)
-                                ? Theme.of(context).colorScheme.onPrimary
-                                : Theme.of(context).colorScheme.onSecondary,
+                                ? designColorScheme.onPrimary
+                                : designColorScheme.onSecondary,
                             fontSize: 13.sp),
                       ),
                       Text(
                         '\$51',
-                        style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                            color: Theme.of(context).colorScheme.secondary,
+                        style: designStyleText.bodyMedium?.copyWith(
+                            color: designColorScheme.secondary,
                             fontSize: 15.sp),
                       ),
                     ],
@@ -50,8 +52,8 @@ class DishItemCentre extends StatelessWidget {
               height: 90.h,
               decoration: BoxDecoration(
                 color: (isSelected == true)
-                    ? Theme.of(context).colorScheme.primary
-                    : Theme.of(context).colorScheme.secondaryContainer,
+                    ? designColorScheme.primary
+                    : designColorScheme.secondaryContainer,
                 borderRadius: BorderRadius.all(
                   Radius.circular(24.r),
                 ),

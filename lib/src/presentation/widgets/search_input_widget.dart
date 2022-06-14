@@ -10,21 +10,20 @@ class SearchInputWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var designColorScheme = Theme.of(context).colorScheme;
+    var designStyleText = Theme.of(context).textTheme;
     return SizedBox(
       width: 327.w,
       height: 56.h,
       child: TextField(
-        style: TextStyle(color: Theme.of(context).colorScheme.onSecondary),
+        style: TextStyle(color: designColorScheme.onSecondary),
         decoration: InputDecoration(
           border: OutlineInputBorder(
             borderSide: BorderSide.none,
             borderRadius: BorderRadius.circular(28.r),
           ),
           hintText: 'Restaurant, food & drinks',
-          hintStyle: Theme.of(context)
-              .textTheme
-              .titleMedium
-              ?.copyWith(fontSize: 16.sp),
+          hintStyle: designStyleText.titleMedium?.copyWith(fontSize: 16.sp),
           prefixIcon: const Icon(
             EvaIcons.searchOutline,
           ),

@@ -14,12 +14,14 @@ class TypePaymentButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var designColorScheme = Theme.of(context).colorScheme;
+    var designStyleText = Theme.of(context).textTheme;
     var textColorTitle = (isSelected == true)
-        ? Theme.of(context).colorScheme.onPrimary
-        : Theme.of(context).colorScheme.onSecondary;
+        ? designColorScheme.onPrimary
+        : designColorScheme.onSecondary;
     var textColorSubtitle = (isSelected == true)
-        ? Theme.of(context).colorScheme.onPrimary
-        : Theme.of(context).colorScheme.onSecondary.withOpacity(0.5);
+        ? designColorScheme.onPrimary
+        : designColorScheme.onSecondary.withOpacity(0.5);
 
     return Container(
       height: 80.h,
@@ -47,11 +49,9 @@ class TypePaymentButton extends StatelessWidget {
                     Text(
                       'Credit Card',
                       style: (isSelected == true)
-                          ? Theme.of(context)
-                              .textTheme
-                              .bodyMedium
+                          ? designStyleText.bodyMedium
                               ?.copyWith(color: textColorTitle, fontSize: 15.sp)
-                          : Theme.of(context).textTheme.bodyMedium?.copyWith(
+                          : designStyleText.bodyMedium?.copyWith(
                               color: textColorTitle, fontSize: 15.sp),
                     ),
                     Row(
@@ -87,17 +87,11 @@ class TypePaymentButton extends StatelessWidget {
                         Text(
                           '4356',
                           style: (isSelected == true)
-                              ? Theme.of(context)
-                                  .textTheme
-                                  .bodyMedium
-                                  ?.copyWith(
-                                      color: textColorSubtitle, fontSize: 15.sp)
-                              : Theme.of(context)
-                                  .textTheme
-                                  .bodyMedium
-                                  ?.copyWith(
-                                      color: textColorSubtitle.withOpacity(0.5),
-                                      fontSize: 15.sp),
+                              ? designStyleText.bodyMedium?.copyWith(
+                                  color: textColorSubtitle, fontSize: 15.sp)
+                              : designStyleText.bodyMedium?.copyWith(
+                                  color: textColorSubtitle.withOpacity(0.5),
+                                  fontSize: 15.sp),
                         ),
                       ],
                     ),
@@ -108,16 +102,16 @@ class TypePaymentButton extends StatelessWidget {
             Icon(
               EvaIcons.checkmarkCircle2,
               color: (isSelected == true)
-                  ? Theme.of(context).colorScheme.onSecondary
-                  : Theme.of(context).colorScheme.secondaryContainer,
+                  ? designColorScheme.onSecondary
+                  : designColorScheme.secondaryContainer,
             )
           ],
         ),
       ),
       decoration: BoxDecoration(
         color: (isSelected == true)
-            ? Theme.of(context).colorScheme.primary
-            : Theme.of(context).colorScheme.secondaryContainer,
+            ? designColorScheme.primary
+            : designColorScheme.secondaryContainer,
         borderRadius: BorderRadius.all(Radius.circular(32.r)),
         boxShadow: isSelected == true
             ? const [

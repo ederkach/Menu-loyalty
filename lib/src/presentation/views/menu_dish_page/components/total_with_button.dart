@@ -55,8 +55,8 @@ class TotalWithButtonWidget extends StatelessWidget {
             width: 10.w,
           ),
           Container(
-            height: MediaQuery.of(context).getProportionateScreenWidth(72),
-            width: MediaQuery.of(context).getProportionateScreenWidth(72),
+            height: MediaQuery.of(context).w(72),
+            width: MediaQuery.of(context).w(72),
             child: TextButton(
               onPressed: () {
                 Navigator.of(context).pop();

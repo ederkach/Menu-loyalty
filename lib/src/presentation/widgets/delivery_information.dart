@@ -10,6 +10,8 @@ class DeliveryInformation extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var designColorScheme = Theme.of(context).colorScheme;
+    var designStyleText = Theme.of(context).textTheme;
     return Container(
       height: 80.h,
       width: 327.w,
@@ -24,11 +26,11 @@ class DeliveryInformation extends StatelessWidget {
                 Container(
                   height: 48.h,
                   width: 48.w,
-                  child: Icon(EvaIcons.pin,
-                      color: Theme.of(context).colorScheme.onSecondary),
+                  child:
+                      Icon(EvaIcons.pin, color: designColorScheme.onSecondary),
                   decoration: BoxDecoration(
                     shape: BoxShape.circle,
-                    color: Theme.of(context).colorScheme.secondary,
+                    color: designColorScheme.secondary,
                   ),
                 ),
                 SizedBox(
@@ -40,23 +42,18 @@ class DeliveryInformation extends StatelessWidget {
                   children: [
                     Text(
                       'Andika ( +639384959 )',
-                      style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                          color: Theme.of(context).colorScheme.onSecondary,
+                      style: designStyleText.bodyMedium?.copyWith(
+                          color: designColorScheme.onSecondary,
                           fontSize: 15.sp),
                     ),
                     Row(
                       children: [
                         Text(
                           'Jalan Pancasila No.1, DIY',
-                          style: Theme.of(context)
-                              .textTheme
-                              .bodyMedium
-                              ?.copyWith(
-                                  color: Theme.of(context)
-                                      .colorScheme
-                                      .onSecondary
-                                      .withOpacity(0.5),
-                                  fontSize: 15.sp),
+                          style: designStyleText.bodyMedium?.copyWith(
+                              color: designColorScheme.onSecondary
+                                  .withOpacity(0.5),
+                              fontSize: 15.sp),
                         ),
                       ],
                     ),
@@ -64,13 +61,12 @@ class DeliveryInformation extends StatelessWidget {
                 ),
               ],
             ),
-            Icon(EvaIcons.editOutline,
-                color: Theme.of(context).colorScheme.onSecondary),
+            Icon(EvaIcons.editOutline, color: designColorScheme.onSecondary),
           ],
         ),
       ),
       decoration: BoxDecoration(
-        color: Theme.of(context).colorScheme.secondaryContainer,
+        color: designColorScheme.secondaryContainer,
         borderRadius: BorderRadius.all(Radius.circular(32.r)),
       ),
     );

@@ -9,23 +9,20 @@ class GreetingsWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var designStyleText = Theme.of(context).textTheme;
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
           'Hi, Katharina 👋',
-          style:
-              Theme.of(context).textTheme.headline6?.copyWith(fontSize: 19.sp),
+          style: designStyleText.headline6?.copyWith(fontSize: 19.sp),
         ),
         SizedBox(
           height: 10.h,
         ),
         Text(
           'Want to order delicious food?',
-          style: Theme.of(context)
-              .textTheme
-              .titleMedium
-              ?.copyWith(fontSize: 15.sp),
+          style: designStyleText.titleMedium?.copyWith(fontSize: 15.sp),
         ),
       ],
     );

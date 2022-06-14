@@ -16,6 +16,8 @@ class ItemPayment extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var designColorScheme = Theme.of(context).colorScheme;
+    var designStyleText = Theme.of(context).textTheme;
     return Container(
       height: 101.h,
       width: 155.w,
@@ -33,26 +35,21 @@ class ItemPayment extends StatelessWidget {
                       ? EvaIcons.giftOutline
                       : EvaIcons.creditCardOutline,
                   color: (isSelected == true)
-                      ? Theme.of(context).colorScheme.onPrimary
-                      : Theme.of(context)
-                          .colorScheme
-                          .onPrimary
-                          .withOpacity(0.5),
+                      ? designColorScheme.onPrimary
+                      : designColorScheme.onPrimary.withOpacity(0.5),
                 ),
                 Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text(
                       '\$15,45',
-                      style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                          color: Theme.of(context).colorScheme.onPrimary,
-                          fontSize: 15.sp),
+                      style: designStyleText.bodyMedium?.copyWith(
+                          color: designColorScheme.onPrimary, fontSize: 15.sp),
                     ),
                     Text(
                       (typePayment == TypePayment.cash) ? 'Cash' : 'Card',
-                      style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                          color: Theme.of(context).colorScheme.onPrimary,
-                          fontSize: 13.sp),
+                      style: designStyleText.bodyMedium?.copyWith(
+                          color: designColorScheme.onPrimary, fontSize: 13.sp),
                     ),
                   ],
                 ),
@@ -60,8 +57,8 @@ class ItemPayment extends StatelessWidget {
             ),
             decoration: BoxDecoration(
               color: (isSelected == true)
-                  ? Theme.of(context).colorScheme.onSecondary.withOpacity(0.1)
-                  : Theme.of(context).colorScheme.background.withOpacity(0.1),
+                  ? designColorScheme.onSecondary.withOpacity(0.1)
+                  : designColorScheme.background.withOpacity(0.1),
               borderRadius: BorderRadius.all(
                 Radius.circular(24.r),
               ),
@@ -72,7 +69,7 @@ class ItemPayment extends StatelessWidget {
               right: 10.w,
               top: 10.h,
               child: Icon(EvaIcons.checkmarkCircle2,
-                  color: Theme.of(context).colorScheme.secondary),
+                  color: designColorScheme.secondary),
             )
         ],
       ),

@@ -20,6 +20,7 @@ class BottomPanel extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var designColorScheme = Theme.of(context).colorScheme;
     return Container(
       child: Padding(
         padding: EdgeInsets.only(top: 22.0.h),
@@ -34,7 +35,7 @@ class BottomPanel extends StatelessWidget {
       width: width.w,
       height: height.h,
       decoration: BoxDecoration(
-        color: Theme.of(context).colorScheme.primary,
+        color: designColorScheme.primary,
         borderRadius: BorderRadius.only(
           topLeft: Radius.circular(40.r),
           topRight: Radius.circular(40.r),

@@ -20,13 +20,15 @@ class ItemMenuProfile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var designColorScheme = Theme.of(context).colorScheme;
+    var designStyleText = Theme.of(context).textTheme;
     return Container(
       width: 327.w,
       height: 91.h,
       decoration: BoxDecoration(
           color: (!redColor)
-              ? Theme.of(context).colorScheme.secondaryContainer
-              : Theme.of(context).colorScheme.error.withOpacity(0.1),
+              ? designColorScheme.secondaryContainer
+              : designColorScheme.error.withOpacity(0.1),
           borderRadius: BorderRadius.all(Radius.circular(32.r))),
       child: Row(
         children: [
@@ -39,12 +41,12 @@ class ItemMenuProfile extends StatelessWidget {
             decoration: BoxDecoration(
               shape: BoxShape.circle,
               color: (!redColor)
-                  ? Theme.of(context).colorScheme.primary
-                  : Theme.of(context).colorScheme.error,
+                  ? designColorScheme.primary
+                  : designColorScheme.error,
             ),
             child: Icon(
               evaIcons,
-              color: Theme.of(context).colorScheme.background,
+              color: designColorScheme.background,
             ),
           ),
           SizedBox(
@@ -55,24 +57,20 @@ class ItemMenuProfile extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text(title,
-                  style: Theme.of(context).textTheme.bodyText1?.copyWith(
+                  style: designStyleText.bodyText1?.copyWith(
                       fontSize: 17.sp,
                       color: (!redColor)
-                          ? Theme.of(context).colorScheme.onSecondary
-                          : Theme.of(context).colorScheme.error)),
+                          ? designColorScheme.onSecondary
+                          : designColorScheme.error)),
               if (onSubtitle == true)
                 Text(
                   subTitle,
                   style: (!redColor)
-                      ? Theme.of(context).textTheme.bodyMedium?.copyWith(
+                      ? designStyleText.bodyMedium?.copyWith(
                           fontSize: 13.sp,
-                          color: Theme.of(context)
-                              .colorScheme
-                              .onSecondary
-                              .withOpacity(0.5))
-                      : Theme.of(context).textTheme.bodyMedium?.copyWith(
-                          fontSize: 13.sp,
-                          color: Theme.of(context).colorScheme.error),
+                          color: designColorScheme.onSecondary.withOpacity(0.5))
+                      : designStyleText.bodyMedium?.copyWith(
+                          fontSize: 13.sp, color: designColorScheme.error),
                 ),
             ],
           ),

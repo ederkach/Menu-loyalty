@@ -24,6 +24,7 @@ class _ChoosePaymentState extends State<ChoosePayment> {
 
   @override
   Widget build(BuildContext context) {
+    var designColorScheme = Theme.of(context).colorScheme;
     return Padding(
       padding: EdgeInsets.symmetric(vertical: 20.0.h),
       child: SizedBox(
@@ -34,7 +35,7 @@ class _ChoosePaymentState extends State<ChoosePayment> {
           itemCount: 2,
           separatorBuilder: (BuildContext context, int index) =>
               VerticalDivider(
-            color: Theme.of(context).colorScheme.primary,
+            color: designColorScheme.primary,
             width: 17.w,
           ),
           itemBuilder: (BuildContext context, int index) {

@@ -19,6 +19,8 @@ class IconMenuButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var designColorScheme = Theme.of(context).colorScheme;
+    var designStyleText = Theme.of(context).textTheme;
     return Container(
       height: 90.h,
       width: 155.w,
@@ -41,21 +43,18 @@ class IconMenuButton extends StatelessWidget {
               ImageIcon(
                 AssetImage(categoriesOffer.iconPath),
                 color: (isSelected == true)
-                    ? Theme.of(context).scaffoldBackgroundColor
+                    ? designColorScheme.onPrimary
                     : Theme.of(context).iconTheme.color,
                 size: 24.sp,
               ),
               Text(
                 categoriesOffer.name,
                 style: (isSelected == true)
-                    ? Theme.of(context).textTheme.bodyMedium?.copyWith(
-                        color: Theme.of(context).scaffoldBackgroundColor,
+                    ? designStyleText.bodyMedium?.copyWith(
+                        color: designColorScheme.secondaryContainer,
                         fontSize: 13.sp)
-                    : Theme.of(context).textTheme.bodyMedium?.copyWith(
-                        color: Theme.of(context)
-                            .colorScheme
-                            .onSecondary
-                            .withOpacity(0.5),
+                    : designStyleText.bodyMedium?.copyWith(
+                        color: designColorScheme.onSecondary.withOpacity(0.5),
                         fontSize: 13.sp),
               ),
             ],
@@ -64,8 +63,8 @@ class IconMenuButton extends StatelessWidget {
       ),
       decoration: BoxDecoration(
         color: (isSelected == true)
-            ? Theme.of(context).colorScheme.secondary
-            : Theme.of(context).colorScheme.secondaryContainer,
+            ? designColorScheme.secondary
+            : designColorScheme.secondaryContainer,
         borderRadius: BorderRadius.all(Radius.circular(32.r)),
         boxShadow: isSelected == true
             ? const [

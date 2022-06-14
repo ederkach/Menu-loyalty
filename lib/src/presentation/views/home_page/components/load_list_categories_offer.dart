@@ -12,21 +12,20 @@ class LoadCategoriesOffer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var designColorScheme = Theme.of(context).colorScheme;
     return ListView.separated(
       scrollDirection: Axis.horizontal,
       itemCount: 2,
       separatorBuilder: (BuildContext context, int index) => VerticalDivider(
-        color: Theme.of(context).colorScheme.onPrimary,
+        color: designColorScheme.onPrimary,
         width: 17.w,
       ),
       itemBuilder: (BuildContext context, int index) {
-        return GestureDetector(
-            onTap: (() {}),
-            child: IconMenuButton(
-                categoriesOffer: CategoriesOffer(
-                    name: nameIcon, iconPath: 'assets/icons/loadingIcon.png'),
-                dotColor: Theme.of(context).colorScheme.onSecondary,
-                isSelected: (index == 0) ? true : false));
+        return IconMenuButton(
+            categoriesOffer: CategoriesOffer(
+                name: nameIcon, iconPath: 'assets/icons/loadingIcon.png'),
+            dotColor: designColorScheme.onSecondary,
+            isSelected: (index == 0) ? true : false);
       },
     );
   }

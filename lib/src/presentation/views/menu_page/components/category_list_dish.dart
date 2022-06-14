@@ -19,6 +19,7 @@ class CategoryListDish extends StatefulWidget {
 class _CategoryListDishState extends State<CategoryListDish> {
   @override
   Widget build(BuildContext context) {
+    var designColorScheme = Theme.of(context).colorScheme;
     return Expanded(
       child: ListView.separated(
         padding: EdgeInsets.only(top: 0, bottom: 30.h),
@@ -27,7 +28,7 @@ class _CategoryListDishState extends State<CategoryListDish> {
         scrollDirection: Axis.vertical,
         itemCount: 10,
         separatorBuilder: (BuildContext context, int index) => Divider(
-          color: Theme.of(context).colorScheme.onPrimary,
+          color: designColorScheme.onPrimary,
           height: 10.h,
         ),
         itemBuilder: (BuildContext context, int index) {

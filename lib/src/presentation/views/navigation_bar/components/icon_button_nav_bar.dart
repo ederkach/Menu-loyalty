@@ -22,6 +22,7 @@ class IconButtonNabBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var designColorScheme = Theme.of(context).colorScheme;
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
@@ -38,7 +39,7 @@ class IconButtonNabBar extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.only(bottom: 20),
             child: DotWidget(
-              dotColor: Theme.of(context).colorScheme.secondary,
+              dotColor: designColorScheme.secondary,
               sizeheight: 7,
               sizewidth: 7,
             ),

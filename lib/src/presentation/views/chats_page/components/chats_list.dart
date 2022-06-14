@@ -23,11 +23,12 @@ class _ChatsListState extends State<ChatsList> {
 
   @override
   Widget build(BuildContext context) {
+    var designColorScheme = Theme.of(context).colorScheme;
     return ListView.separated(
       scrollDirection: Axis.vertical,
       itemCount: 10,
       separatorBuilder: (BuildContext context, int index) => Divider(
-        color: Theme.of(context).colorScheme.onSecondary.withOpacity(0.5),
+        color: designColorScheme.onSecondary.withOpacity(0.5),
         height: 20.w,
       ),
       itemBuilder: (BuildContext context, int index) {

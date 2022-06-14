@@ -29,10 +29,8 @@ class MyApp extends StatelessWidget {
             create: (_) => CategoriesofferBloc(CategoriesOfferRepository())
               ..add(const FetchCategoriesOffer())),
         BlocProvider(
-            create: (BuildContext context) => MenuBloc(
+            create: (_) => MenuBloc(
                   menuRepository: MenuRepository(),
-                  categoriesOfferBloc:
-                      BlocProvider.of<CategoriesofferBloc>(context),
                 )..add(const FetchMenu())),
       ],
       child: ScreenUtilInit(

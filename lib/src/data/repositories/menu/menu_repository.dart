@@ -15,7 +15,7 @@ class MenuRepository extends BaseMenuRepository {
   @override
   Future<Either<ServerException, List<MenuModel>>> getMenu() async {
     try {
-      final repositoryMenu = await _firebaseFirestore
+      repositoryMenu = await _firebaseFirestore
           .collection('Menu')
           .orderBy('rank')
           .withConverter<MenuModel>(

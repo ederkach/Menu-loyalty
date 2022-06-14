@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../data/models/categories_offer_model/categories_offer_model.dart';
+import '../../../blocs/blocs.dart';
 import '../../../widgets/icon_menu_button.dart';
 
 class ListCategoryOffer extends StatefulWidget {
@@ -43,6 +45,8 @@ class _ListCategoryOfferState extends State<ListCategoryOffer> {
         return GestureDetector(
             onTap: (() {
               selectIndex(index);
+              BlocProvider.of<MenuBloc>(context).add(ChoseCategory(
+                  widget.listCategoriesOffer[index].id.toString()));
             }),
             child: IconMenuButton(
                 categoriesOffer: widget.listCategoriesOffer[index],

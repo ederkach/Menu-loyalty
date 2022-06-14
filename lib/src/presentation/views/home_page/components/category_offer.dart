@@ -16,25 +16,34 @@ class CategoryOffer extends StatelessWidget {
     return SizedBox(
       width: 327.w,
       height: 92.h,
-      child: BlocBuilder<CategoriesofferBloc, CategoriesofferState>(
-        builder: (context, state) {
-          return state.when(
-            categoriesOfferLoading: () => const LoadCategoriesOffer(
-              nameIcon: 'Load...',
-            ),
-            emptyCategoriesOffer: () => const LoadCategoriesOffer(
-              nameIcon: 'No data',
-            ),
+      child: BlocListener<CategoriesofferBloc, CategoriesofferState>(
+        listener: (context, state) {
+          state.whenOrNull(
             categoriesOfferLoadSuccess: (listCategoriesOffer) =>
-                ListCategoryOffer(
-              listCategoriesOffer: listCategoriesOffer,
-            ),
-            categoriesOfferStateLoadFailure: (failure) =>
-                const LoadCategoriesOffer(
-              nameIcon: 'No data',
-            ),
+                BlocProvider.of<MenuBloc>(context)
+                  ..add(ChoseCategory(listCategoriesOffer.first.id.toString())),
           );
         },
+        child: BlocBuilder<CategoriesofferBloc, CategoriesofferState>(
+          builder: (context, state) {
+            return state.when(
+              categoriesOfferLoading: () => const LoadCategoriesOffer(
+                nameIcon: 'Load...',
+              ),
+              emptyCategoriesOffer: () => const LoadCategoriesOffer(
+                nameIcon: 'No data',
+              ),
+              categoriesOfferLoadSuccess: (listCategoriesOffer) =>
+                  ListCategoryOffer(
+                listCategoriesOffer: listCategoriesOffer,
+              ),
+              categoriesOfferStateLoadFailure: (failure) =>
+                  const LoadCategoriesOffer(
+                nameIcon: 'No data',
+              ),
+            );
+          },
+        ),
       ),
     );
   }

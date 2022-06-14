@@ -1,8 +1,8 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:dartz/dartz.dart';
 
-import '../../../core/error/exception.dart';
-import '../../models/categories_offer_model/categories_offer_model.dart';
+import '../../../../../core/error/exception.dart';
+import '../../../../models/categories_offer_model/categories_offer_model.dart';
 import 'base_categories_offer_repository.dart';
 
 class CategoriesOfferRepository extends BaseCategoriesOfferRepository {

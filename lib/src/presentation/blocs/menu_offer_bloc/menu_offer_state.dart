@@ -8,6 +8,6 @@ abstract class MenuOfferState with _$MenuOfferState {
       MenuLoadFailure;
   const factory MenuOfferState.menuLoadSuccess(
       List<MenuModel> listCategoriesOffer) = MenuLoadSuccess;
-  const factory MenuOfferState.menuFilteredCaregory(
-      List<MenuModel> listCategoriesOffer) = MenuFilteredCaregory;
+  const factory MenuOfferState.menuFilteredCategory(
+      List<MenuModel> listCategoriesOffer) = MenuFilteredCategory;
 }

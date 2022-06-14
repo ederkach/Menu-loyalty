@@ -16,15 +16,16 @@ class CategoryOffer extends StatelessWidget {
     return SizedBox(
       width: 327.w,
       height: 92.h,
-      child: BlocListener<CategoriesofferBloc, CategoriesofferState>(
+      child: BlocListener<CategoriesOfferBloc, CategoriesOfferState>(
         listener: (context, state) {
           state.whenOrNull(
             categoriesOfferLoadSuccess: (listCategoriesOffer) =>
                 BlocProvider.of<MenuOfferBloc>(context)
-                  ..add(ChoseCategory(listCategoriesOffer.first.id.toString())),
+                  ..add(FilterByCategoryOffer(
+                      listCategoriesOffer.first.id.toString())),
           );
         },
-        child: BlocBuilder<CategoriesofferBloc, CategoriesofferState>(
+        child: BlocBuilder<CategoriesOfferBloc, CategoriesOfferState>(
           builder: (context, state) {
             return state.when(
               categoriesOfferLoading: () => const LoadCategoriesOffer(
@@ -37,7 +38,7 @@ class CategoryOffer extends StatelessWidget {
                   ListCategoryOffer(
                 listCategoriesOffer: listCategoriesOffer,
               ),
-              categoriesOfferStateLoadFailure: (failure) =>
+              CategoriesOfferStateLoadFailure: (failure) =>
                   const LoadCategoriesOffer(
                 nameIcon: 'No data',
               ),

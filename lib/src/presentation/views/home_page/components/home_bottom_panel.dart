@@ -26,7 +26,7 @@ class HomeBottomPanel extends StatelessWidget {
       bottomPanelListWidgets: BlocBuilder<MenuOfferBloc, MenuOfferState>(
         builder: (context, state) {
           return state.maybeWhen(
-            menuFilteredCaregory: (listMenu) => ListOffer(
+            menuFilteredCategory: (listMenu) => ListOffer(
               listMenu: listMenu,
             ),
             orElse: () => const LoadListOffer(

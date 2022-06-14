@@ -23,7 +23,7 @@ class HomeBottomPanel extends StatelessWidget {
           },
           child: const ButtonUpDark()),
       supportWidgets: const SizedBox(),
-      bottomPanelListWidgets: BlocBuilder<MenuBloc, MenuState>(
+      bottomPanelListWidgets: BlocBuilder<MenuOfferBloc, MenuOfferState>(
         builder: (context, state) {
           return state.maybeWhen(
             menuFilteredCaregory: (listMenu) => ListOffer(

@@ -8,37 +8,38 @@ import 'package:menu_loyalty/src/data/repositories/menu/menu_repository.dart';
 
 import '../../../data/models/menu_model/menu_model.dart';
 
-part 'menu_event.dart';
-part 'menu_state.dart';
-part 'menu_bloc.freezed.dart';
+part 'menu_offer_event.dart';
+part 'menu_offer_state.dart';
+part 'menu_offer_bloc.freezed.dart';
 
-class MenuBloc extends Bloc<MenuEvent, MenuState> {
+class MenuOfferBloc extends Bloc<MenuOfferEvent, MenuOfferState> {
   final MenuRepository _menuRepository;
 
-  MenuBloc({required MenuRepository menuRepository})
+  MenuOfferBloc({required MenuRepository menuRepository})
       : _menuRepository = menuRepository,
-        super(const MenuState.emptyMenu()) {
+        super(const MenuOfferState.emptyMenu()) {
     on<FetchMenu>(_onLoadMenu);
     on<ChoseCategory>(_choseCategory);
   }
 
-  void _onLoadMenu(FetchMenu event, Emitter<MenuState> emit) async {
+  void _onLoadMenu(FetchMenu event, Emitter<MenuOfferState> emit) async {
     emit(
-      const MenuState.menuLoading(),
+      const MenuOfferState.menuLoading(),
     );
 
     final dataMenuRepository = await _menuRepository.getMenu();
 
     emit(
       dataMenuRepository.fold(
-        (failure) => MenuState.menuLoadFailure(
+        (failure) => MenuOfferState.menuLoadFailure(
             ServerException(message: failure.message)),
-        (menuList) => MenuState.menuFilteredCaregory(menuList),
+        (menuList) => MenuOfferState.menuFilteredCaregory(menuList),
       ),
     );
   }
 
-  FutureOr<void> _choseCategory(ChoseCategory event, Emitter<MenuState> emit) {
+  FutureOr<void> _choseCategory(
+      ChoseCategory event, Emitter<MenuOfferState> emit) {
     List<MenuModel> filterCategoryOffer = _menuRepository.repositoryMenu
         .where((e) => e.categoriesOffer!
             .where((element) => element == event.idCategory)
@@ -46,7 +47,7 @@ class MenuBloc extends Bloc<MenuEvent, MenuState> {
         .toList();
 
     emit(
-      MenuState.menuFilteredCaregory(filterCategoryOffer),
+      MenuOfferState.menuFilteredCaregory(filterCategoryOffer),
     );
   }
 }

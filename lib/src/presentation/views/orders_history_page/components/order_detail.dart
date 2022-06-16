@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 
 import 'package:menu_loyalty/src/config/size_config.dart';
@@ -18,8 +19,12 @@ class OrderDetail extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        Image.network(
-          'https://firebasestorage.googleapis.com/v0/b/menubonus.appspot.com/o/Replace%20images4.png?alt=media&token=9c18bdee-5c4d-40ce-8d05-4ee61caa7a68',
+        CachedNetworkImage(
+          imageUrl:
+              'https://firebasestorage.googleapis.com/v0/b/menubonus.appspot.com/o/Replace%20images4.png?alt=media&token=9c18bdee-5c4d-40ce-8d05-4ee61caa7a68',
+          placeholder: (context, url) => const CircularProgressIndicator(),
+          errorWidget: (context, url, error) =>
+              const ImageIcon(AssetImage('assets/icons/loadingIcon.png')),
           width: sizer.w(88),
           height: sizer.w(88),
         ),

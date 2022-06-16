@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 
 import 'package:menu_loyalty/src/config/size_config.dart';
@@ -64,16 +65,16 @@ class DishItemPositioned extends StatelessWidget {
             ),
           ),
           Positioned(
-              right: 0,
-              child: (menuModel.imagePath.toString() != '')
-                  ? Image.network(
-                      menuModel.imagePath.toString(),
-                      width: sizer.w(116),
-                      height: sizer.hwt(116),
-                    )
-                  : CircularProgressIndicator(
-                      color: designColorScheme.onSecondary,
-                    )),
+            right: 0,
+            child: CachedNetworkImage(
+              imageUrl: menuModel.imagePath.toString(),
+              placeholder: (context, url) => const CircularProgressIndicator(),
+              errorWidget: (context, url, error) =>
+                  const ImageIcon(AssetImage('assets/icons/loadingIcon.png')),
+              width: sizer.w(116),
+              height: sizer.hwt(116),
+            ),
+          ),
         ],
       ),
     );

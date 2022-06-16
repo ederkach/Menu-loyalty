@@ -4,16 +4,18 @@ import 'package:menu_loyalty/src/config/size_config.dart';
 
 class TitleDish extends StatelessWidget {
   const TitleDish({
+    required this.dishGroups,
+    required this.dishName,
     Key? key,
-    required this.designStyleText,
-    required this.designColorScheme,
   }) : super(key: key);
 
-  final TextTheme designStyleText;
-  final ColorScheme designColorScheme;
+  final String dishGroups;
+  final String dishName;
 
   @override
   Widget build(BuildContext context) {
+    var designColorScheme = Theme.of(context).colorScheme;
+    var designStyleText = Theme.of(context).textTheme;
     var sizer = MediaQuery.of(context);
     return Padding(
       padding: EdgeInsets.symmetric(
@@ -24,10 +26,11 @@ class TitleDish extends StatelessWidget {
         children: [
           SizedBox(
             height: sizer.hwt(12),
+            width: sizer.w(327),
           ),
           SizedBox(
             child: Text(
-              'Salad, Vegan, Breakfast',
+              dishGroups,
               style: designStyleText.displayMedium!
                   .copyWith(fontSize: 17, color: designColorScheme.secondary),
             ),
@@ -37,7 +40,7 @@ class TitleDish extends StatelessWidget {
           ),
           SizedBox(
             child: Text(
-              'Dragon Fruit Eggs Curry Sauce',
+              dishName,
               maxLines: 2,
               style: designStyleText.displayMedium!
                   .copyWith(fontSize: 28, color: designColorScheme.onPrimary),

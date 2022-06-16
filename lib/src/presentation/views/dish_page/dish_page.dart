@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 
 import 'package:eva_icons_flutter/eva_icons_flutter.dart';
@@ -31,7 +32,6 @@ class DishPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var designColorScheme = Theme.of(context).colorScheme;
-    var designStyleText = Theme.of(context).textTheme;
     var sizer = MediaQuery.of(context);
 
     return Scaffold(
@@ -83,8 +83,9 @@ class DishPage extends StatelessWidget {
             ),
           ),
           TitleDish(
-              designStyleText: designStyleText,
-              designColorScheme: designColorScheme),
+            dishGroups: 'Salad, Vegan, Breakfast',
+            dishName: menuModel.name,
+          ),
           Positioned(
             bottom: 0,
             child: Container(
@@ -95,18 +96,14 @@ class DishPage extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.start,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      SpecDishWidget(
-                          designStyleText: designStyleText,
-                          designColorScheme: designColorScheme),
+                      const SpecDishWidget(
+                        kkal: '150',
+                        weight: 'Weight 100gr',
+                      ),
                       DescriptionWidget(
-                          designStyleText: designStyleText,
-                          designColorScheme: designColorScheme),
-                      QtyWidget(
-                          designStyleText: designStyleText,
-                          designColorScheme: designColorScheme),
-                      TotalWithButtonWidget(
-                          designStyleText: designStyleText,
-                          designColorScheme: designColorScheme),
+                          description: menuModel.description.toString()),
+                      const QtyWidget(),
+                      const TotalWithButtonWidget(),
                     ]),
               ),
               height: sizer.h(475),
@@ -123,10 +120,13 @@ class DishPage extends StatelessWidget {
           Positioned(
             left: sizer.w(98),
             top: sizer.h(143),
-            child: Image.network(
-              menuModel.imagePath.toString(),
-              width: sizer.w(185),
-              height: sizer.w(185),
+            child: CachedNetworkImage(
+              imageUrl: menuModel.imagePath.toString(),
+              placeholder: (context, url) => const CircularProgressIndicator(),
+              errorWidget: (context, url, error) =>
+                  const ImageIcon(AssetImage('assets/icons/loadingIcon.png')),
+              width: sizer.w(165),
+              height: sizer.w(165),
             ),
           ),
         ],

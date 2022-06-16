@@ -4,16 +4,18 @@ import 'package:menu_loyalty/src/config/size_config.dart';
 
 class SpecDishWidget extends StatelessWidget {
   const SpecDishWidget({
+    required this.kkal,
+    required this.weight,
     Key? key,
-    required this.designStyleText,
-    required this.designColorScheme,
   }) : super(key: key);
 
-  final TextTheme designStyleText;
-  final ColorScheme designColorScheme;
+  final String kkal;
+  final String weight;
 
   @override
   Widget build(BuildContext context) {
+    var designColorScheme = Theme.of(context).colorScheme;
+    var designStyleText = Theme.of(context).textTheme;
     var sizer = MediaQuery.of(context);
     return Row(
       mainAxisAlignment: MainAxisAlignment.end,
@@ -29,7 +31,7 @@ class SpecDishWidget extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 Text(
-                  '🔥 kkal 150',
+                  '🔥 kkal $kkal',
                   maxLines: 2,
                   textAlign: TextAlign.center,
                   style: designStyleText.bodyMedium!.copyWith(

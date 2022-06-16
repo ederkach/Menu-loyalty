@@ -4,16 +4,16 @@ import 'package:menu_loyalty/src/config/size_config.dart';
 
 class DescriptionWidget extends StatelessWidget {
   const DescriptionWidget({
+    required this.description,
     Key? key,
-    required this.designStyleText,
-    required this.designColorScheme,
   }) : super(key: key);
 
-  final TextTheme designStyleText;
-  final ColorScheme designColorScheme;
+  final String description;
 
   @override
   Widget build(BuildContext context) {
+    var designColorScheme = Theme.of(context).colorScheme;
+    var designStyleText = Theme.of(context).textTheme;
     var sizer = MediaQuery.of(context);
     return Column(
       mainAxisAlignment: MainAxisAlignment.start,
@@ -29,7 +29,7 @@ class DescriptionWidget extends StatelessWidget {
           height: sizer.hwt(15),
         ),
         Text(
-          'Get 50% off discount on the cookied vegan with sweat cookies and try connected for further discount',
+          description,
           maxLines: 3,
           style: designStyleText.displayMedium!.copyWith(
               fontSize: 15,

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:eva_icons_flutter/eva_icons_flutter.dart';
+import 'package:menu_loyalty/src/data/models/menu_model/menu_model.dart';
 
 import '../../../config/size_config.dart';
 import 'components/description.dart';
@@ -9,15 +10,22 @@ import 'components/spec.dart';
 import 'components/title_dish.dart';
 import 'components/total_with_button.dart';
 
-class MenuDishPage extends StatelessWidget {
-  static const String routeName = 'MenuDishPage';
+class DishPage extends StatelessWidget {
+  static const String routeName = 'DishPage';
 
-  const MenuDishPage({Key? key}) : super(key: key);
+  const DishPage({
+    required this.menuModel,
+    Key? key,
+  }) : super(key: key);
 
-  static Route route() {
+  final MenuModel menuModel;
+
+  Route route() {
     return PageRouteBuilder(
-        settings: const RouteSettings(name: routeName),
-        pageBuilder: (_, __, ___) => const MenuDishPage());
+        settings: RouteSettings(name: routeName, arguments: menuModel),
+        pageBuilder: (_, __, ___) => DishPage(
+              menuModel: menuModel,
+            ));
   }
 
   @override
@@ -25,6 +33,7 @@ class MenuDishPage extends StatelessWidget {
     var designColorScheme = Theme.of(context).colorScheme;
     var designStyleText = Theme.of(context).textTheme;
     var sizer = MediaQuery.of(context);
+
     return Scaffold(
       backgroundColor: designColorScheme.primary,
       appBar: AppBar(
@@ -115,7 +124,7 @@ class MenuDishPage extends StatelessWidget {
             left: sizer.w(98),
             top: sizer.h(143),
             child: Image.network(
-              'https://firebasestorage.googleapis.com/v0/b/menubonus.appspot.com/o/Replace%20images4.png?alt=media&token=9c18bdee-5c4d-40ce-8d05-4ee61caa7a68',
+              menuModel.imagePath.toString(),
               width: sizer.w(185),
               height: sizer.w(185),
             ),

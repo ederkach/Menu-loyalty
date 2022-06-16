@@ -50,7 +50,8 @@ class _ListOfferDishState extends State<ListOfferDish> {
               child: GestureDetector(
                 onTap: (() {
                   selectIndex(index);
-                  Navigator.pushNamed(context, 'MenuDishPage');
+                  Navigator.pushNamed(context, 'DishPage',
+                      arguments: widget.listMenu[index]);
                 }),
                 child: DishItemPositioned(
                   isSelected: (index == _selectedIndex) ? true : false,

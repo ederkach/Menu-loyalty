@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'package:menu_loyalty/src/config/size_config.dart';
 
-import '../../../widgets/type_payment_button.dart';
+import 'type_payment_button.dart';
 
 class ListPayments extends StatefulWidget {
   const ListPayments({

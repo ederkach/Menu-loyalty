@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'package:menu_loyalty/src/config/size_config.dart';
 
-import 'qty_button.dart';
+import '../../../widgets/qty_button.dart';
 
 class CartListItem extends StatelessWidget {
   const CartListItem({

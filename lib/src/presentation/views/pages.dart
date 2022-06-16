@@ -3,7 +3,7 @@ export 'cart_page/cart_page.dart';
 export 'chats_page/chats_page.dart';
 export 'home_page/home_page.dart';
 export 'menu_page/menu_page.dart';
-export 'menu_dish_page/menu_dish_page.dart';
+export 'dish_page/dish_page.dart';
 export 'orders_history_page/orders_history_page.dart';
 export 'profile_page/profile_page.dart';
 export 'navigation_bar/main_navigation_bar.dart';

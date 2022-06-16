@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:menu_loyalty/src/config/size_config.dart';
 
-import '../../../widgets/check_out_list_item.dart';
+import 'check_out_list_item.dart';
 
 class CheckOutList extends StatefulWidget {
   const CheckOutList({

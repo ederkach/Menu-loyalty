@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:menu_loyalty/src/config/size_config.dart';
 
-import '../../../widgets/cart_list_item.dart';
+import 'cart_list_item.dart';
 
 class CartList extends StatefulWidget {
   const CartList({

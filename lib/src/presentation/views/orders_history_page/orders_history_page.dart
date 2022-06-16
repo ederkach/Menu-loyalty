@@ -5,6 +5,8 @@ import 'package:menu_loyalty/src/config/size_config.dart';
 import 'package:menu_loyalty/src/constants/enums.dart';
 import 'package:menu_loyalty/src/presentation/widgets/label_widget.dart';
 
+import '../../widgets/leading_icon_app_bar.dart';
+import '../../widgets/title_app_bar.dart';
 import 'components/completed_orders_list.dart';
 import 'components/last_orders_list.dart';
 
@@ -22,7 +24,6 @@ class OrdersHistoryPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var designColorScheme = Theme.of(context).colorScheme;
-    var designStyleText = Theme.of(context).textTheme;
     var sizer = MediaQuery.of(context);
     return Scaffold(
       backgroundColor: designColorScheme.secondaryContainer,
@@ -36,18 +37,11 @@ class OrdersHistoryPage extends StatelessWidget {
               bottom: Radius.circular(30),
             ),
           ),
-          leading: Padding(
-            padding: EdgeInsets.only(
-              left: sizer.w(10),
-            ),
-            child: IconButton(
-              onPressed: () {
-                Navigator.of(context).pop();
-              },
-              icon: const Icon(
-                EvaIcons.arrowIosBackOutline,
-              ),
-            ),
+          leading: const LeadingIconAppBar(
+            iconData: EvaIcons.arrowIosBackOutline,
+          ),
+          title: const TitleAppBar(
+            title: 'Last Orders',
           ),
           actions: [
             IconButton(
@@ -59,11 +53,6 @@ class OrdersHistoryPage extends StatelessWidget {
               ),
             ),
           ],
-          title: Text(
-            'last orders',
-            style: designStyleText.headlineMedium
-                ?.copyWith(color: designColorScheme.onSecondary, fontSize: 17),
-          ),
           centerTitle: true,
         ),
       ),

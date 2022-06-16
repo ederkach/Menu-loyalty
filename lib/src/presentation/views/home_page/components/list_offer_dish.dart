@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:menu_loyalty/src/config/size_config.dart';
 
 import '../../../../data/models/menu_model/menu_model.dart';
-import '../../../widgets/dish_item.dart';
+import '../../../widgets/dish_item_positioned.dart';
 
-class ListOffer extends StatefulWidget {
-  const ListOffer({
+class ListOfferDish extends StatefulWidget {
+  const ListOfferDish({
     required this.listMenu,
     Key? key,
   }) : super(key: key);
@@ -13,10 +13,10 @@ class ListOffer extends StatefulWidget {
   final List<MenuModel> listMenu;
 
   @override
-  State<ListOffer> createState() => _ListOfferState();
+  State<ListOfferDish> createState() => _ListOfferDishState();
 }
 
-class _ListOfferState extends State<ListOffer> {
+class _ListOfferDishState extends State<ListOfferDish> {
   int _selectedIndex = 0;
 
   void selectIndex(index) {
@@ -52,7 +52,7 @@ class _ListOfferState extends State<ListOffer> {
                   selectIndex(index);
                   Navigator.pushNamed(context, 'MenuDishPage');
                 }),
-                child: DishItem(
+                child: DishItemPositioned(
                   isSelected: (index == _selectedIndex) ? true : false,
                   menuModel: widget.listMenu[index],
                 ),

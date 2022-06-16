@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:menu_loyalty/src/config/size_config.dart';
 
 class QtyButton extends StatelessWidget {

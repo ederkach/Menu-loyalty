@@ -15,6 +15,9 @@ abstract class MenuModel implements _$MenuModel {
     final bool? spicy,
     final bool? vegan,
     @Default(0) final int? rank,
+    @Default(0) final double? price,
+    final String? currency,
+    final String? description,
     @JsonKey(name: 'Categories') List<String>? categories,
     @JsonKey(name: 'CategoriesOffer') List<String>? categoriesOffer,
   }) = _MenuModel;

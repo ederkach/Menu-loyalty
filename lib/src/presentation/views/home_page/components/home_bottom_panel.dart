@@ -5,8 +5,8 @@ import 'package:menu_loyalty/src/config/size_config.dart';
 import '../../../blocs/blocs.dart';
 import '../../../widgets/bottom_panel.dart';
 import '../../../widgets/button_up_dark.dart';
-import 'list_offer.dart';
-import 'load_list_offer.dart';
+import 'list_offer_dish.dart';
+import 'loading_list_offer_dish.dart';
 
 class HomeBottomPanel extends StatelessWidget {
   const HomeBottomPanel({
@@ -18,7 +18,7 @@ class HomeBottomPanel extends StatelessWidget {
     var sizer = MediaQuery.of(context);
     return BottomPanel(
       width: sizer.w(375),
-      height: sizer.hwt(420),
+      height: sizer.hwt(390),
       bottomButtonWidgets: GestureDetector(
           onTap: () {
             Navigator.pushNamed(context, 'MenuPage');
@@ -28,10 +28,10 @@ class HomeBottomPanel extends StatelessWidget {
       bottomPanelListWidgets: BlocBuilder<MenuOfferBloc, MenuOfferState>(
         builder: (context, state) {
           return state.maybeWhen(
-            menuFilteredCategory: (listMenu) => ListOffer(
+            menuFilteredCategory: (listMenu) => ListOfferDish(
               listMenu: listMenu,
             ),
-            orElse: () => const LoadListOffer(
+            orElse: () => const LoadingListOffer(
               name: '.....',
             ),
           );

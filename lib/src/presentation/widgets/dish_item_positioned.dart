@@ -4,8 +4,8 @@ import 'package:menu_loyalty/src/config/size_config.dart';
 
 import '../../data/models/menu_model/menu_model.dart';
 
-class DishItem extends StatelessWidget {
-  const DishItem({
+class DishItemPositioned extends StatelessWidget {
+  const DishItemPositioned({
     required this.isSelected,
     required this.menuModel,
     Key? key,

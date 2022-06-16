@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:menu_loyalty/src/config/size_config.dart';
 
 import '../../../../data/models/menu_model/menu_model.dart';
-import '../../../widgets/dish_item.dart';
+import '../../../widgets/dish_item_positioned.dart';
 
-class LoadListOffer extends StatelessWidget {
-  const LoadListOffer({required this.name, Key? key}) : super(key: key);
+class LoadingListOffer extends StatelessWidget {
+  const LoadingListOffer({required this.name, Key? key}) : super(key: key);
 
   final String name;
 
@@ -30,7 +30,7 @@ class LoadListOffer extends StatelessWidget {
           itemBuilder: (BuildContext context, int index) {
             return Padding(
               padding: const EdgeInsets.symmetric(vertical: 2),
-              child: DishItem(
+              child: DishItemPositioned(
                 isSelected: (index == 0) ? true : false,
                 menuModel: MenuModel(name: name, imagePath: ''),
               ),

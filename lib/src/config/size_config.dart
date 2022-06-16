@@ -14,6 +14,11 @@ extension SizeConfig on MediaQueryData {
   double hwt(double inputHeight) =>
       (inputHeight / layoutHeight) * (size.height - viewPadding.top);
 
+  /// Get the proportionate height as per screen size without top paddinng & bottom padding.
+  double hwtb(double inputHeight) =>
+      (inputHeight / layoutHeight) *
+      (size.height - viewPadding.top - viewPadding.bottom);
+
   /// Get the proportionate height as per screen size.
   double w(double inputWidth) => (inputWidth / layoutWidth) * size.width;
 }

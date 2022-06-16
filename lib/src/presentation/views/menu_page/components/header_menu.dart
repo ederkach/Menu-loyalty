@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:menu_loyalty/src/config/size_config.dart';
 
 import '../../../../constants/enums.dart';
 import '../../../widgets/button_up_grey.dart';
@@ -19,15 +19,16 @@ class HeaderMenu extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var designStyleText = Theme.of(context).textTheme;
+    var sizer = MediaQuery.of(context);
 
     return Column(
       children: [
         SizedBox(
-          height: 18.h,
+          height: sizer.hwt(18),
         ),
         const ButtonUpGrey(),
         SizedBox(
-          height: 10.h,
+          height: sizer.hwt(10),
         ),
         Row(
           children: [
@@ -37,17 +38,24 @@ class HeaderMenu extends StatelessWidget {
           ],
         ),
         Padding(
-          padding: EdgeInsets.only(top: 20.0.h),
+          padding: EdgeInsets.only(
+            top: sizer.hwt(20),
+          ),
           child: const CategoryList(),
         ),
         if (scrollVisibility)
           Padding(
-            padding: EdgeInsets.only(top: 10.0.h),
+            padding: EdgeInsets.only(
+              top: sizer.hwt(10),
+            ),
             child: const CategoryListOffer(),
           ),
         if (scrollVisibility)
           Padding(
-            padding: EdgeInsets.only(top: 20.0.h, bottom: 10.h),
+            padding: EdgeInsets.only(
+              top: sizer.hwt(10),
+              bottom: sizer.hwt(10),
+            ),
             child: const LabelWidget(
               label: 'Category offer',
               darkWhite: DarkWhite.dark,

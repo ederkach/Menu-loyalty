@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:menu_loyalty/src/config/size_config.dart';
 
 class ItemMenuProfile extends StatelessWidget {
   const ItemMenuProfile({
@@ -22,22 +22,23 @@ class ItemMenuProfile extends StatelessWidget {
   Widget build(BuildContext context) {
     var designColorScheme = Theme.of(context).colorScheme;
     var designStyleText = Theme.of(context).textTheme;
+    var sizer = MediaQuery.of(context);
     return Container(
-      width: 327.w,
-      height: 91.h,
+      height: sizer.hwt(91),
+      width: sizer.w(327),
       decoration: BoxDecoration(
           color: (!redColor)
               ? designColorScheme.secondaryContainer
               : designColorScheme.error.withOpacity(0.1),
-          borderRadius: BorderRadius.all(Radius.circular(32.r))),
+          borderRadius: const BorderRadius.all(Radius.circular(32))),
       child: Row(
         children: [
           SizedBox(
-            width: 20.w,
+            width: sizer.w(20),
           ),
           Container(
-            height: 48.h,
-            width: 48.w,
+            height: sizer.w(48),
+            width: sizer.w(48),
             decoration: BoxDecoration(
               shape: BoxShape.circle,
               color: (!redColor)
@@ -50,7 +51,7 @@ class ItemMenuProfile extends StatelessWidget {
             ),
           ),
           SizedBox(
-            width: 20.w,
+            width: sizer.w(20),
           ),
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -58,7 +59,7 @@ class ItemMenuProfile extends StatelessWidget {
             children: [
               Text(title,
                   style: designStyleText.bodyText1?.copyWith(
-                      fontSize: 17.sp,
+                      fontSize: 17,
                       color: (!redColor)
                           ? designColorScheme.onSecondary
                           : designColorScheme.error)),
@@ -67,10 +68,10 @@ class ItemMenuProfile extends StatelessWidget {
                   subTitle,
                   style: (!redColor)
                       ? designStyleText.bodyMedium?.copyWith(
-                          fontSize: 13.sp,
+                          fontSize: 13,
                           color: designColorScheme.onSecondary.withOpacity(0.5))
                       : designStyleText.bodyMedium?.copyWith(
-                          fontSize: 13.sp, color: designColorScheme.error),
+                          fontSize: 13, color: designColorScheme.error),
                 ),
             ],
           ),

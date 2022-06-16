@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:menu_loyalty/src/config/size_config.dart';
 import 'package:menu_loyalty/src/constants/enums.dart';
 
 class BadgeStatusOrder extends StatelessWidget {
@@ -13,6 +13,7 @@ class BadgeStatusOrder extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var sizer = MediaQuery.of(context);
     Color color;
     String title;
     if (statusOrder == StatusOrder.onGoing) {
@@ -26,10 +27,10 @@ class BadgeStatusOrder extends StatelessWidget {
       title = 'Cancelled';
     }
     return Positioned(
-      right: 10.w,
+      right: sizer.w(10),
       child: Container(
-        height: 35.h,
-        width: 88.w,
+        height: sizer.hwt(35),
+        width: sizer.w(88),
         child: Center(
           child: Text(
             title,
@@ -38,8 +39,8 @@ class BadgeStatusOrder extends StatelessWidget {
         ),
         decoration: BoxDecoration(
           color: color.withOpacity(0.2),
-          borderRadius: BorderRadius.all(
-            Radius.circular(16.r),
+          borderRadius: const BorderRadius.all(
+            Radius.circular(16),
           ),
         ),
       ),

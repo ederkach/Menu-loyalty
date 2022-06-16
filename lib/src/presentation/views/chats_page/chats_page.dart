@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:eva_icons_flutter/eva_icons_flutter.dart';
+import 'package:menu_loyalty/src/config/size_config.dart';
 
 import 'components/chats_list.dart';
 
@@ -20,11 +20,13 @@ class ChatsPage extends StatelessWidget {
   Widget build(BuildContext context) {
     var designColorScheme = Theme.of(context).colorScheme;
     var designStyleText = Theme.of(context).textTheme;
-
+    var sizer = MediaQuery.of(context);
     return Scaffold(
       appBar: AppBar(
         leading: Padding(
-          padding: EdgeInsets.only(left: 10.w),
+          padding: EdgeInsets.only(
+            left: sizer.w(10),
+          ),
           child: IconButton(
             onPressed: () {
               Navigator.of(context).pop();
@@ -37,12 +39,14 @@ class ChatsPage extends StatelessWidget {
         title: Text(
           'Chat',
           style: designStyleText.headlineMedium
-              ?.copyWith(color: designColorScheme.onSecondary, fontSize: 17.sp),
+              ?.copyWith(color: designColorScheme.onSecondary, fontSize: 17),
         ),
         centerTitle: true,
       ),
       body: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 24.w),
+        padding: EdgeInsets.symmetric(
+          horizontal: sizer.w(24),
+        ),
         child: const ChatsList(),
       ),
     );

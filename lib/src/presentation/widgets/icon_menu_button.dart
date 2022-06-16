@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:menu_loyalty/src/config/size_config.dart';
 
 import '../../data/models/categories_offer_model/categories_offer_model.dart';
 import 'dot_widget.dart';
@@ -21,21 +21,24 @@ class IconMenuButton extends StatelessWidget {
   Widget build(BuildContext context) {
     var designColorScheme = Theme.of(context).colorScheme;
     var designStyleText = Theme.of(context).textTheme;
+    var sizer = MediaQuery.of(context);
     return Container(
-      height: 90.h,
-      width: 155.w,
-      padding: EdgeInsets.symmetric(vertical: 10.w),
+      height: sizer.hwt(90),
+      width: sizer.w(155),
+      padding: EdgeInsets.symmetric(
+        vertical: sizer.w(10),
+      ),
       child: Stack(
         alignment: AlignmentDirectional.center,
         children: [
           if (isSelected == true)
             Positioned(
-                top: 7.h,
-                right: 17.w,
+                top: sizer.hwt(7),
+                right: sizer.w(17),
                 child: DotWidget(
                   dotColor: dotColor,
-                  sizeheight: 9,
-                  sizewidth: 9,
+                  sizeheight: sizer.hwt(9),
+                  sizewidth: sizer.w(9),
                 )),
           Column(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -45,17 +48,17 @@ class IconMenuButton extends StatelessWidget {
                 color: (isSelected == true)
                     ? designColorScheme.onPrimary
                     : Theme.of(context).iconTheme.color,
-                size: 24.sp,
+                size: 24,
               ),
               Text(
                 categoriesOffer.name,
                 style: (isSelected == true)
                     ? designStyleText.bodyMedium?.copyWith(
                         color: designColorScheme.secondaryContainer,
-                        fontSize: 13.sp)
+                        fontSize: 13)
                     : designStyleText.bodyMedium?.copyWith(
                         color: designColorScheme.onSecondary.withOpacity(0.5),
-                        fontSize: 13.sp),
+                        fontSize: 13),
               ),
             ],
           ),
@@ -65,7 +68,7 @@ class IconMenuButton extends StatelessWidget {
         color: (isSelected == true)
             ? designColorScheme.secondary
             : designColorScheme.secondaryContainer,
-        borderRadius: BorderRadius.all(Radius.circular(32.r)),
+        borderRadius: const BorderRadius.all(Radius.circular(30)),
         boxShadow: isSelected == true
             ? const [
                 BoxShadow(

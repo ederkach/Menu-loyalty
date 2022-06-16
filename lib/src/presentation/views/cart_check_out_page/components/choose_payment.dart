@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:menu_loyalty/src/config/size_config.dart';
 import 'package:menu_loyalty/src/constants/enums.dart';
 
 import 'item_payment.dart';
@@ -25,18 +25,21 @@ class _ChoosePaymentState extends State<ChoosePayment> {
   @override
   Widget build(BuildContext context) {
     var designColorScheme = Theme.of(context).colorScheme;
+    var sizer = MediaQuery.of(context);
     return Padding(
-      padding: EdgeInsets.symmetric(vertical: 20.0.h),
+      padding: EdgeInsets.symmetric(
+        vertical: sizer.hwt(20),
+      ),
       child: SizedBox(
-        height: 106.h,
-        width: 327.w,
+        height: sizer.hwt(106),
+        width: sizer.w(327),
         child: ListView.separated(
           scrollDirection: Axis.horizontal,
           itemCount: 2,
           separatorBuilder: (BuildContext context, int index) =>
               VerticalDivider(
             color: designColorScheme.primary,
-            width: 17.w,
+            width: sizer.w(17),
           ),
           itemBuilder: (BuildContext context, int index) {
             return Padding(

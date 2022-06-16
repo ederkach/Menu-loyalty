@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:menu_loyalty/src/config/size_config.dart';
 
 import '../../../../constants/enums.dart';
 import 'badge_status_order.dart';
@@ -14,25 +14,28 @@ class LastOrdersList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var designColorScheme = Theme.of(context).colorScheme;
+    var sizer = MediaQuery.of(context);
     return SizedBox(
-      height: 264.h,
+      height: sizer.hwt(264),
       child: ListView.separated(
           scrollDirection: Axis.horizontal,
           itemCount: 3,
           separatorBuilder: (BuildContext context, int index) =>
               VerticalDivider(
                 color: designColorScheme.onPrimary,
-                width: 17.w,
+                width: sizer.w(17),
               ),
           itemBuilder: (BuildContext context, int index) {
             return GestureDetector(
               onTap: (() {}),
               child: Container(
-                height: 264.h,
-                width: 327.w,
+                height: sizer.hwt(264),
+                width: sizer.w(327),
                 child: Padding(
-                  padding:
-                      EdgeInsets.symmetric(horizontal: 10.w, vertical: 20.h),
+                  padding: EdgeInsets.symmetric(
+                    horizontal: sizer.w(10),
+                    vertical: sizer.hwt(20),
+                  ),
                   child: Stack(
                     children: const [
                       BadgeStatusOrder(
@@ -44,8 +47,8 @@ class LastOrdersList extends StatelessWidget {
                 ),
                 decoration: BoxDecoration(
                   color: designColorScheme.onPrimary,
-                  borderRadius: BorderRadius.all(
-                    Radius.circular(16.r),
+                  borderRadius: const BorderRadius.all(
+                    Radius.circular(16),
                   ),
                 ),
               ),

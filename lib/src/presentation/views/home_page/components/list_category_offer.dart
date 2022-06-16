@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:menu_loyalty/src/config/size_config.dart';
 
 import '../../../../data/models/categories_offer_model/categories_offer_model.dart';
 import '../../../blocs/blocs.dart';
@@ -34,17 +34,19 @@ class _ListCategoryOfferState extends State<ListCategoryOffer> {
   @override
   Widget build(BuildContext context) {
     var designColorScheme = Theme.of(context).colorScheme;
+    var sizer = MediaQuery.of(context);
     return ListView.separated(
       scrollDirection: Axis.horizontal,
       itemCount: widget.listCategoriesOffer.length,
       separatorBuilder: (BuildContext context, int index) => VerticalDivider(
         color: designColorScheme.onPrimary,
-        width: 17.w,
+        width: sizer.w(17),
       ),
       itemBuilder: (BuildContext context, int index) {
         return GestureDetector(
             onTap: (() {
               selectIndex(index);
+
               BlocProvider.of<MenuOfferBloc>(context).add(FilterByCategoryOffer(
                   widget.listCategoriesOffer[index].id.toString()));
             }),

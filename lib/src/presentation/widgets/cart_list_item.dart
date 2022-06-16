@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:menu_loyalty/src/config/size_config.dart';
 
 import 'qty_button.dart';
 
@@ -13,9 +13,10 @@ class CartListItem extends StatelessWidget {
   Widget build(BuildContext context) {
     var designColorScheme = Theme.of(context).colorScheme;
     var designStyleText = Theme.of(context).textTheme;
+    var sizer = MediaQuery.of(context);
     return SizedBox(
-      width: 327.w,
-      height: 74.h,
+      width: sizer.w(327),
+      height: sizer.hwt(78),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
@@ -26,17 +27,17 @@ class CartListItem extends StatelessWidget {
                 'https://firebasestorage.googleapis.com/v0/b/menubonus.appspot.com/o/Replace%20images4.png?alt=media&token=9c18bdee-5c4d-40ce-8d05-4ee61caa7a68',
               ),
             ),
-            width: 88.w,
-            height: 72.h,
+            width: sizer.w(88),
+            height: sizer.hwt(72),
             decoration: BoxDecoration(
               color: designColorScheme.secondaryContainer,
-              borderRadius: BorderRadius.all(
-                Radius.circular(16.r),
+              borderRadius: const BorderRadius.all(
+                Radius.circular(16),
               ),
             ),
           ),
           SizedBox(
-            width: 16.w,
+            width: sizer.w(16),
           ),
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -44,24 +45,24 @@ class CartListItem extends StatelessWidget {
             children: [
               Text(
                 'Orange Panglazed',
-                style: designStyleText.bodyMedium!.copyWith(fontSize: 17.sp),
+                style: designStyleText.bodyMedium!.copyWith(fontSize: 17),
               ),
               Text(
                 'Romano cheese',
-                style: designStyleText.bodyMedium!.copyWith(
-                    fontSize: 13.sp, color: designColorScheme.secondary),
+                style: designStyleText.bodyMedium!
+                    .copyWith(fontSize: 13, color: designColorScheme.secondary),
               ),
               Text(
                 '\$51,00',
                 style: designStyleText.bodyMedium?.copyWith(
                     color: designColorScheme.secondary,
-                    fontSize: 15.sp,
+                    fontSize: 15,
                     fontWeight: FontWeight.bold),
               ),
             ],
           ),
           SizedBox(
-            width: 35.w,
+            width: sizer.w(35),
           ),
           Column(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -73,7 +74,7 @@ class CartListItem extends StatelessWidget {
               Text(
                 '100.5',
                 style: designStyleText.bodyMedium!.copyWith(
-                    fontSize: 17.sp,
+                    fontSize: 17,
                     fontWeight: FontWeight.bold,
                     color: designColorScheme.onSecondary),
               ),

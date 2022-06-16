@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:eva_icons_flutter/eva_icons_flutter.dart';
+import 'package:menu_loyalty/src/config/size_config.dart';
 
 import 'components/header_widget.dart';
 import 'components/item_menu_profile.dart';
@@ -21,11 +21,13 @@ class ProfilePage extends StatelessWidget {
   Widget build(BuildContext context) {
     var designColorScheme = Theme.of(context).colorScheme;
     var designStyleText = Theme.of(context).textTheme;
-
+    var sizer = MediaQuery.of(context);
     return Scaffold(
       appBar: AppBar(
         leading: Padding(
-          padding: EdgeInsets.only(left: 10.w),
+          padding: EdgeInsets.only(
+            left: sizer.w(10),
+          ),
           child: IconButton(
             onPressed: () {
               Navigator.of(context).pop();
@@ -38,12 +40,14 @@ class ProfilePage extends StatelessWidget {
         title: Text(
           'Profile',
           style: designStyleText.headlineMedium
-              ?.copyWith(color: designColorScheme.onSecondary, fontSize: 17.sp),
+              ?.copyWith(color: designColorScheme.onSecondary, fontSize: 17),
         ),
         centerTitle: true,
         actions: [
           Padding(
-            padding: EdgeInsets.only(right: 24.w),
+            padding: EdgeInsets.only(
+              right: sizer.w(24),
+            ),
             child: IconButton(
                 onPressed: () {},
                 icon: const Icon(
@@ -54,16 +58,18 @@ class ProfilePage extends StatelessWidget {
       ),
       body: SingleChildScrollView(
         child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 24.w),
+          padding: EdgeInsets.symmetric(
+            horizontal: sizer.w(24),
+          ),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               SizedBox(
-                height: 20.h,
+                height: sizer.hwt(20),
               ),
               const HeaderWidget(),
               SizedBox(
-                height: 30.h,
+                height: sizer.hwt(30),
               ),
               Stack(
                 children: [
@@ -75,17 +81,17 @@ class ProfilePage extends StatelessWidget {
                     redColor: false,
                   ),
                   Positioned(
-                    right: 10.w,
-                    bottom: 33.h,
+                    right: sizer.w(10),
+                    bottom: sizer.hwt(33),
                     child: SizedBox(
-                        width: 60.w,
-                        height: 24.h,
+                        width: sizer.w(60),
+                        height: sizer.hwt(24),
                         child: Image.asset('assets/images/MasterCard.png')),
                   ),
                 ],
               ),
               SizedBox(
-                height: 15.h,
+                height: sizer.hwt(15),
               ),
               const ItemMenuProfile(
                 evaIcons: EvaIcons.pinOutline,
@@ -95,7 +101,7 @@ class ProfilePage extends StatelessWidget {
                 redColor: false,
               ),
               SizedBox(
-                height: 15.h,
+                height: sizer.hwt(15),
               ),
               const ItemMenuProfile(
                 evaIcons: EvaIcons.bellOffOutline,
@@ -105,7 +111,7 @@ class ProfilePage extends StatelessWidget {
                 redColor: false,
               ),
               SizedBox(
-                height: 15.h,
+                height: sizer.hwt(15),
               ),
               Stack(children: [
                 const ItemMenuProfile(
@@ -116,19 +122,19 @@ class ProfilePage extends StatelessWidget {
                   redColor: false,
                 ),
                 Positioned(
-                  right: 14.h,
-                  bottom: 15.w,
+                  right: sizer.w(14),
+                  bottom: sizer.hwt(15),
                   child: InkWell(
                     onTap: () {
                       Navigator.pushNamed(context, 'OrdersHistoryPage');
                     },
                     child: Container(
-                        width: 59.w,
-                        height: 59.h,
+                        width: sizer.w(59),
+                        height: sizer.hwt(59),
                         decoration: BoxDecoration(
                           color: designColorScheme.secondary,
-                          borderRadius: BorderRadius.all(
-                            Radius.circular(16.r),
+                          borderRadius: const BorderRadius.all(
+                            Radius.circular(16),
                           ),
                         ),
                         child: Icon(
@@ -139,7 +145,7 @@ class ProfilePage extends StatelessWidget {
                 ),
               ]),
               SizedBox(
-                height: 15.h,
+                height: sizer.hwt(15),
               ),
               const ItemMenuProfile(
                 evaIcons: EvaIcons.logOutOutline,

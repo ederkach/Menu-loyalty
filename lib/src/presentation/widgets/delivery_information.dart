@@ -1,7 +1,7 @@
 import 'package:eva_icons_flutter/eva_icons_flutter.dart';
 import 'package:flutter/material.dart';
 
-import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:menu_loyalty/src/config/size_config.dart';
 
 class DeliveryInformation extends StatelessWidget {
   const DeliveryInformation({
@@ -12,20 +12,25 @@ class DeliveryInformation extends StatelessWidget {
   Widget build(BuildContext context) {
     var designColorScheme = Theme.of(context).colorScheme;
     var designStyleText = Theme.of(context).textTheme;
+    var sizer = MediaQuery.of(context);
     return Container(
-      height: 80.h,
-      width: 327.w,
-      padding: EdgeInsets.symmetric(vertical: 10.w),
+      height: sizer.hwt(80),
+      width: sizer.w(327),
+      padding: EdgeInsets.symmetric(
+        vertical: sizer.w(10),
+      ),
       child: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 20.w),
+        padding: EdgeInsets.symmetric(
+          horizontal: sizer.w(20),
+        ),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Row(
               children: [
                 Container(
-                  height: 48.h,
-                  width: 48.w,
+                  height: sizer.hwt(48),
+                  width: sizer.w(48),
                   child:
                       Icon(EvaIcons.pin, color: designColorScheme.onSecondary),
                   decoration: BoxDecoration(
@@ -34,7 +39,7 @@ class DeliveryInformation extends StatelessWidget {
                   ),
                 ),
                 SizedBox(
-                  width: 20.w,
+                  width: sizer.w(20),
                 ),
                 Column(
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -43,8 +48,7 @@ class DeliveryInformation extends StatelessWidget {
                     Text(
                       'Andika ( +639384959 )',
                       style: designStyleText.bodyMedium?.copyWith(
-                          color: designColorScheme.onSecondary,
-                          fontSize: 15.sp),
+                          color: designColorScheme.onSecondary, fontSize: 15),
                     ),
                     Row(
                       children: [
@@ -53,7 +57,7 @@ class DeliveryInformation extends StatelessWidget {
                           style: designStyleText.bodyMedium?.copyWith(
                               color: designColorScheme.onSecondary
                                   .withOpacity(0.5),
-                              fontSize: 15.sp),
+                              fontSize: 15),
                         ),
                       ],
                     ),
@@ -67,7 +71,7 @@ class DeliveryInformation extends StatelessWidget {
       ),
       decoration: BoxDecoration(
         color: designColorScheme.secondaryContainer,
-        borderRadius: BorderRadius.all(Radius.circular(32.r)),
+        borderRadius: const BorderRadius.all(Radius.circular(32)),
       ),
     );
   }

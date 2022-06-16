@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:eva_icons_flutter/eva_icons_flutter.dart';
+import 'package:menu_loyalty/src/config/size_config.dart';
 
 import 'components/category_list_dish.dart';
 import 'components/header_menu.dart';
@@ -51,22 +51,27 @@ class _MenuPageState extends State<MenuPage> {
   @override
   Widget build(BuildContext context) {
     var designColorScheme = Theme.of(context).colorScheme;
+    var sizer = MediaQuery.of(context);
     return Scaffold(
       backgroundColor: designColorScheme.secondaryContainer,
       body: Padding(
-        padding: EdgeInsets.only(top: 50.h),
+        padding: EdgeInsets.only(
+          top: sizer.hwt(50),
+        ),
         child: Container(
-            height: 800.h,
-            width: 375.w,
+            height: sizer.hwt(800),
+            width: sizer.w(375),
             decoration: BoxDecoration(
               color: designColorScheme.onPrimary,
-              borderRadius: BorderRadius.only(
-                topLeft: Radius.circular(40.r),
-                topRight: Radius.circular(40.r),
+              borderRadius: const BorderRadius.only(
+                topLeft: Radius.circular(40),
+                topRight: Radius.circular(40),
               ),
             ),
             child: Padding(
-              padding: EdgeInsets.symmetric(horizontal: 24.w),
+              padding: EdgeInsets.symmetric(
+                horizontal: sizer.w(24),
+              ),
               child: Column(
                 children: [
                   HeaderMenu(scrollVisibility: scrollVisibility),
@@ -76,8 +81,8 @@ class _MenuPageState extends State<MenuPage> {
             )),
       ),
       floatingActionButton: Container(
-        height: 72.w,
-        width: 72.w,
+        height: sizer.w(72),
+        width: sizer.w(72),
         child: TextButton(
           onPressed: () {
             Navigator.of(context).pop();
@@ -89,8 +94,8 @@ class _MenuPageState extends State<MenuPage> {
         ),
         decoration: BoxDecoration(
           color: designColorScheme.primary,
-          borderRadius: BorderRadius.all(
-            Radius.circular(26.r),
+          borderRadius: const BorderRadius.all(
+            Radius.circular(26),
           ),
         ),
       ),

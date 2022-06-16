@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 import 'package:eva_icons_flutter/eva_icons_flutter.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:menu_loyalty/src/config/size_config.dart';
 
 class TotalWithButtonWidget extends StatelessWidget {
@@ -16,8 +15,11 @@ class TotalWithButtonWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var sizer = MediaQuery.of(context);
     return Padding(
-      padding: EdgeInsets.only(top: 15.h),
+      padding: EdgeInsets.only(
+        top: sizer.hwt(15),
+      ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
@@ -28,35 +30,35 @@ class TotalWithButtonWidget extends StatelessWidget {
                 'Total Prices',
                 maxLines: 2,
                 style: designStyleText.headline6!.copyWith(
-                    fontSize: 17.sp, color: designColorScheme.onSecondary),
+                    fontSize: 17, color: designColorScheme.onSecondary),
               ),
               SizedBox(
-                height: 10.h,
+                height: sizer.hwt(10),
               ),
               Text(
                 '\$ 15,45',
                 maxLines: 2,
                 style: designStyleText.headline6!.copyWith(
-                    fontSize: 20.sp,
+                    fontSize: 20,
                     fontWeight: FontWeight.w600,
                     color: designColorScheme.secondary),
               ),
             ],
           ),
           SizedBox(
-            width: 50.w,
+            width: sizer.w(50),
           ),
           Text(
             'Add to Cart',
-            style: designStyleText.headline6!.copyWith(
-                fontSize: 17.sp, color: designColorScheme.onSecondary),
+            style: designStyleText.headline6!
+                .copyWith(fontSize: 17, color: designColorScheme.onSecondary),
           ),
           SizedBox(
-            width: 10.w,
+            width: sizer.w(10),
           ),
           Container(
-            height: MediaQuery.of(context).w(72),
-            width: MediaQuery.of(context).w(72),
+            height: sizer.w(72),
+            width: sizer.w(72),
             child: TextButton(
               onPressed: () {
                 Navigator.of(context).pop();
@@ -68,8 +70,8 @@ class TotalWithButtonWidget extends StatelessWidget {
             ),
             decoration: BoxDecoration(
               color: designColorScheme.primary,
-              borderRadius: BorderRadius.all(
-                Radius.circular(26.r),
+              borderRadius: const BorderRadius.all(
+                Radius.circular(26),
               ),
             ),
           ),

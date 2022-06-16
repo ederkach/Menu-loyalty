@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:menu_loyalty/src/config/size_config.dart';
 
 class QtyButton extends StatelessWidget {
   const QtyButton({
@@ -15,21 +16,22 @@ class QtyButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var designStyleText = Theme.of(context).textTheme;
+    var sizer = MediaQuery.of(context);
     return Container(
       child: Center(
         child: Text(
           title,
           style: designStyleText.bodyMedium!.copyWith(
-            fontSize: 15.sp,
+            fontSize: 15,
             fontWeight: FontWeight.bold,
           ),
         ),
       ),
-      height: 24.h,
-      width: 24.w,
+      height: sizer.hwt(24),
+      width: sizer.w(24),
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.all(
-          Radius.circular(5.r),
+        borderRadius: const BorderRadius.all(
+          Radius.circular(5),
         ),
         color: background,
         boxShadow: const [

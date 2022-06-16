@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:menu_loyalty/src/config/size_config.dart';
 
 import '../../../widgets/type_payment_button.dart';
 
@@ -25,13 +25,16 @@ class _ListPaymentsState extends State<ListPayments> {
   @override
   Widget build(BuildContext context) {
     var designColorScheme = Theme.of(context).colorScheme;
+    var sizer = MediaQuery.of(context);
     return ListView.separated(
-      padding: EdgeInsets.only(top: 10.h),
+      padding: EdgeInsets.only(
+        top: sizer.hwt(10),
+      ),
       scrollDirection: Axis.vertical,
       itemCount: 3,
       separatorBuilder: (BuildContext context, int index) => Divider(
         color: designColorScheme.background,
-        height: 10.w,
+        height: sizer.hwt(10),
       ),
       itemBuilder: (BuildContext context, int index) {
         return GestureDetector(

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:menu_loyalty/src/config/size_config.dart';
 
 import '../../../widgets/dish_item_centre.dart';
 
@@ -25,15 +25,16 @@ class _CategoryListOfferState extends State<CategoryListOffer> {
   @override
   Widget build(BuildContext context) {
     var designColorScheme = Theme.of(context).colorScheme;
+    var sizer = MediaQuery.of(context);
     return SizedBox(
-      width: 334.w,
-      height: 155.h,
+      height: sizer.hwt(155),
+      width: sizer.w(334),
       child: ListView.separated(
         scrollDirection: Axis.horizontal,
         itemCount: 6,
         separatorBuilder: (BuildContext context, int index) => VerticalDivider(
           color: designColorScheme.onPrimary,
-          width: 15.w,
+          width: sizer.w(15),
         ),
         itemBuilder: (BuildContext context, int index) {
           return Padding(

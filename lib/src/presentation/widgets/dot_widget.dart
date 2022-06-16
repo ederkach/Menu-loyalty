@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-
 class DotWidget extends StatelessWidget {
   const DotWidget({
     required this.dotColor,
@@ -17,8 +15,8 @@ class DotWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: sizeheight.h,
-      width: sizewidth.w,
+      height: sizeheight,
+      width: sizewidth,
       decoration: BoxDecoration(
         shape: BoxShape.circle,
         color: dotColor,

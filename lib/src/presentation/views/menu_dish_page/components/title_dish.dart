@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:menu_loyalty/src/config/size_config.dart';
 
 class TitleDish extends StatelessWidget {
   const TitleDish({
@@ -14,13 +14,16 @@ class TitleDish extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var sizer = MediaQuery.of(context);
     return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 24.w),
+      padding: EdgeInsets.symmetric(
+        horizontal: sizer.w(24),
+      ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           SizedBox(
-            height: 12.h,
+            height: sizer.hwt(12),
           ),
           SizedBox(
             child: Text(
@@ -30,7 +33,7 @@ class TitleDish extends StatelessWidget {
             ),
           ),
           SizedBox(
-            height: 6.h,
+            height: sizer.hwt(6),
           ),
           SizedBox(
             child: Text(

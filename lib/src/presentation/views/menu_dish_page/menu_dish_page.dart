@@ -25,7 +25,6 @@ class MenuDishPage extends StatelessWidget {
     var designColorScheme = Theme.of(context).colorScheme;
     var designStyleText = Theme.of(context).textTheme;
     var sizer = MediaQuery.of(context);
-
     return Scaffold(
       backgroundColor: designColorScheme.primary,
       appBar: AppBar(
@@ -65,10 +64,10 @@ class MenuDishPage extends StatelessWidget {
       body: Stack(
         children: [
           Positioned(
-            top: sizer.hwt(72),
+            top: sizer.h(72),
             right: 0,
             child: SizedBox(
-              height: sizer.hwt(320),
+              height: sizer.h(320),
               child: const Image(
                 image: AssetImage("assets/images/FlourBackground.png"),
               ),
@@ -101,7 +100,7 @@ class MenuDishPage extends StatelessWidget {
                           designColorScheme: designColorScheme),
                     ]),
               ),
-              height: sizer.hwt(484),
+              height: sizer.h(475),
               width: sizer.w(375),
               decoration: BoxDecoration(
                 color: designColorScheme.background,
@@ -114,7 +113,7 @@ class MenuDishPage extends StatelessWidget {
           ),
           Positioned(
             left: sizer.w(98),
-            top: sizer.hwt(170),
+            top: sizer.h(143),
             child: Image.network(
               'https://firebasestorage.googleapis.com/v0/b/menubonus.appspot.com/o/Replace%20images4.png?alt=media&token=9c18bdee-5c4d-40ce-8d05-4ee61caa7a68',
               width: sizer.w(185),

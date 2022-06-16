@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:eva_icons_flutter/eva_icons_flutter.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:menu_loyalty/src/config/size_config.dart';
 
 import 'components/icon_button_nav_bar.dart';
 import 'components/main_button_nav_bar.dart';
@@ -56,14 +56,14 @@ class _MainNavBarState extends State<MainNavBar> {
 
   Container buildMyNavBar(BuildContext context) {
     var designColorScheme = Theme.of(context).colorScheme;
-
+    var sizer = MediaQuery.of(context);
     return Container(
-      height: 104.h,
+      height: sizer.hwt(104),
       decoration: BoxDecoration(
         color: designColorScheme.onPrimary,
-        borderRadius: BorderRadius.only(
-          topLeft: Radius.circular(40.r),
-          topRight: Radius.circular(40.r),
+        borderRadius: const BorderRadius.only(
+          topLeft: Radius.circular(40),
+          topRight: Radius.circular(40),
         ),
       ),
       child: Row(

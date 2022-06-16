@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:menu_loyalty/src/config/size_config.dart';
 
 class CategoryDishItem extends StatelessWidget {
   const CategoryDishItem({
@@ -11,24 +11,27 @@ class CategoryDishItem extends StatelessWidget {
   Widget build(BuildContext context) {
     var designColorScheme = Theme.of(context).colorScheme;
     var designStyleText = Theme.of(context).textTheme;
+    var sizer = MediaQuery.of(context);
     return SizedBox(
-      height: 90.h,
+      height: sizer.hwt(90),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
           Container(
             child: Padding(
-              padding: const EdgeInsets.all(8.0),
+              padding: EdgeInsets.all(
+                sizer.w(8),
+              ),
               child: Image.network(
                 'https://firebasestorage.googleapis.com/v0/b/menubonus.appspot.com/o/Replace%20images4.png?alt=media&token=9c18bdee-5c4d-40ce-8d05-4ee61caa7a68',
               ),
             ),
-            width: 155.w,
-            height: 90.h,
+            width: sizer.w(155),
+            height: sizer.hwt(90),
             decoration: BoxDecoration(
               color: designColorScheme.secondaryContainer,
-              borderRadius: BorderRadius.all(
-                Radius.circular(16.r),
+              borderRadius: const BorderRadius.all(
+                Radius.circular(16),
               ),
             ),
           ),
@@ -38,18 +41,18 @@ class CategoryDishItem extends StatelessWidget {
             children: [
               Text(
                 'Orange Panglazed',
-                style: designStyleText.bodyMedium!.copyWith(fontSize: 17.sp),
+                style: designStyleText.bodyMedium!.copyWith(fontSize: 17),
               ),
               Text(
                 'Romano cheese',
-                style: designStyleText.bodyMedium!.copyWith(
-                    fontSize: 13.sp, color: designColorScheme.secondary),
+                style: designStyleText.bodyMedium!
+                    .copyWith(fontSize: 13, color: designColorScheme.secondary),
               ),
               Text(
                 '\$51,00',
                 style: designStyleText.bodyMedium?.copyWith(
                     color: designColorScheme.secondary,
-                    fontSize: 15.sp,
+                    fontSize: 15,
                     fontWeight: FontWeight.bold),
               ),
             ],

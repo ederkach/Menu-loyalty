@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 
 import 'package:menu_loyalty/src/config/size_config.dart';
@@ -21,8 +22,15 @@ class CheckOutListItem extends StatelessWidget {
           Container(
             child: Padding(
               padding: const EdgeInsets.all(8.0),
-              child: Image.network(
-                'https://firebasestorage.googleapis.com/v0/b/menubonus.appspot.com/o/Replace%20images4.png?alt=media&token=9c18bdee-5c4d-40ce-8d05-4ee61caa7a68',
+              child: CachedNetworkImage(
+                imageUrl:
+                    'https://firebasestorage.googleapis.com/v0/b/menubonus.appspot.com/o/Replace%20images4.png?alt=media&token=9c18bdee-5c4d-40ce-8d05-4ee61caa7a68',
+                placeholder: (context, url) =>
+                    const CircularProgressIndicator(),
+                errorWidget: (context, url, error) =>
+                    const ImageIcon(AssetImage('assets/icons/loadingIcon.png')),
+                width: sizer.w(116),
+                height: sizer.hwt(116),
               ),
             ),
             width: sizer.w(72),

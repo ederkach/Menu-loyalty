@@ -7,15 +7,12 @@ import '../../../widgets/qty_button.dart';
 class QtyWidget extends StatelessWidget {
   const QtyWidget({
     Key? key,
-    required this.designStyleText,
-    required this.designColorScheme,
   }) : super(key: key);
-
-  final TextTheme designStyleText;
-  final ColorScheme designColorScheme;
 
   @override
   Widget build(BuildContext context) {
+    var designColorScheme = Theme.of(context).colorScheme;
+    var designStyleText = Theme.of(context).textTheme;
     var sizer = MediaQuery.of(context);
     return Padding(
       padding: EdgeInsets.only(

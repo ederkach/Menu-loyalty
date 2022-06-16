@@ -6,15 +6,12 @@ import 'package:menu_loyalty/src/config/size_config.dart';
 class TotalWithButtonWidget extends StatelessWidget {
   const TotalWithButtonWidget({
     Key? key,
-    required this.designStyleText,
-    required this.designColorScheme,
   }) : super(key: key);
-
-  final TextTheme designStyleText;
-  final ColorScheme designColorScheme;
 
   @override
   Widget build(BuildContext context) {
+    var designColorScheme = Theme.of(context).colorScheme;
+    var designStyleText = Theme.of(context).textTheme;
     var sizer = MediaQuery.of(context);
     return Padding(
       padding: EdgeInsets.only(

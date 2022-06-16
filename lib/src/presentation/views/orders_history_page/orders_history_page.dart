@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:eva_icons_flutter/eva_icons_flutter.dart';
+import 'package:menu_loyalty/src/config/size_config.dart';
 import 'package:menu_loyalty/src/constants/enums.dart';
 import 'package:menu_loyalty/src/presentation/widgets/label_widget.dart';
 
@@ -23,10 +23,13 @@ class OrdersHistoryPage extends StatelessWidget {
   Widget build(BuildContext context) {
     var designColorScheme = Theme.of(context).colorScheme;
     var designStyleText = Theme.of(context).textTheme;
+    var sizer = MediaQuery.of(context);
     return Scaffold(
       backgroundColor: designColorScheme.secondaryContainer,
       appBar: PreferredSize(
-        preferredSize: Size.fromHeight(70.0.h),
+        preferredSize: Size.fromHeight(
+          sizer.hwt(70),
+        ),
         child: AppBar(
           shape: const RoundedRectangleBorder(
             borderRadius: BorderRadius.vertical(
@@ -34,7 +37,9 @@ class OrdersHistoryPage extends StatelessWidget {
             ),
           ),
           leading: Padding(
-            padding: EdgeInsets.only(left: 10.w),
+            padding: EdgeInsets.only(
+              left: sizer.w(10),
+            ),
             child: IconButton(
               onPressed: () {
                 Navigator.of(context).pop();
@@ -56,29 +61,31 @@ class OrdersHistoryPage extends StatelessWidget {
           ],
           title: Text(
             'last orders',
-            style: designStyleText.headlineMedium?.copyWith(
-                color: designColorScheme.onSecondary, fontSize: 17.sp),
+            style: designStyleText.headlineMedium
+                ?.copyWith(color: designColorScheme.onSecondary, fontSize: 17),
           ),
           centerTitle: true,
         ),
       ),
       body: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 24.w),
+        padding: EdgeInsets.symmetric(
+          horizontal: sizer.w(24),
+        ),
         child: Column(
           children: [
             SizedBox(
-              height: 20.h,
+              height: sizer.hwt(20),
             ),
             const LastOrdersList(),
             SizedBox(
-              height: 20.h,
+              height: sizer.hwt(20),
             ),
             const LabelWidget(
               darkWhite: DarkWhite.dark,
               label: 'Complete task',
             ),
             SizedBox(
-              height: 20.h,
+              height: sizer.hwt(20),
             ),
             const CompletedOrdersList(),
           ],

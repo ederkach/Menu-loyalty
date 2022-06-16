@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:menu_loyalty/src/config/size_config.dart';
 
 class HeaderWidget extends StatelessWidget {
   const HeaderWidget({
@@ -11,30 +11,31 @@ class HeaderWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     var designColorScheme = Theme.of(context).colorScheme;
     var designStyleText = Theme.of(context).textTheme;
+    var sizer = MediaQuery.of(context);
     return Row(
       children: [
         SizedBox(
-          width: 94.w,
-          height: 94.w,
-          child: ClipRRect(
-            child: const Image(
+          height: sizer.w(94),
+          width: sizer.w(94),
+          child: const ClipRRect(
+            child: Image(
               image: NetworkImage(
                   'https://t4.ftcdn.net/jpg/03/85/50/01/360_F_385500115_T8QiYsPeliQ5tE3npwOuJNUfunqFBo1U.jpg'),
             ),
-            borderRadius: BorderRadius.all(Radius.circular(20.r)),
+            borderRadius: BorderRadius.all(Radius.circular(20)),
           ),
         ),
         SizedBox(
-          width: 24.w,
+          width: sizer.w(24),
         ),
         SizedBox(
-          height: 60.h,
-          width: 177.w,
+          height: sizer.hwt(60),
+          width: sizer.w(177),
           child: Text(
             'Hello,\nKatharina Kiddy 👋',
             maxLines: 2,
-            style: designStyleText.bodyMedium?.copyWith(
-                color: designColorScheme.onSecondary, fontSize: 20.sp),
+            style: designStyleText.bodyMedium
+                ?.copyWith(color: designColorScheme.onSecondary, fontSize: 20),
           ),
         ),
       ],

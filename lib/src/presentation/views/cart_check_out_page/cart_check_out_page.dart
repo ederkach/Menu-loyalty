@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:eva_icons_flutter/eva_icons_flutter.dart';
+import 'package:menu_loyalty/src/config/size_config.dart';
 
 import '../../widgets/bottom_panel.dart';
 import '../../widgets/button_up_dark.dart';
@@ -25,10 +25,13 @@ class CheckOutPage extends StatelessWidget {
   Widget build(BuildContext context) {
     var designColorScheme = Theme.of(context).colorScheme;
     var designStyleText = Theme.of(context).textTheme;
+    var sizer = MediaQuery.of(context);
     return Scaffold(
       backgroundColor: designColorScheme.secondaryContainer,
       appBar: PreferredSize(
-        preferredSize: Size.fromHeight(70.0.h),
+        preferredSize: Size.fromHeight(
+          sizer.hwt(70),
+        ),
         child: AppBar(
           shape: const RoundedRectangleBorder(
             borderRadius: BorderRadius.vertical(
@@ -36,7 +39,9 @@ class CheckOutPage extends StatelessWidget {
             ),
           ),
           leading: Padding(
-            padding: EdgeInsets.only(left: 10.w),
+            padding: EdgeInsets.only(
+              left: sizer.w(10),
+            ),
             child: IconButton(
               onPressed: () {
                 Navigator.of(context).pop();
@@ -48,8 +53,8 @@ class CheckOutPage extends StatelessWidget {
           ),
           title: Text(
             'Confirm Order',
-            style: designStyleText.headlineMedium?.copyWith(
-                color: designColorScheme.onSecondary, fontSize: 17.sp),
+            style: designStyleText.headlineMedium
+                ?.copyWith(color: designColorScheme.onSecondary, fontSize: 17),
           ),
           centerTitle: true,
         ),
@@ -57,29 +62,33 @@ class CheckOutPage extends StatelessWidget {
       body: Stack(
         children: [
           Padding(
-            padding: EdgeInsets.symmetric(horizontal: 24.w),
+            padding: EdgeInsets.symmetric(
+              horizontal: sizer.w(24),
+            ),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
                 SizedBox(
-                  height: 20.h,
+                  height: sizer.hwt(20),
                 ),
                 const DeliveredTo(),
                 SizedBox(
-                  height: 20.h,
+                  height: sizer.hwt(20),
                 ),
                 Expanded(
                   child: Container(
                     child: Padding(
-                      padding: EdgeInsets.all(20.0.w),
+                      padding: EdgeInsets.all(
+                        sizer.w(20),
+                      ),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text('Items Order',
                               style: designStyleText.headline6!
-                                  .copyWith(fontSize: 16.sp)),
+                                  .copyWith(fontSize: 16)),
                           SizedBox(
-                            height: 10.h,
+                            height: sizer.hwt(10),
                           ),
                           const CheckOutList(),
                         ],
@@ -87,8 +96,8 @@ class CheckOutPage extends StatelessWidget {
                     ),
                     decoration: BoxDecoration(
                       color: designColorScheme.onPrimary,
-                      borderRadius: BorderRadius.all(
-                        Radius.circular(16.r),
+                      borderRadius: const BorderRadius.all(
+                        Radius.circular(16),
                       ),
                     ),
                   ),
@@ -99,8 +108,8 @@ class CheckOutPage extends StatelessWidget {
           Positioned(
             bottom: 0,
             child: BottomPanel(
-              width: 375.w,
-              height: 317.h,
+              height: sizer.hwt(317),
+              width: sizer.w(375),
               bottomButtonWidgets: const ButtonUpDark(),
               supportWidgets: const ChoosePayment(),
               bottomPanelListWidgets: GestureDetector(
@@ -119,18 +128,25 @@ class CheckOutPage extends StatelessWidget {
   Future<dynamic> showBottomPayPanel(BuildContext context) {
     var designColorScheme = Theme.of(context).colorScheme;
     var designStyleText = Theme.of(context).textTheme;
+    var sizer = MediaQuery.of(context);
     return showDialog(
       context: context,
       builder: (ctx) => AlertDialog(
-        insetPadding: EdgeInsets.all(20.w),
-        buttonPadding: EdgeInsets.all(20.w),
+        insetPadding: EdgeInsets.all(
+          sizer.w(20),
+        ),
+        buttonPadding: EdgeInsets.all(
+          sizer.w(20),
+        ),
         shape: const RoundedRectangleBorder(
             borderRadius: BorderRadius.all(Radius.circular(32.0))),
         content: Padding(
-          padding: EdgeInsets.all(30.w),
+          padding: EdgeInsets.all(
+            sizer.w(30),
+          ),
           child: Container(
-            height: 175.h,
-            width: 327.w,
+            height: sizer.hwt(175),
+            width: sizer.w(327),
             child: Center(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
@@ -138,34 +154,34 @@ class CheckOutPage extends StatelessWidget {
                 children: [
                   Image.asset(
                     'assets/images/Checkmark.png',
-                    height: 74.w,
-                    width: 74.w,
+                    height: sizer.hwt(74),
+                    width: sizer.w(74),
                   ),
                   SizedBox(
-                    height: 10.h,
+                    height: sizer.hwt(10),
                   ),
                   Text(
                     "Your Ordered Successfully",
                     style: designStyleText.headlineMedium?.copyWith(
-                        color: designColorScheme.onSecondary, fontSize: 17.sp),
+                        color: designColorScheme.onSecondary, fontSize: 17),
                   ),
                   SizedBox(
-                    height: 10.h,
+                    height: sizer.hwt(10),
                   ),
                   Text(
                     "Your successfully place an order. Your order confirm and delivered within 20 minutes.Wish you enjoy the meal.",
                     textAlign: TextAlign.center,
                     style: designStyleText.headlineMedium?.copyWith(
                         color: designColorScheme.onSecondary.withOpacity(0.5),
-                        fontSize: 12.sp),
+                        fontSize: 12),
                   ),
                 ],
               ),
             ),
             decoration: BoxDecoration(
               color: designColorScheme.onPrimary,
-              borderRadius: BorderRadius.all(
-                Radius.circular(16.r),
+              borderRadius: const BorderRadius.all(
+                Radius.circular(16),
               ),
             ),
           ),

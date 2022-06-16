@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:eva_icons_flutter/eva_icons_flutter.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:menu_loyalty/src/config/size_config.dart';
 import 'package:menu_loyalty/src/constants/enums.dart';
 
 import '../../widgets/label_widget.dart';
@@ -25,19 +25,20 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var sizer = MediaQuery.of(context);
     return Scaffold(
       appBar: AppBar(
         leading: Padding(
-          padding: EdgeInsets.only(left: 24.w),
-          child: CircleAvatar(
-            radius: 32.r,
-            backgroundImage: const NetworkImage(
+          padding: EdgeInsets.only(left: sizer.w(24)),
+          child: const CircleAvatar(
+            radius: 32,
+            backgroundImage: NetworkImage(
                 'https://t4.ftcdn.net/jpg/03/85/50/01/360_F_385500115_T8QiYsPeliQ5tE3npwOuJNUfunqFBo1U.jpg'), //AssetImage loads image URL.
           ),
         ),
         actions: [
           Padding(
-            padding: EdgeInsets.only(right: 24.w),
+            padding: EdgeInsets.only(right: sizer.w(24)),
             child: IconButton(
                 onPressed: () {},
                 icon: const Icon(
@@ -51,28 +52,28 @@ class HomePage extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Padding(
-              padding: EdgeInsets.symmetric(horizontal: 24.w),
+              padding: EdgeInsets.symmetric(horizontal: sizer.w(24)),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   const GreetingsWidget(),
                   SizedBox(
-                    height: 20.h,
+                    height: sizer.hwt(20),
                   ),
                   const SearchInputWidget(),
                   SizedBox(
-                    height: 20.h,
+                    height: sizer.hwt(20),
                   ),
                   const LabelWidget(
                     label: 'Category offer',
                     darkWhite: DarkWhite.dark,
                   ),
                   SizedBox(
-                    height: 20.h,
+                    height: sizer.hwt(20),
                   ),
                   const CategoryOffer(),
                   SizedBox(
-                    height: 22.h,
+                    height: sizer.hwt(22),
                   ),
                 ],
               ),

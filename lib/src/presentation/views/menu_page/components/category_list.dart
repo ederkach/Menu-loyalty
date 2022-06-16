@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:menu_loyalty/src/config/size_config.dart';
 
 import 'category_list_item.dart';
 
@@ -25,15 +25,16 @@ class _CategoryListState extends State<CategoryList> {
   @override
   Widget build(BuildContext context) {
     var designColorScheme = Theme.of(context).colorScheme;
+    var sizer = MediaQuery.of(context);
     return SizedBox(
-      width: 334.w,
-      height: 40.h,
+      height: sizer.hwt(45),
+      width: sizer.w(334),
       child: ListView.separated(
         scrollDirection: Axis.horizontal,
         itemCount: 6,
         separatorBuilder: (BuildContext context, int index) => VerticalDivider(
           color: designColorScheme.onPrimary,
-          width: 5.w,
+          width: sizer.w(5),
         ),
         itemBuilder: (BuildContext context, int index) {
           return Padding(

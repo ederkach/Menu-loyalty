@@ -37,6 +37,9 @@ class MenuOfferBloc extends Bloc<MenuOfferEvent, MenuOfferState> {
 
   void _choseCategory(
       FilterByCategoryOffer event, Emitter<MenuOfferState> emit) {
+    emit(
+      const MenuOfferState.menuLoading(),
+    );
     List<MenuModel> filterCategoryOffer = _menuRepository.repositoryMenu
         .where((e) => e.categoriesOffer!
             .where((element) => element == event.idCategoryOffer)

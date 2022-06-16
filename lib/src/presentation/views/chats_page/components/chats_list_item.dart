@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:menu_loyalty/src/config/size_config.dart';
 
 class ChatsListItem extends StatelessWidget {
   const ChatsListItem({
@@ -11,19 +11,20 @@ class ChatsListItem extends StatelessWidget {
   Widget build(BuildContext context) {
     var designStyleText = Theme.of(context).textTheme;
     var designColorScheme = Theme.of(context).colorScheme;
+    var sizer = MediaQuery.of(context);
     return SizedBox(
-      width: 327.w,
-      height: 74.h,
+      height: sizer.hwt(74),
+      width: sizer.w(327),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
-          CircleAvatar(
-            radius: 32.r,
-            backgroundImage: const NetworkImage(
+          const CircleAvatar(
+            radius: 32,
+            backgroundImage: NetworkImage(
                 'https://t4.ftcdn.net/jpg/03/85/50/01/360_F_385500115_T8QiYsPeliQ5tE3npwOuJNUfunqFBo1U.jpg'), //AssetImage loads image URL.
           ),
           SizedBox(
-            width: 16.w,
+            width: sizer.w(16),
           ),
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -33,21 +34,20 @@ class ChatsListItem extends StatelessWidget {
                 children: [
                   Text(
                     'Orange Panglazed',
-                    style:
-                        designStyleText.bodyMedium!.copyWith(fontSize: 17.sp),
+                    style: designStyleText.bodyMedium!.copyWith(fontSize: 17),
                   ),
                 ],
               ),
               Text(
                 'Romano cheese',
                 style: designStyleText.bodyMedium!.copyWith(
-                    fontSize: 13.sp,
+                    fontSize: 13,
                     color: designColorScheme.onSecondary.withOpacity(0.6)),
               ),
             ],
           ),
           SizedBox(
-            width: 35.w,
+            width: sizer.w(35),
           ),
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -56,7 +56,7 @@ class ChatsListItem extends StatelessWidget {
               Text(
                 '11:25 AM',
                 style: designStyleText.bodyMedium!.copyWith(
-                    fontSize: 13.sp,
+                    fontSize: 13,
                     color: designColorScheme.onSecondary.withOpacity(0.6)),
               ),
             ],

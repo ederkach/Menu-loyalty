@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:eva_icons_flutter/eva_icons_flutter.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:menu_loyalty/src/config/size_config.dart';
 
 class SearchInputWidget extends StatelessWidget {
   const SearchInputWidget({
@@ -12,18 +12,19 @@ class SearchInputWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     var designColorScheme = Theme.of(context).colorScheme;
     var designStyleText = Theme.of(context).textTheme;
+    var sizer = MediaQuery.of(context);
     return SizedBox(
-      width: 327.w,
-      height: 56.h,
+      height: sizer.hwt(56),
+      width: sizer.w(327),
       child: TextField(
         style: TextStyle(color: designColorScheme.onSecondary),
         decoration: InputDecoration(
           border: OutlineInputBorder(
             borderSide: BorderSide.none,
-            borderRadius: BorderRadius.circular(28.r),
+            borderRadius: BorderRadius.circular(28),
           ),
           hintText: 'Restaurant, food & drinks',
-          hintStyle: designStyleText.titleMedium?.copyWith(fontSize: 16.sp),
+          hintStyle: designStyleText.titleMedium?.copyWith(fontSize: 16),
           prefixIcon: const Icon(
             EvaIcons.searchOutline,
           ),

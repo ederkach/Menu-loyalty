@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:menu_loyalty/src/config/size_config.dart';
 
 import '../../../blocs/blocs.dart';
 import 'list_category_offer.dart';
@@ -13,9 +13,10 @@ class CategoryOffer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var sizer = MediaQuery.of(context);
     return SizedBox(
-      width: 327.w,
-      height: 92.h,
+      width: sizer.w(327),
+      height: sizer.hwt(92),
       child: BlocListener<CategoriesOfferBloc, CategoriesOfferState>(
         listener: (context, state) {
           state.whenOrNull(

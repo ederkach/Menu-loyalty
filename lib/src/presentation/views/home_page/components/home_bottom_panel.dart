@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:menu_loyalty/src/config/size_config.dart';
 
 import '../../../blocs/blocs.dart';
 import '../../../widgets/bottom_panel.dart';
@@ -14,9 +15,10 @@ class HomeBottomPanel extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var sizer = MediaQuery.of(context);
     return BottomPanel(
-      width: 375,
-      height: 404,
+      width: sizer.w(375),
+      height: sizer.hwt(420),
       bottomButtonWidgets: GestureDetector(
           onTap: () {
             Navigator.pushNamed(context, 'MenuPage');

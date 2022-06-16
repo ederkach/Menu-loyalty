@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:menu_loyalty/src/config/size_config.dart';
 
 import '../../../widgets/qty_button.dart';
 
@@ -16,8 +16,11 @@ class QtyWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var sizer = MediaQuery.of(context);
     return Padding(
-      padding: EdgeInsets.only(top: 30.h),
+      padding: EdgeInsets.only(
+        top: sizer.hwt(10),
+      ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
@@ -31,7 +34,7 @@ class QtyWidget extends StatelessWidget {
               Text(
                 '100.5',
                 style: designStyleText.bodyMedium!.copyWith(
-                    fontSize: 17.sp,
+                    fontSize: 17,
                     fontWeight: FontWeight.bold,
                     color: designColorScheme.onSecondary),
               ),
@@ -42,20 +45,20 @@ class QtyWidget extends StatelessWidget {
             ],
           ),
           Container(
-            height: 43.h,
-            width: 143.w,
+            height: sizer.hwt(43),
+            width: sizer.w(143),
             child: Center(
                 child: Text(
               'Try promo code',
               maxLines: 1,
               textAlign: TextAlign.center,
-              style: designStyleText.bodyMedium!.copyWith(
-                  fontSize: 15.sp, color: designColorScheme.onPrimary),
+              style: designStyleText.bodyMedium!
+                  .copyWith(fontSize: 15, color: designColorScheme.onPrimary),
             )),
-            decoration: BoxDecoration(
-              color: const Color(0xFFFF9800),
+            decoration: const BoxDecoration(
+              color: Color(0xFFFF9800),
               borderRadius: BorderRadius.all(
-                Radius.circular(26.r),
+                Radius.circular(26),
               ),
             ),
           ),

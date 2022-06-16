@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:menu_loyalty/src/config/size_config.dart';
 
 class GreenButton extends StatelessWidget {
   const GreenButton({
@@ -14,20 +14,21 @@ class GreenButton extends StatelessWidget {
   Widget build(BuildContext context) {
     var designColorScheme = Theme.of(context).colorScheme;
     var designStyleText = Theme.of(context).textTheme;
+    var sizer = MediaQuery.of(context);
     return Container(
-      height: 56.h,
-      width: 327.w,
+      height: sizer.hwt(56),
+      width: sizer.w(327),
       decoration: BoxDecoration(
         color: designColorScheme.secondary,
-        borderRadius: BorderRadius.all(
-          Radius.circular(28.r),
+        borderRadius: const BorderRadius.all(
+          Radius.circular(28),
         ),
       ),
       child: Center(
         child: Text(
           title,
           style: designStyleText.headline6!
-              .copyWith(fontSize: 17.sp, color: designColorScheme.onPrimary),
+              .copyWith(fontSize: 17, color: designColorScheme.onPrimary),
         ),
       ),
     );

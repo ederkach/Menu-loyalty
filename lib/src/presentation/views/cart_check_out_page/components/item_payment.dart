@@ -1,7 +1,7 @@
 import 'package:eva_icons_flutter/eva_icons_flutter.dart';
 import 'package:flutter/material.dart';
 
-import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:menu_loyalty/src/config/size_config.dart';
 import 'package:menu_loyalty/src/constants/enums.dart';
 
 class ItemPayment extends StatelessWidget {
@@ -18,15 +18,16 @@ class ItemPayment extends StatelessWidget {
   Widget build(BuildContext context) {
     var designColorScheme = Theme.of(context).colorScheme;
     var designStyleText = Theme.of(context).textTheme;
+    var sizer = MediaQuery.of(context);
     return Container(
-      height: 101.h,
-      width: 155.w,
+      height: sizer.hwt(101),
+      width: sizer.w(155),
       decoration: const BoxDecoration(),
       child: Stack(
         children: [
           Container(
-            height: 101.h,
-            width: 155.w,
+            height: sizer.hwt(101),
+            width: sizer.w(155),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -44,12 +45,12 @@ class ItemPayment extends StatelessWidget {
                     Text(
                       '\$15,45',
                       style: designStyleText.bodyMedium?.copyWith(
-                          color: designColorScheme.onPrimary, fontSize: 15.sp),
+                          color: designColorScheme.onPrimary, fontSize: 15),
                     ),
                     Text(
                       (typePayment == TypePayment.cash) ? 'Cash' : 'Card',
                       style: designStyleText.bodyMedium?.copyWith(
-                          color: designColorScheme.onPrimary, fontSize: 13.sp),
+                          color: designColorScheme.onPrimary, fontSize: 13),
                     ),
                   ],
                 ),
@@ -59,15 +60,15 @@ class ItemPayment extends StatelessWidget {
               color: (isSelected == true)
                   ? designColorScheme.onSecondary.withOpacity(0.1)
                   : designColorScheme.background.withOpacity(0.1),
-              borderRadius: BorderRadius.all(
-                Radius.circular(24.r),
+              borderRadius: const BorderRadius.all(
+                Radius.circular(24),
               ),
             ),
           ),
           if (isSelected == true)
             Positioned(
-              right: 10.w,
-              top: 10.h,
+              right: sizer.w(10),
+              top: sizer.hwt(10),
               child: Icon(EvaIcons.checkmarkCircle2,
                   color: designColorScheme.secondary),
             )

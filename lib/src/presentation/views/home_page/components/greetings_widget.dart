@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:menu_loyalty/src/config/size_config.dart';
 
 class GreetingsWidget extends StatelessWidget {
   const GreetingsWidget({
@@ -10,19 +10,20 @@ class GreetingsWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var designStyleText = Theme.of(context).textTheme;
+    var sizer = MediaQuery.of(context);
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
           'Hi, Katharina 👋',
-          style: designStyleText.headline6?.copyWith(fontSize: 19.sp),
+          style: designStyleText.headline6?.copyWith(fontSize: 19),
         ),
         SizedBox(
-          height: 10.h,
+          height: sizer.hwt(10),
         ),
         Text(
           'Want to order delicious food?',
-          style: designStyleText.titleMedium?.copyWith(fontSize: 15.sp),
+          style: designStyleText.titleMedium?.copyWith(fontSize: 15),
         ),
       ],
     );

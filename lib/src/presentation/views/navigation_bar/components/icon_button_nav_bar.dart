@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-
 import '../../../widgets/dot_widget.dart';
 
 class IconButtonNabBar extends StatelessWidget {
@@ -32,7 +30,7 @@ class IconButtonNabBar extends StatelessWidget {
           },
           icon: Icon(
             evaIcons,
-            size: 24.sp,
+            size: 24,
           ),
         ),
         if (showDot)

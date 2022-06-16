@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:menu_loyalty/src/config/size_config.dart';
 
 class DescriptionWidget extends StatelessWidget {
   const DescriptionWidget({
@@ -14,6 +14,7 @@ class DescriptionWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var sizer = MediaQuery.of(context);
     return Column(
       mainAxisAlignment: MainAxisAlignment.start,
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -22,9 +23,11 @@ class DescriptionWidget extends StatelessWidget {
           'Descriptions',
           maxLines: 1,
           style: designStyleText.displayMedium!
-              .copyWith(fontSize: 20.sp, color: designColorScheme.onSecondary),
+              .copyWith(fontSize: 20, color: designColorScheme.onSecondary),
         ),
-        SizedBox(height: 15.h),
+        SizedBox(
+          height: sizer.hwt(15),
+        ),
         Text(
           'Get 50% off discount on the cookied vegan with sweat cookies and try connected for further discount',
           maxLines: 3,

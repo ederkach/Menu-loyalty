@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:menu_loyalty/src/config/size_config.dart';
 
 class BottomPanel extends StatelessWidget {
   const BottomPanel({
@@ -21,9 +21,12 @@ class BottomPanel extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var designColorScheme = Theme.of(context).colorScheme;
+    var sizer = MediaQuery.of(context);
     return Container(
       child: Padding(
-        padding: EdgeInsets.only(top: 22.0.h),
+        padding: EdgeInsets.only(
+          top: sizer.hwt(22),
+        ),
         child: Column(
           children: [
             bottomButtonWidgets,
@@ -32,13 +35,13 @@ class BottomPanel extends StatelessWidget {
           ],
         ),
       ),
-      width: width.w,
-      height: height.h,
+      width: width,
+      height: height,
       decoration: BoxDecoration(
         color: designColorScheme.primary,
-        borderRadius: BorderRadius.only(
-          topLeft: Radius.circular(40.r),
-          topRight: Radius.circular(40.r),
+        borderRadius: const BorderRadius.only(
+          topLeft: Radius.circular(40),
+          topRight: Radius.circular(40),
         ),
       ),
     );

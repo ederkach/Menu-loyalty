@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:menu_loyalty/src/config/size_config.dart';
 
 import '../../../../constants/enums.dart';
 import '../../../widgets/label_widget.dart';
@@ -13,29 +13,32 @@ class DeliveredTo extends StatelessWidget {
   Widget build(BuildContext context) {
     var designColorScheme = Theme.of(context).colorScheme;
     var designStyleText = Theme.of(context).textTheme;
+    var sizer = MediaQuery.of(context);
     return Container(
-      height: 165.h,
-      width: 327.w,
+      height: sizer.hwt(170),
+      width: sizer.w(327),
       child: Padding(
-        padding: EdgeInsets.all(20.0.w),
+        padding: EdgeInsets.all(
+          sizer.w(20),
+        ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
             const LabelWidget(label: 'Delevered To', darkWhite: DarkWhite.dark),
             SizedBox(
-              height: 10.h,
+              height: sizer.hwt(10),
             ),
             Row(
               children: [
                 SizedBox(
-                  height: 70.w,
-                  width: 70.w,
+                  height: sizer.w(70),
+                  width: sizer.w(70),
                   child: const Image(
                     image: AssetImage("assets/images/Maps.png"),
                   ),
                 ),
                 SizedBox(
-                  width: 15.h,
+                  width: sizer.hwt(15),
                 ),
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -43,22 +46,22 @@ class DeliveredTo extends StatelessWidget {
                   children: [
                     const Text('Andika ( +639384959 )'),
                     SizedBox(
-                      height: 6.h,
+                      height: sizer.hwt(6),
                     ),
                     Text(
                       'Jalan Pancasila No.1, DIY',
                       style: designStyleText.headlineMedium?.copyWith(
                           color: designColorScheme.onSecondary.withOpacity(0.5),
-                          fontSize: 13.sp),
+                          fontSize: 13),
                     ),
                     SizedBox(
-                      height: 8.h,
+                      height: sizer.hwt(8),
                     ),
                     Text(
                       'Est : 30 MIN',
                       style: designStyleText.headlineMedium?.copyWith(
                           color: designColorScheme.onSecondary.withOpacity(0.5),
-                          fontSize: 15.sp),
+                          fontSize: 15),
                     )
                   ],
                 )
@@ -69,8 +72,8 @@ class DeliveredTo extends StatelessWidget {
       ),
       decoration: BoxDecoration(
         color: designColorScheme.onPrimary,
-        borderRadius: BorderRadius.all(
-          Radius.circular(26.r),
+        borderRadius: const BorderRadius.all(
+          Radius.circular(26),
         ),
       ),
     );

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:menu_loyalty/src/config/size_config.dart';
 
 class SpecDishWidget extends StatelessWidget {
   const SpecDishWidget({
@@ -14,41 +14,41 @@ class SpecDishWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var sizer = MediaQuery.of(context);
     return Row(
       mainAxisAlignment: MainAxisAlignment.end,
       children: [
         Container(
-          height: 126.h,
-          width: 72.w,
+          height: sizer.h(126),
+          width: sizer.w(72),
           child: Padding(
-            padding: EdgeInsets.all(8.0.w),
+            padding: EdgeInsets.all(
+              sizer.w(6),
+            ),
             child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 Text(
                   '🔥 kkal 150',
                   maxLines: 2,
                   textAlign: TextAlign.center,
                   style: designStyleText.bodyMedium!.copyWith(
-                      fontSize: 14.sp, color: designColorScheme.onPrimary),
-                ),
-                SizedBox(
-                  height: 20.h,
+                      fontSize: 14, color: designColorScheme.onPrimary),
                 ),
                 Text(
                   'Weight 100gr',
                   maxLines: 2,
                   textAlign: TextAlign.center,
                   style: designStyleText.bodyMedium!.copyWith(
-                      fontSize: 13.sp, color: designColorScheme.onPrimary),
+                      fontSize: 13, color: designColorScheme.onPrimary),
                 ),
               ],
             ),
           ),
           decoration: BoxDecoration(
             color: designColorScheme.primary,
-            borderRadius: BorderRadius.all(
-              Radius.circular(26.r),
+            borderRadius: const BorderRadius.all(
+              Radius.circular(26),
             ),
           ),
         ),

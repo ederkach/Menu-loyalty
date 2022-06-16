@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:menu_loyalty/src/config/size_config.dart';
 
 import '../../../../constants/enums.dart';
-import '../../../widgets/green_button.dart';
+import '../../../widgets/green_bottom_button.dart';
 import '../../../widgets/label_widget.dart';
 
 class CartSum extends StatelessWidget {
@@ -99,7 +99,7 @@ class CartSum extends StatelessWidget {
             onTap: (() => {
                   payNow(),
                 }),
-            child: const GreenButton(
+            child: const GreenBottomButton(
               title: 'Pay Now',
             ),
           )

@@ -9,7 +9,7 @@ import 'package:modal_bottom_sheet/modal_bottom_sheet.dart';
 import '../../../constants/enums.dart';
 import '../../widgets/bottom_panel.dart';
 import '../../widgets/button_up_dark.dart';
-import '../../widgets/green_button.dart';
+import '../../widgets/green_bottom_button.dart';
 import '../../widgets/label_widget.dart';
 import 'components/cart_list.dart';
 import 'components/cart_sum.dart';
@@ -104,7 +104,7 @@ class _CartPageState extends State<CartPage> {
               ),
               GestureDetector(
                 onTap: (() => {Navigator.pushNamed(context, 'CheckOutPage')}),
-                child: const GreenButton(
+                child: const GreenBottomButton(
                   title: 'Place Order',
                 ),
               )

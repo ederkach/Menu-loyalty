@@ -4,10 +4,10 @@ import 'package:menu_loyalty/src/config/size_config.dart';
 
 import '../../../blocs/blocs.dart';
 import 'list_category_offer.dart';
-import 'load_list_categories_offer.dart';
+import 'loading_list_categories_offer.dart';
 
-class CategoryOffer extends StatelessWidget {
-  const CategoryOffer({
+class CategoryOfferStateControl extends StatelessWidget {
+  const CategoryOfferStateControl({
     Key? key,
   }) : super(key: key);
 
@@ -29,10 +29,10 @@ class CategoryOffer extends StatelessWidget {
         child: BlocBuilder<CategoriesOfferBloc, CategoriesOfferState>(
           builder: (context, state) {
             return state.when(
-              categoriesOfferLoading: () => const LoadCategoriesOffer(
+              categoriesOfferLoading: () => const LoadingCategoriesOffer(
                 nameIcon: 'Load...',
               ),
-              emptyCategoriesOffer: () => const LoadCategoriesOffer(
+              emptyCategoriesOffer: () => const LoadingCategoriesOffer(
                 nameIcon: 'No data',
               ),
               categoriesOfferLoadSuccess: (listCategoriesOffer) =>
@@ -40,7 +40,7 @@ class CategoryOffer extends StatelessWidget {
                 listCategoriesOffer: listCategoriesOffer,
               ),
               CategoriesOfferStateLoadFailure: (failure) =>
-                  const LoadCategoriesOffer(
+                  const LoadingCategoriesOffer(
                 nameIcon: 'No data',
               ),
             );

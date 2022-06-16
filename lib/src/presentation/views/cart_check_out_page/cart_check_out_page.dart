@@ -5,7 +5,7 @@ import 'package:menu_loyalty/src/config/size_config.dart';
 
 import '../../widgets/bottom_panel.dart';
 import '../../widgets/button_up_dark.dart';
-import '../../widgets/green_button.dart';
+import '../../widgets/green_bottom_button.dart';
 import 'components/check_out_list.dart';
 import 'components/choose_payment.dart';
 import 'components/delivered_to.dart';
@@ -114,7 +114,7 @@ class CheckOutPage extends StatelessWidget {
               supportWidgets: const ChoosePayment(),
               bottomPanelListWidgets: GestureDetector(
                 onTap: (() => {showBottomPayPanel(context)}),
-                child: const GreenButton(
+                child: const GreenBottomButton(
                   title: 'Pay Now',
                 ),
               ),
@@ -192,7 +192,7 @@ class CheckOutPage extends StatelessWidget {
               Navigator.pushNamedAndRemoveUntil(
                   context, 'MainNavBar', (route) => false)
             },
-            child: const GreenButton(
+            child: const GreenBottomButton(
               title: 'Keep Browsing',
             ),
           ),

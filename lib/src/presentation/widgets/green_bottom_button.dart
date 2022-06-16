@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 
 import 'package:menu_loyalty/src/config/size_config.dart';
 
-class GreenButton extends StatelessWidget {
-  const GreenButton({
+class GreenBottomButton extends StatelessWidget {
+  const GreenBottomButton({
     required this.title,
     Key? key,
   }) : super(key: key);

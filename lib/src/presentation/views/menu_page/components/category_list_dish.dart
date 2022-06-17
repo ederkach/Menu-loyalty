@@ -42,7 +42,8 @@ class _CategoryListDishState extends State<CategoryListDish> {
             padding: const EdgeInsets.symmetric(vertical: 2),
             child: GestureDetector(
               onTap: (() {
-                Navigator.pushNamed(context, 'DishPage');
+                Navigator.pushNamed(context, 'DishPage',
+                    arguments: widget.listMenu![index]);
               }),
               child: CategoryDishItem(
                 menuModel: widget.listMenu![index],

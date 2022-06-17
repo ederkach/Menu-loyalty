@@ -2,6 +2,7 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 
 import 'package:menu_loyalty/src/config/size_config.dart';
+import 'package:progress_indicators/progress_indicators.dart';
 
 class DishItemCentre extends StatelessWidget {
   const DishItemCentre({
@@ -27,7 +28,7 @@ class DishItemCentre extends StatelessWidget {
             child: Container(
               child: Padding(
                 padding: EdgeInsets.symmetric(
-                    horizontal: sizer.w(25), vertical: sizer.hwt(8)),
+                    horizontal: sizer.w(25), vertical: sizer.hwt(2)),
                 child: Center(
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.end,
@@ -39,12 +40,12 @@ class DishItemCentre extends StatelessWidget {
                             color: (isSelected == true)
                                 ? designColorScheme.onPrimary
                                 : designColorScheme.onSecondary,
-                            fontSize: 13),
+                            fontSize: 12),
                       ),
                       Text(
                         '\$51',
                         style: designStyleText.bodyMedium?.copyWith(
-                            color: designColorScheme.secondary, fontSize: 15),
+                            color: designColorScheme.secondary, fontSize: 13),
                       ),
                     ],
                   ),
@@ -67,7 +68,9 @@ class DishItemCentre extends StatelessWidget {
             child: CachedNetworkImage(
               imageUrl:
                   'https://firebasestorage.googleapis.com/v0/b/menubonus.appspot.com/o/Replace%20images4.png?alt=media&token=9c18bdee-5c4d-40ce-8d05-4ee61caa7a68',
-              placeholder: (context, url) => const CircularProgressIndicator(),
+              placeholder: (context, url) => GlowingProgressIndicator(
+                  child: const ImageIcon(
+                      AssetImage('assets/icons/loadingIcon.png'))),
               errorWidget: (context, url, error) =>
                   const ImageIcon(AssetImage('assets/icons/loadingIcon.png')),
               height: sizer.hwt(88),

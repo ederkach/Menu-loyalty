@@ -38,7 +38,7 @@ class SpecDishWidget extends StatelessWidget {
                       fontSize: 14, color: designColorScheme.onPrimary),
                 ),
                 Text(
-                  'Weight 100gr',
+                  'Weight ${weight}gr',
                   maxLines: 2,
                   textAlign: TextAlign.center,
                   style: designStyleText.bodyMedium!.copyWith(

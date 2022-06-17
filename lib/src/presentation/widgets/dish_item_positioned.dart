@@ -2,6 +2,7 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 
 import 'package:menu_loyalty/src/config/size_config.dart';
+import 'package:progress_indicators/progress_indicators.dart';
 
 import '../../data/models/menu_model/menu_model.dart';
 
@@ -68,7 +69,9 @@ class DishItemPositioned extends StatelessWidget {
             right: 0,
             child: CachedNetworkImage(
               imageUrl: menuModel.imagePath.toString(),
-              placeholder: (context, url) => const CircularProgressIndicator(),
+              placeholder: (context, url) => GlowingProgressIndicator(
+                  child: const ImageIcon(
+                      AssetImage('assets/icons/loadingIcon.png'))),
               errorWidget: (context, url, error) =>
                   const ImageIcon(AssetImage('assets/icons/loadingIcon.png')),
               width: sizer.w(116),

@@ -39,6 +39,7 @@ dependencies:
   google_fonts: ^3.0.1
   ionicons: ^0.1.2
   modal_bottom_sheet: ^2.0.1
+  progress_indicators: ^1.0.0
 
 
   # Architecture

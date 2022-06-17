@@ -12,18 +12,23 @@ class ButtonUpGrey extends StatelessWidget {
   Widget build(BuildContext context) {
     var designColorScheme = Theme.of(context).colorScheme;
     var sizer = MediaQuery.of(context);
-    return Container(
-      child: Icon(
-        EvaIcons.arrowheadUp,
-        color: designColorScheme.onSecondary.withOpacity(0.5),
-        size: 24,
+    return Padding(
+      padding: EdgeInsets.only(
+        top: sizer.hwt(18),
       ),
-      width: sizer.w(123),
-      height: sizer.hwt(46),
-      decoration: BoxDecoration(
-        color: designColorScheme.secondaryContainer,
-        borderRadius: const BorderRadius.all(
-          Radius.circular(24),
+      child: Container(
+        child: Icon(
+          EvaIcons.arrowheadUp,
+          color: designColorScheme.onSecondary.withOpacity(0.5),
+          size: 24,
+        ),
+        width: sizer.w(123),
+        height: sizer.hwt(46),
+        decoration: BoxDecoration(
+          color: designColorScheme.secondaryContainer,
+          borderRadius: const BorderRadius.all(
+            Radius.circular(24),
+          ),
         ),
       ),
     );

@@ -97,9 +97,9 @@ class DishPage extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.start,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      const SpecDishWidget(
-                        kkal: '150',
-                        weight: '100',
+                      SpecDishWidget(
+                        kkal: menuModel.kkal.toString(),
+                        weight: menuModel.weight.toString(),
                       ),
                       DescriptionWidget(
                           description: menuModel.description.toString()),

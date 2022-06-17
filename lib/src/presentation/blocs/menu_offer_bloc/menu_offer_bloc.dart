@@ -30,7 +30,7 @@ class MenuOfferBloc extends Bloc<MenuOfferEvent, MenuOfferState> {
       dataMenuRepository.fold(
         (failure) => MenuOfferState.menuLoadFailure(
             ServerException(message: failure.message)),
-        (menuList) => MenuOfferState.menuFilteredCategory(menuList),
+        (menuList) => MenuOfferState.menuLoadSuccess(menuList),
       ),
     );
   }

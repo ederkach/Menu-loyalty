@@ -2,15 +2,18 @@ import 'package:flutter/material.dart';
 
 import 'package:menu_loyalty/src/config/size_config.dart';
 
-import 'category_dish_item.dart';
+import '../../../../data/models/menu_model/menu_model.dart';
+import '../widgets/category_dish_item.dart';
 
 class CategoryListDish extends StatefulWidget {
   const CategoryListDish({
     required this.scrollcontroller,
+    required this.listMenu,
     Key? key,
   }) : super(key: key);
 
   final ScrollController scrollcontroller;
+  final List<MenuModel>? listMenu;
 
   @override
   State<CategoryListDish> createState() => _CategoryListDishState();
@@ -29,7 +32,7 @@ class _CategoryListDishState extends State<CategoryListDish> {
         ),
         controller: widget.scrollcontroller,
         scrollDirection: Axis.vertical,
-        itemCount: 10,
+        itemCount: widget.listMenu!.length,
         separatorBuilder: (BuildContext context, int index) => Divider(
           color: designColorScheme.onPrimary,
           height: sizer.hwt(10),
@@ -41,7 +44,9 @@ class _CategoryListDishState extends State<CategoryListDish> {
               onTap: (() {
                 Navigator.pushNamed(context, 'DishPage');
               }),
-              child: const CategoryDishItem(),
+              child: CategoryDishItem(
+                menuModel: widget.listMenu![index],
+              ),
             ),
           );
         },

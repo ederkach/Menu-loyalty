@@ -4,10 +4,15 @@ import 'package:flutter/material.dart';
 import 'package:menu_loyalty/src/config/size_config.dart';
 import 'package:progress_indicators/progress_indicators.dart';
 
+import '../../../../data/models/menu_model/menu_model.dart';
+
 class CategoryDishItem extends StatelessWidget {
   const CategoryDishItem({
+    required this.menuModel,
     Key? key,
   }) : super(key: key);
+
+  final MenuModel menuModel;
 
   @override
   Widget build(BuildContext context) {
@@ -25,8 +30,7 @@ class CategoryDishItem extends StatelessWidget {
                 sizer.w(8),
               ),
               child: CachedNetworkImage(
-                imageUrl:
-                    'https://firebasestorage.googleapis.com/v0/b/menubonus.appspot.com/o/Replace%20images4.png?alt=media&token=9c18bdee-5c4d-40ce-8d05-4ee61caa7a68',
+                imageUrl: menuModel.imagePath.toString(),
                 placeholder: (context, url) => GlowingProgressIndicator(
                     child: const ImageIcon(
                         AssetImage('assets/icons/loadingIcon.png'))),
@@ -48,7 +52,7 @@ class CategoryDishItem extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
               Text(
-                'Orange Panglazed',
+                menuModel.name,
                 style: designStyleText.bodyMedium!.copyWith(fontSize: 17),
               ),
               Text(
@@ -57,7 +61,7 @@ class CategoryDishItem extends StatelessWidget {
                     .copyWith(fontSize: 13, color: designColorScheme.secondary),
               ),
               Text(
-                '\$51,00',
+                '\$${menuModel.price.toString()}',
                 style: designStyleText.bodyMedium?.copyWith(
                     color: designColorScheme.secondary,
                     fontSize: 15,

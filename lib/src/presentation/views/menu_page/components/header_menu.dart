@@ -5,8 +5,8 @@ import 'package:menu_loyalty/src/config/size_config.dart';
 import '../../../../constants/enums.dart';
 import '../../../widgets/button_up_grey.dart';
 import '../../../widgets/label_widget.dart';
-import 'category_list.dart';
-import 'category_list_offer.dart';
+import 'control_categories.dart';
+import 'control_offer_list.dart';
 
 class HeaderMenu extends StatelessWidget {
   const HeaderMenu({
@@ -23,13 +23,7 @@ class HeaderMenu extends StatelessWidget {
 
     return Column(
       children: [
-        SizedBox(
-          height: sizer.hwt(18),
-        ),
         const ButtonUpGrey(),
-        SizedBox(
-          height: sizer.hwt(10),
-        ),
         Row(
           children: [
             Text('Category 🌭',
@@ -37,19 +31,8 @@ class HeaderMenu extends StatelessWidget {
                     .copyWith(fontSize: 26, fontWeight: FontWeight.w500)),
           ],
         ),
-        Padding(
-          padding: EdgeInsets.only(
-            top: sizer.hwt(20),
-          ),
-          child: const CategoryList(),
-        ),
-        if (scrollVisibility)
-          Padding(
-            padding: EdgeInsets.only(
-              top: sizer.hwt(10),
-            ),
-            child: const CategoryListOffer(),
-          ),
+        const ControlCategories(),
+        if (scrollVisibility) const ControlOfferList(),
         if (scrollVisibility)
           Padding(
             padding: EdgeInsets.only(

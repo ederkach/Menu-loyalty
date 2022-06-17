@@ -1,6 +1,7 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:menu_loyalty/src/data/datasources/remote/repositories/categories/categories_repository_copy.dart';
 
 import 'src/config/app_router.dart';
 import 'src/config/theme/theme.dart';
@@ -25,12 +26,21 @@ class MyApp extends StatelessWidget {
     return MultiBlocProvider(
       providers: [
         BlocProvider(
-            create: (_) => CategoriesOfferBloc(CategoriesOfferRepository())
+            create: (_) =>
+                CategoriesBloc(categoriesRepository: CategoriesRepository())
+                  ..add(const FetchCategories())),
+        BlocProvider(
+            create: (_) => CategoriesOfferBloc(
+                categoriesOfferRepository: CategoriesOfferRepository())
               ..add(const FetchCategoriesOffer())),
         BlocProvider(
             create: (_) => MenuOfferBloc(
                   menuRepository: MenuRepository(),
                 )..add(const FetchMenu())),
+        BlocProvider(
+            create: (_) => MainMenuBloc(
+                  menuRepository: MenuRepository(),
+                )..add(const FetchMainMenu())),
       ],
       child: MaterialApp(
         title: 'PORIS FOOD APP',

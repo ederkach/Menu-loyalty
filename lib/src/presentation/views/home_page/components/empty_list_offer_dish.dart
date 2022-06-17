@@ -4,8 +4,8 @@ import 'package:menu_loyalty/src/config/size_config.dart';
 import '../../../../data/models/menu_model/menu_model.dart';
 import '../../../widgets/dish_item_positioned.dart';
 
-class LoadingListOffer extends StatelessWidget {
-  const LoadingListOffer({required this.name, Key? key}) : super(key: key);
+class EmptyListOffer extends StatelessWidget {
+  const EmptyListOffer({required this.name, Key? key}) : super(key: key);
 
   final String name;
 

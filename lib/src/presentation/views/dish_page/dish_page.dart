@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 
 import 'package:eva_icons_flutter/eva_icons_flutter.dart';
 import 'package:menu_loyalty/src/data/models/menu_model/menu_model.dart';
+import 'package:progress_indicators/progress_indicators.dart';
 
 import '../../../config/size_config.dart';
 import 'components/description.dart';
@@ -98,7 +99,7 @@ class DishPage extends StatelessWidget {
                     children: [
                       const SpecDishWidget(
                         kkal: '150',
-                        weight: 'Weight 100gr',
+                        weight: '100',
                       ),
                       DescriptionWidget(
                           description: menuModel.description.toString()),
@@ -122,7 +123,9 @@ class DishPage extends StatelessWidget {
             top: sizer.h(143),
             child: CachedNetworkImage(
               imageUrl: menuModel.imagePath.toString(),
-              placeholder: (context, url) => const CircularProgressIndicator(),
+              placeholder: (context, url) => GlowingProgressIndicator(
+                  child: const ImageIcon(
+                      AssetImage('assets/icons/loadingIcon.png'))),
               errorWidget: (context, url, error) =>
                   const ImageIcon(AssetImage('assets/icons/loadingIcon.png')),
               width: sizer.w(165),

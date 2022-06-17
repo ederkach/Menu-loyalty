@@ -46,7 +46,8 @@ class _CategoryListOfferState extends State<CategoryListOffer> {
             child: GestureDetector(
               onTap: (() {
                 selectIndex(index);
-                Navigator.pushNamed(context, 'DishPage');
+                Navigator.pushNamed(context, 'DishPage',
+                    arguments: widget.listMenuOffer![index]);
               }),
               child: DishItemCentre(
                   menuModel: widget.listMenuOffer![index],

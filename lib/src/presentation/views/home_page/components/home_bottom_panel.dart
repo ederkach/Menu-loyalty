@@ -5,7 +5,7 @@ import 'package:menu_loyalty/src/config/size_config.dart';
 import '../../../blocs/blocs.dart';
 import '../../../widgets/button_up_dark.dart';
 import 'list_offer_dish.dart';
-import 'loading_list_offer_dish.dart';
+import 'empty_list_offer_dish.dart';
 
 class HomeBottomPanel extends StatelessWidget {
   const HomeBottomPanel({
@@ -37,7 +37,7 @@ class HomeBottomPanel extends StatelessWidget {
                   menuFilteredCategory: (listMenu) => ListOfferDish(
                     listMenu: listMenu,
                   ),
-                  orElse: () => const LoadingListOffer(
+                  orElse: () => const EmptyListOffer(
                     name: '.....',
                   ),
                 );

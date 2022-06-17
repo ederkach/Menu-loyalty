@@ -14,8 +14,9 @@ class CategoriesOfferBloc
     extends Bloc<CategoriesOfferEvent, CategoriesOfferState> {
   final CategoriesOfferRepository _categoriesOfferRepository;
 
-  CategoriesOfferBloc(this._categoriesOfferRepository)
-      : super(const CategoriesOfferState.emptyCategoriesOffer()) {
+  CategoriesOfferBloc({required categoriesOfferRepository})
+      : _categoriesOfferRepository = categoriesOfferRepository,
+        super(const CategoriesOfferState.emptyCategoriesOffer()) {
     on<FetchCategoriesOffer>(_onLoadCategoriesOffer);
   }
 

@@ -6,7 +6,7 @@ import 'package:menu_loyalty/src/constants/enums.dart';
 
 import '../../widgets/label_widget.dart';
 import '../../widgets/search_input_widget.dart';
-import 'components/category_offer_state_control.dart';
+import 'components/control_category_offer.dart';
 import 'components/greetings_widget.dart';
 import 'components/home_bottom_panel.dart';
 
@@ -71,7 +71,7 @@ class HomePage extends StatelessWidget {
                   SizedBox(
                     height: sizer.hwt(20),
                   ),
-                  const CategoryOfferStateControl(),
+                  const ControlCategoryOffer(),
                   SizedBox(
                     height: sizer.hwt(22),
                   ),

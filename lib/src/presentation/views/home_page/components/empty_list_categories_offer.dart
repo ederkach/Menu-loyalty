@@ -4,8 +4,8 @@ import 'package:menu_loyalty/src/config/size_config.dart';
 import '../../../../data/models/categories_offer_model/categories_offer_model.dart';
 import '../../../widgets/icon_menu_button.dart';
 
-class LoadingCategoriesOffer extends StatelessWidget {
-  const LoadingCategoriesOffer({required this.nameIcon, Key? key})
+class EmptyListCategoriesOffer extends StatelessWidget {
+  const EmptyListCategoriesOffer({required this.nameIcon, Key? key})
       : super(key: key);
 
   final String nameIcon;

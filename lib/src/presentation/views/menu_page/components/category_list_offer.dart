@@ -1,13 +1,17 @@
 import 'package:flutter/material.dart';
 
 import 'package:menu_loyalty/src/config/size_config.dart';
+import 'package:menu_loyalty/src/data/models/menu_model/menu_model.dart';
 
 import '../../../widgets/dish_item_centre.dart';
 
 class CategoryListOffer extends StatefulWidget {
   const CategoryListOffer({
+    required this.listMenuOffer,
     Key? key,
   }) : super(key: key);
+
+  final List<MenuModel>? listMenuOffer;
 
   @override
   State<CategoryListOffer> createState() => _CategoryListOfferState();
@@ -31,7 +35,7 @@ class _CategoryListOfferState extends State<CategoryListOffer> {
       width: sizer.w(334),
       child: ListView.separated(
         scrollDirection: Axis.horizontal,
-        itemCount: 6,
+        itemCount: widget.listMenuOffer!.length,
         separatorBuilder: (BuildContext context, int index) => VerticalDivider(
           color: designColorScheme.onPrimary,
           width: sizer.w(15),
@@ -45,6 +49,7 @@ class _CategoryListOfferState extends State<CategoryListOffer> {
                 Navigator.pushNamed(context, 'DishPage');
               }),
               child: DishItemCentre(
+                  menuModel: widget.listMenuOffer![index],
                   isSelected: (index == _selectedIndex) ? true : false),
             ),
           );

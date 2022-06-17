@@ -4,13 +4,17 @@ import 'package:flutter/material.dart';
 import 'package:menu_loyalty/src/config/size_config.dart';
 import 'package:progress_indicators/progress_indicators.dart';
 
+import '../../data/models/menu_model/menu_model.dart';
+
 class DishItemCentre extends StatelessWidget {
   const DishItemCentre({
     required this.isSelected,
+    required this.menuModel,
     Key? key,
   }) : super(key: key);
 
   final bool isSelected;
+  final MenuModel menuModel;
 
   @override
   Widget build(BuildContext context) {
@@ -34,7 +38,7 @@ class DishItemCentre extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.end,
                     children: [
                       Text(
-                        'Cooked with egg Sweet Cookies dr r rjk mjrm jkr',
+                        menuModel.name,
                         maxLines: 2,
                         style: designStyleText.bodyMedium?.copyWith(
                             color: (isSelected == true)
@@ -43,7 +47,7 @@ class DishItemCentre extends StatelessWidget {
                             fontSize: 12),
                       ),
                       Text(
-                        '\$51',
+                        '\$${menuModel.price.toString()}',
                         style: designStyleText.bodyMedium?.copyWith(
                             color: designColorScheme.secondary, fontSize: 13),
                       ),
@@ -66,8 +70,7 @@ class DishItemCentre extends StatelessWidget {
           Positioned(
             right: 32,
             child: CachedNetworkImage(
-              imageUrl:
-                  'https://firebasestorage.googleapis.com/v0/b/menubonus.appspot.com/o/Replace%20images4.png?alt=media&token=9c18bdee-5c4d-40ce-8d05-4ee61caa7a68',
+              imageUrl: menuModel.imagePath.toString(),
               placeholder: (context, url) => GlowingProgressIndicator(
                   child: const ImageIcon(
                       AssetImage('assets/icons/loadingIcon.png'))),

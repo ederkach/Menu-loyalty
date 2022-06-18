@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../blocs/blocs.dart';
 import 'category_list.dart';
+import 'empty_category_list.dart';
 
 class ControlCategories extends StatelessWidget {
   const ControlCategories({
@@ -25,7 +26,7 @@ class ControlCategories extends StatelessWidget {
             categoriesLoadSuccess: (listCategories) => CategoryList(
               listCategories: listCategories,
             ),
-            orElse: () => const CircularProgressIndicator(),
+            orElse: () => const EmptyCategoryList(),
           );
         },
       ),

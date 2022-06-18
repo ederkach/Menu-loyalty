@@ -4,6 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../blocs/blocs.dart';
 import 'components/body_panel.dart';
 import 'components/category_list_dish.dart';
+import 'components/empty_category_list_dish.dart';
 import 'components/header_menu.dart';
 import 'widgets/home_button.dart';
 
@@ -66,7 +67,7 @@ class _MenuPageState extends State<MenuPage> {
                             CategoryListDish(
                                 scrollcontroller: scrollcontroller,
                                 listMenu: stateResult.listFilteredMainMenu),
-                    orElse: () => const CircularProgressIndicator());
+                    orElse: () => const EmptyCategoryListDish());
               },
             ),
           ],

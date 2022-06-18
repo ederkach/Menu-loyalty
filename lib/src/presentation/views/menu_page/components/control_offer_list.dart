@@ -4,6 +4,7 @@ import 'package:menu_loyalty/src/config/size_config.dart';
 
 import '../../../blocs/blocs.dart';
 import 'category_list_offer.dart';
+import 'empty_category_list_offer.dart';
 
 class ControlOfferList extends StatelessWidget {
   const ControlOfferList({
@@ -23,7 +24,7 @@ class ControlOfferList extends StatelessWidget {
               mainMenuFilteredByCategory:
                   (MainMenuFilteredByCategory stateResult) => CategoryListOffer(
                       listMenuOffer: stateResult.listOfferMenu),
-              orElse: () => const CircularProgressIndicator());
+              orElse: () => const EmptyCategoryListOffer());
         },
       ),
     );

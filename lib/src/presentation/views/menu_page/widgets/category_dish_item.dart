@@ -21,8 +21,9 @@ class CategoryDishItem extends StatelessWidget {
     var sizer = MediaQuery.of(context);
     return SizedBox(
       height: sizer.hwt(90),
+      width: sizer.w(327),
       child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        //mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
           Container(
             child: Padding(
@@ -30,6 +31,8 @@ class CategoryDishItem extends StatelessWidget {
                 sizer.w(8),
               ),
               child: CachedNetworkImage(
+                width: sizer.w(10),
+                height: sizer.w(10),
                 imageUrl: menuModel.imagePath.toString(),
                 placeholder: (context, url) => GlowingProgressIndicator(
                     child: const ImageIcon(
@@ -39,7 +42,7 @@ class CategoryDishItem extends StatelessWidget {
               ),
             ),
             width: sizer.w(155),
-            height: sizer.hwt(90),
+            height: sizer.w(90),
             decoration: BoxDecoration(
               color: designColorScheme.secondaryContainer,
               borderRadius: const BorderRadius.all(
@@ -47,13 +50,20 @@ class CategoryDishItem extends StatelessWidget {
               ),
             ),
           ),
+          SizedBox(
+            width: sizer.w(10),
+          ),
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
-              Text(
-                menuModel.name,
-                style: designStyleText.bodyMedium!.copyWith(fontSize: 17),
+              Flexible(
+                child: Text(
+                  menuModel.name,
+                  maxLines: 2,
+                  overflow: TextOverflow.fade,
+                  style: designStyleText.bodyMedium!.copyWith(fontSize: 15),
+                ),
               ),
               Text(
                 'Romano cheese',

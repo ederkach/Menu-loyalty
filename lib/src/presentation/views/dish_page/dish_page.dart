@@ -6,11 +6,8 @@ import 'package:menu_loyalty/src/data/models/menu_model/menu_model.dart';
 import 'package:progress_indicators/progress_indicators.dart';
 
 import '../../../config/size_config.dart';
-import 'components/description.dart';
-import 'components/qty.dart';
-import 'components/spec.dart';
+import 'components/bottom_dish_panel.dart';
 import 'components/title_dish.dart';
-import 'components/total_with_button.dart';
 
 class DishPage extends StatelessWidget {
   static const String routeName = 'DishPage';
@@ -87,37 +84,7 @@ class DishPage extends StatelessWidget {
             dishGroups: 'Salad, Vegan, Breakfast',
             dishName: menuModel.name,
           ),
-          Positioned(
-            bottom: 0,
-            child: Container(
-              child: Padding(
-                padding: EdgeInsets.only(
-                    top: sizer.hwt(22), left: sizer.w(24), right: sizer.w(24)),
-                child: Column(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      SpecDishWidget(
-                        kkal: menuModel.kkal.toString(),
-                        weight: menuModel.weight.toString(),
-                      ),
-                      DescriptionWidget(
-                          description: menuModel.description.toString()),
-                      const QtyWidget(),
-                      const TotalWithButtonWidget(),
-                    ]),
-              ),
-              height: sizer.h(475),
-              width: sizer.w(375),
-              decoration: BoxDecoration(
-                color: designColorScheme.background,
-                borderRadius: const BorderRadius.only(
-                  topLeft: Radius.circular(40),
-                  topRight: Radius.circular(40),
-                ),
-              ),
-            ),
-          ),
+          BottomDishPanel(menuModel: menuModel),
           Positioned(
             left: sizer.w(98),
             top: sizer.h(143),

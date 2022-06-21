@@ -21,6 +21,13 @@ class CategoryList extends StatefulWidget {
 class _CategoryListState extends State<CategoryList> {
   int _selectedIndex = 0;
 
+  @override
+  void initState() {
+    BlocProvider.of<MainMenuBloc>(context)
+        .add(FilterByCategory(widget.listCategories!.first.id.toString()));
+    super.initState();
+  }
+
   void selectIndex(index) {
     setState(() {
       _selectedIndex = index;

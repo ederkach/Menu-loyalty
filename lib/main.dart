@@ -1,7 +1,6 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:menu_loyalty/src/data/datasources/remote/repositories/categories/categories_repository_copy.dart';
 
 import 'src/config/app_router.dart';
 import 'src/config/theme/theme.dart';

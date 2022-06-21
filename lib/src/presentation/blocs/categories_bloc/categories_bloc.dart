@@ -1,8 +1,8 @@
 import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:menu_loyalty/src/core/error/exception.dart';
-import 'package:menu_loyalty/src/data/datasources/remote/repositories/categories/categories_repository_copy.dart';
 
+import '../../../data/datasources/remote/repositories/repositories.dart';
 import '../../../data/models/categories_model/categories_model.dart';
 
 part 'categories_event.dart';

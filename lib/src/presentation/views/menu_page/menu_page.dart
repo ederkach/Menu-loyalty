@@ -31,7 +31,7 @@ class _MenuPageState extends State<MenuPage> {
   @override
   initState() {
     scrollcontroller.addListener(() {
-      if (scrollcontroller.position.pixels > 80) {
+      if (scrollcontroller.position.pixels > 5) {
         setState(() {
           scrollVisibility = false;
         });
@@ -41,6 +41,7 @@ class _MenuPageState extends State<MenuPage> {
         });
       }
     });
+
     super.initState();
   }
 

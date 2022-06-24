@@ -19,13 +19,14 @@ abstract class MenuModel implements _$MenuModel {
     @Default(true) final bool? offerToday,
     @Default(0) final int? rank,
     @Default(0) final double? price,
+    @Default(0) final int? quantity,
     final String? currency,
     final String? description,
     @JsonKey(name: 'Categories') List<String>? categories,
     @JsonKey(name: 'CategoriesOffer') List<String>? categoriesOffer,
   }) = _MenuModel;
 
-  factory MenuModel.empty() => const MenuModel(name: '');
+  factory MenuModel.empty() => const MenuModel(id: '', name: '');
 
   factory MenuModel.fromJson(Map<String, dynamic> json) =>
       _$MenuModelFromJson(json);

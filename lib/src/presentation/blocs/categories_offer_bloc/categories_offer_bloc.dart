@@ -3,7 +3,7 @@ import 'package:dartz/dartz.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:menu_loyalty/src/core/error/exception.dart';
 
-import '../../../data/datasources/remote/repositories/repositories.dart';
+import '../../../data/datasources/repositories.dart';
 import '../../../data/models/categories_offer_model/categories_offer_model.dart';
 
 part 'categories_offer_event.dart';

@@ -36,7 +36,9 @@ class BottomDishPanel extends StatelessWidget {
                 DescriptionWidget(
                     description: menuModel.description.toString()),
                 const QtyWidget(),
-                const TotalWithButtonWidget(),
+                TotalWithButtonWidget(
+                  menuModel: menuModel,
+                ),
               ]),
         ),
         height: sizer.h(475),

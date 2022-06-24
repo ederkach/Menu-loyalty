@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'src/config/app_router.dart';
 import 'src/config/theme/theme.dart';
 
-import 'src/data/datasources/remote/repositories/repositories.dart';
+import 'src/data/datasources/repositories.dart';
 import 'src/presentation/blocs/blocs.dart';
 import 'src/presentation/views/pages.dart';
 import 'locator_service.dart' as di;
@@ -24,6 +24,9 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiBlocProvider(
       providers: [
+        BlocProvider(
+            create: (_) => CartBloc(cartRepository: CartRepository())
+              ..add(const StartedCart())),
         BlocProvider(
             create: (_) =>
                 CategoriesBloc(categoriesRepository: CategoriesRepository())

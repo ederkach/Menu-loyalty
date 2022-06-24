@@ -3,13 +3,16 @@ import 'package:flutter/material.dart';
 import 'package:menu_loyalty/src/config/size_config.dart';
 
 import '../../../../constants/enums.dart';
+import '../../../../data/models/cart_model/cart_model.dart';
 import '../../../widgets/green_bottom_button.dart';
 import '../../../widgets/label_widget.dart';
 
 class CartSum extends StatelessWidget {
-  const CartSum({required this.payNow, Key? key}) : super(key: key);
+  const CartSum({required this.payNow, required this.cart, Key? key})
+      : super(key: key);
 
   final Function payNow;
+  final Cart cart;
 
   @override
   Widget build(BuildContext context) {
@@ -37,14 +40,14 @@ class CartSum extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text(
-                'Subtotal ( 3 items)',
+                'Subtotal ( ${cart.quantity.toString()} items)',
                 style: designStyleText.bodyText1!.copyWith(
                     fontSize: 15,
                     color:
                         designColorScheme.secondaryContainer.withOpacity(0.7)),
               ),
               Text(
-                '\$ 153,00',
+                '\$${cart.subtotal.toString()}',
                 style: designStyleText.bodyMedium!.copyWith(
                     fontSize: 15,
                     color:
@@ -66,7 +69,7 @@ class CartSum extends StatelessWidget {
                         designColorScheme.secondaryContainer.withOpacity(0.7)),
               ),
               Text(
-                '\$ 10,00',
+                '\$ 0,00',
                 style: designStyleText.bodyMedium!.copyWith(
                     fontSize: 15,
                     color:
@@ -86,7 +89,7 @@ class CartSum extends StatelessWidget {
                     .copyWith(fontSize: 15, color: designColorScheme.onPrimary),
               ),
               Text(
-                '\$ 163,00',
+                '\$${cart.subtotal.toString()}',
                 style: designStyleText.titleLarge!
                     .copyWith(color: designColorScheme.secondary),
               ),

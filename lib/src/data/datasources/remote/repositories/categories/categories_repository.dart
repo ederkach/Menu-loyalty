@@ -3,7 +3,7 @@ import 'package:dartz/dartz.dart';
 
 import '../../../../../core/error/exception.dart';
 import '../../../../models/categories_model/categories_model.dart';
-import 'base_categories_repository copy.dart';
+import 'base_categories_repository.dart';
 
 class CategoriesRepository extends BaseCategoriesRepository {
   final FirebaseFirestore _firebaseFirestore;

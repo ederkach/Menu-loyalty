@@ -2,7 +2,7 @@ import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:menu_loyalty/src/core/error/exception.dart';
 
-import '../../../data/datasources/remote/repositories/repositories.dart';
+import '../../../data/datasources/repositories.dart';
 import '../../../data/models/menu_model/menu_model.dart';
 
 part 'menu_offer_event.dart';

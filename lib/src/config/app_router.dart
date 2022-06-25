@@ -5,7 +5,6 @@ import '../presentation/views/pages.dart';
 
 class AppRouter {
   static Route onGenerateRoute(RouteSettings settings) {
-    print('Go to => ${settings.name}');
     final menuModel =
         settings.arguments as MenuModel? ?? const MenuModel(name: 'No data');
 

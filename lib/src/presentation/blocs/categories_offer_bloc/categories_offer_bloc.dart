@@ -31,7 +31,7 @@ class CategoriesOfferBloc
 
     emit(
       dataCategoriesOfferRepository.fold(
-        (failure) => CategoriesOfferState.CategoriesOfferStateLoadFailure(
+        (failure) => CategoriesOfferState.categoriesOfferStateLoadFailure(
             ServerException(message: failure.message)),
         (categoriesOfferList) =>
             CategoriesOfferState.categoriesOfferLoadSuccess(

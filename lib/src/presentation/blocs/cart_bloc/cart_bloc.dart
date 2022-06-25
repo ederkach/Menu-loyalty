@@ -71,9 +71,15 @@ class CartBloc extends Bloc<CartEvent, CartState> {
         );
       },
       (cart) {
-        emit(
-          CartState.cartLoadSuccess(cart),
-        );
+        if (cart.menuItems.isEmpty) {
+          emit(
+            const CartState.emptyCart(),
+          );
+        } else {
+          emit(
+            CartState.cartLoadSuccess(cart),
+          );
+        }
       },
     );
   }

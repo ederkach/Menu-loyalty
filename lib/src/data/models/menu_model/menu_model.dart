@@ -26,6 +26,8 @@ abstract class MenuModel implements _$MenuModel {
     @JsonKey(name: 'CategoriesOffer') List<String>? categoriesOffer,
   }) = _MenuModel;
 
+  double get total => price! * quantity!;
+
   factory MenuModel.empty() => const MenuModel(id: '', name: '');
 
   factory MenuModel.fromJson(Map<String, dynamic> json) =>

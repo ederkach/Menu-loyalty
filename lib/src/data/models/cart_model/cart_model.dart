@@ -1,10 +1,4 @@
-// import 'package:cloud_firestore/cloud_firestore.dart';
-// import 'package:freezed_annotation/freezed_annotation.dart';
-
 import '../menu_model/menu_model.dart';
-
-// part 'cart_model.freezed.dart';
-// part 'cart_model.g.dart';
 
 class Cart {
   Cart({required this.menuItems});
@@ -41,25 +35,3 @@ extension IterableExtensions<T> on Iterable<T> {
     );
   }
 }
-
-
-// @freezed
-// abstract class Cart implements _$Cart {
-//   const Cart._();
-//   const factory Cart({
-//     final String? id,
-//     @Default(<MenuModel>[]) final List<MenuModel>? menuItems,
-//   }) = _Cart;
-
-//   factory Cart.empty() => const Cart(menuItems: []);
-
-//   factory Cart.fromJson(Map<String, dynamic> json) => _$CartFromJson(json);
-
-//   factory Cart.fromDocument(
-//       DocumentSnapshot<Map<String, dynamic>> documentSnapshot) {
-//     final data = documentSnapshot.data()!;
-//     return Cart.fromJson(data).copyWith(id: documentSnapshot.id);
-//   }
-
-//   Map<String, dynamic> toDocument() => toJson()..remove('id');
-// }

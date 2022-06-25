@@ -37,7 +37,9 @@ class CartRepository extends BaseCartRepository {
           () => Right(repositoryCart),
         );
       }
-      repositoryCart.menuItems.add(menuItem.copyWith(quantity: 1));
+      repositoryCart = Cart(
+          menuItems: repositoryCart.menuItems
+            ..add(menuItem.copyWith(quantity: 1)));
       return Future.delayed(
         _delay,
         () => Right(repositoryCart),

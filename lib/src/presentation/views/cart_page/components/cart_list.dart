@@ -40,6 +40,8 @@ class _CartListState extends State<CartList> {
         return GestureDetector(
           onTap: (() {
             selectIndex(index);
+            Navigator.pushNamed(context, 'DishPage',
+                arguments: widget.cart.menuItems[index]);
           }),
           child: CartListItem(
             menuModel: widget.cart.menuItems[index],

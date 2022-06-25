@@ -17,7 +17,7 @@ class ControlCartList extends StatelessWidget {
         return state.when(
             cartLoading: () => const CircularProgressIndicator(),
             emptyCart: () => Center(
-                  child: Text('You cart is empty (((',
+                  child: Text('Your cart is empty (((',
                       style: designStyleText.headline6!.copyWith(fontSize: 16)),
                 ),
             cartLoadSuccess: (cart) => CartList(

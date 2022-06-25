@@ -1,10 +1,9 @@
 import 'package:eva_icons_flutter/eva_icons_flutter.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-
 import 'package:menu_loyalty/src/config/size_config.dart';
-import 'package:menu_loyalty/src/data/models/menu_model/menu_model.dart';
 
+import '../../../../data/models/menu_model/menu_model.dart';
 import '../../../blocs/blocs.dart';
 import '../../../widgets/qty_button.dart';
 

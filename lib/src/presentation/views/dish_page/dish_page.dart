@@ -2,10 +2,10 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 
 import 'package:eva_icons_flutter/eva_icons_flutter.dart';
-import 'package:menu_loyalty/src/data/models/menu_model/menu_model.dart';
 import 'package:progress_indicators/progress_indicators.dart';
 
 import '../../../config/size_config.dart';
+import '../../../data/models/menu_model/menu_model.dart';
 import 'components/bottom_dish_panel.dart';
 import 'components/title_dish.dart';
 

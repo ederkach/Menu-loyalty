@@ -15,13 +15,15 @@
 
 The project is based on the design PORIS https://ui8.net/ayokerja/products/poris-app-ui-kit but with minor UI adjustments to improve the UX.
 
+This is not the final version for the end client, but only a demonstration, so some features may not be implemented in the project or implemented with limited capabilities.
+
 ## 🎥 Promo Video
 
 Watch the promo video <a href="https://user-images.githubusercontent.com/83706093/175784626-e455d2ab-3a77-40bd-aefc-0bad6ba27631.mov">here.</a>
 
 ## 📱 Screen Shots
 
-<img src="https://user-images.githubusercontent.com/83706093/175784641-2b08ee1e-9193-4f36-8e1f-7456579c1e48.gif" alt="Showcase gif" title="Showcase gif" width="250"/><img 
+<img src="https://user-images.githubusercontent.com/83706093/175784641-2b08ee1e-9193-4f36-8e1f-7456579c1e48.gif" alt="Showcase gif" title="Showcase gif" width="250"/>
 
 <img src='/screens/UI1.png' width='500'>
 <img src='/screens/UI2.png' width='500'>

@@ -6,7 +6,7 @@ abstract class CategoriesOfferState with _$CategoriesOfferState {
       EmptyCategoriesOffer;
   const factory CategoriesOfferState.categoriesOfferLoading() =
       CategoriesOfferStateLoading;
-  const factory CategoriesOfferState.CategoriesOfferStateLoadFailure(
+  const factory CategoriesOfferState.categoriesOfferStateLoadFailure(
       ServerException failure) = CategoriesOfferStateLoadFailure;
   const factory CategoriesOfferState.categoriesOfferLoadSuccess(
       List<CategoriesOffer> listCategoriesOffer) = CategoriesofferLoadSuccess;

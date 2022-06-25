@@ -39,7 +39,7 @@ class ControlCategoryOffer extends StatelessWidget {
                   ListCategoryOffer(
                 listCategoriesOffer: listCategoriesOffer,
               ),
-              CategoriesOfferStateLoadFailure: (failure) =>
+              categoriesOfferStateLoadFailure: (failure) =>
                   const EmptyListCategoriesOffer(
                 nameIcon: 'No data',
               ),

@@ -17,11 +17,12 @@ The project is based on the design PORIS https://ui8.net/ayokerja/products/poris
 
 ## 🎥 Promo Video
 
-Watch the promo video <a href="https://user-images.githubusercontent.com/83706093/171545812-619a6cb8-b860-43b7-841b-29c8249a9814.mov">here.</a>
+Watch the promo video <a href="https://user-images.githubusercontent.com/83706093/175784626-e455d2ab-3a77-40bd-aefc-0bad6ba27631.mov">here.</a>
 
 ## 📱 Screen Shots
 
-<img src="https://user-images.githubusercontent.com/83706093/175783338-4e3bfb22-cd92-49d6-b782-e616740eab50.gif" alt="Showcase gif" title="Showcase gif" width="250"/><img src="https://user-images.githubusercontent.com/83706093/172080076-80f6c057-0f81-4573-81f5-e71f32d5a67d.gif" alt="Showcase gif" title="Showcase gif" width="250"/>
+<img src="https://user-images.githubusercontent.com/83706093/175784641-2b08ee1e-9193-4f36-8e1f-7456579c1e48.gif" alt="Showcase gif" title="Showcase gif" width="250"/><img 
+
 <img src='/screens/UI1.png' width='500'>
 <img src='/screens/UI2.png' width='500'>
 

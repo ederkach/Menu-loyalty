@@ -21,7 +21,7 @@ Watch the promo video <a href="https://user-images.githubusercontent.com/8370609
 
 ## 📱 Screen Shots
 
-<img src="https://user-images.githubusercontent.com/83706093/172080086-4f61bff2-7d62-4012-a7f8-3f9f7d65714d.gif" alt="Showcase gif" title="Showcase gif" width="250"/><img src="https://user-images.githubusercontent.com/83706093/172080076-80f6c057-0f81-4573-81f5-e71f32d5a67d.gif" alt="Showcase gif" title="Showcase gif" width="250"/>
+<img src="https://user-images.githubusercontent.com/83706093/175783338-4e3bfb22-cd92-49d6-b782-e616740eab50.gif" alt="Showcase gif" title="Showcase gif" width="250"/><img src="https://user-images.githubusercontent.com/83706093/172080076-80f6c057-0f81-4573-81f5-e71f32d5a67d.gif" alt="Showcase gif" title="Showcase gif" width="250"/>
 <img src='/screens/UI1.png' width='500'>
 <img src='/screens/UI2.png' width='500'>
 

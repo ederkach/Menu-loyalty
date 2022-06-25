@@ -81,7 +81,7 @@ class DishPage extends StatelessWidget {
             ),
           ),
           TitleDish(
-            dishGroups: 'Salad, Vegan, Breakfast',
+            dishGroups: menuModel.hashtags.toString(),
             dishName: menuModel.name,
           ),
           BottomDishPanel(menuModel: menuModel),

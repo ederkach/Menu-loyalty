@@ -15,6 +15,7 @@ abstract class MenuModel implements _$MenuModel {
     final bool? spicy,
     final bool? vegan,
     final String? weight,
+    final String? hashtags,
     final int? kkal,
     @Default(true) final bool? offerToday,
     @Default(0) final int? rank,

@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 
 import 'package:eva_icons_flutter/eva_icons_flutter.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:menu_loyalty/src/config/size_config.dart';
 
+import '../../blocs/blocs.dart';
 import '../../widgets/custom_app_bar.dart';
 import 'components/check_out_bottom_panel.dart';
 import 'components/check_out_list.dart';
@@ -66,7 +68,16 @@ class CheckOutPage extends StatelessWidget {
                           SizedBox(
                             height: sizer.hwt(10),
                           ),
-                          const CheckOutList(),
+                          BlocBuilder<CartBloc, CartState>(
+                            builder: (context, state) {
+                              return state.maybeWhen(
+                                cartLoadSuccess: (cart) => CheckOutList(
+                                  cart: cart,
+                                ),
+                                orElse: () => Container(),
+                              );
+                            },
+                          ),
                         ],
                       ),
                     ),

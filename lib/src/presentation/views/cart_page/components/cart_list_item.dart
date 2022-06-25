@@ -70,7 +70,7 @@ class CartListItem extends StatelessWidget {
                     style: designStyleText.bodyMedium!.copyWith(fontSize: 14),
                   ),
                   Text(
-                    'Romano cheese',
+                    menuModel.hashtags.toString(),
                     overflow: TextOverflow.clip,
                     style: designStyleText.bodyMedium!.copyWith(
                         fontSize: 12, color: designColorScheme.secondary),

@@ -23,7 +23,6 @@ class CategoryDishItem extends StatelessWidget {
       height: sizer.hwt(90),
       width: sizer.w(327),
       child: Row(
-        //mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
           Container(
             child: Padding(
@@ -71,7 +70,7 @@ class CategoryDishItem extends StatelessWidget {
                     .copyWith(fontSize: 13, color: designColorScheme.secondary),
               ),
               Text(
-                '\$${menuModel.price.toString()}',
+                '${menuModel.currency.toString()}${menuModel.price.toString()}',
                 style: designStyleText.bodyMedium?.copyWith(
                     color: designColorScheme.secondary,
                     fontSize: 15,

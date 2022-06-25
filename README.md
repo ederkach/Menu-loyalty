@@ -11,7 +11,7 @@
 
 <h4>Progect progress:</h4> 
 
-![Progress](https://img.shields.io/badge/Progress-25%25-orange&style=plastic)
+![Progress](https://img.shields.io/badge/Progress-40%40-orange&style=plastic)
 
 The project is based on the design PORIS https://ui8.net/ayokerja/products/poris-app-ui-kit but with minor UI adjustments to improve the UX.
 
@@ -37,13 +37,15 @@ Adaptive design
 
 ✅ Design Menu, Item card, Payment, Orders history
 
-🔴 Integration Firebase, Base entity model
+✅ Integration Firebase, Base entity model
 
-⏹ Repository, CRUD operations Firebase
-
-⏹ Design Filters, Chat, Support screen & widgets
+🔴 Repository, CRUD operations Firebase
 
 ⏹ Application logic, Localization
+
+⏹ Application login, autentification
+
+⏹ Design Filters, Chat, Support screen & widgets
 
 ⏹ Design Maps, Connection Google maps
 

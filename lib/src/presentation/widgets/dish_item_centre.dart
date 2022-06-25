@@ -47,7 +47,7 @@ class DishItemCentre extends StatelessWidget {
                             fontSize: 12),
                       ),
                       Text(
-                        '\$${menuModel.price.toString()}',
+                        '${menuModel.currency.toString()}${menuModel.price.toString()}',
                         style: designStyleText.bodyMedium?.copyWith(
                             color: designColorScheme.secondary, fontSize: 13),
                       ),

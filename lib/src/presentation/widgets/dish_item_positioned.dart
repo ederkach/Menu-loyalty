@@ -45,7 +45,7 @@ class DishItemPositioned extends StatelessWidget {
             bottom: sizer.hwt(10),
             left: sizer.w(15),
             child: Text(
-              '\$51',
+              '${menuModel.currency.toString()}${menuModel.price.toString()}',
               style: designStyleText.bodyMedium
                   ?.copyWith(color: designColorScheme.secondary, fontSize: 15),
             ),

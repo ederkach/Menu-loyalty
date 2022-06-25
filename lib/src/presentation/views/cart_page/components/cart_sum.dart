@@ -69,7 +69,7 @@ class CartSum extends StatelessWidget {
                         designColorScheme.secondaryContainer.withOpacity(0.7)),
               ),
               Text(
-                '\$ 0,00',
+                '\$ 0,0',
                 style: designStyleText.bodyMedium!.copyWith(
                     fontSize: 15,
                     color:
@@ -100,10 +100,10 @@ class CartSum extends StatelessWidget {
           ),
           GestureDetector(
             onTap: (() => {
-                  payNow(),
+                  (cart.subtotal > 0) ? payNow() : Navigator.of(context).pop(),
                 }),
-            child: const GreenBottomButton(
-              title: 'Pay Now',
+            child: GreenBottomButton(
+              title: (cart.subtotal > 0) ? 'Pay Now' : 'Start exploring',
             ),
           )
         ],

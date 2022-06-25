@@ -4,10 +4,15 @@ import 'package:flutter/material.dart';
 import 'package:menu_loyalty/src/config/size_config.dart';
 import 'package:progress_indicators/progress_indicators.dart';
 
+import '../../../../data/models/menu_model/menu_model.dart';
+
 class CheckOutListItem extends StatelessWidget {
   const CheckOutListItem({
+    required this.menuModel,
     Key? key,
   }) : super(key: key);
+
+  final MenuModel menuModel;
 
   @override
   Widget build(BuildContext context) {
@@ -24,8 +29,7 @@ class CheckOutListItem extends StatelessWidget {
             child: Padding(
               padding: const EdgeInsets.all(8.0),
               child: CachedNetworkImage(
-                imageUrl:
-                    'https://firebasestorage.googleapis.com/v0/b/menubonus.appspot.com/o/Replace%20images4.png?alt=media&token=9c18bdee-5c4d-40ce-8d05-4ee61caa7a68',
+                imageUrl: menuModel.imagePath.toString(),
                 placeholder: (context, url) => GlowingProgressIndicator(
                     child: const ImageIcon(
                         AssetImage('assets/icons/loadingIcon.png'))),
@@ -47,34 +51,42 @@ class CheckOutListItem extends StatelessWidget {
           SizedBox(
             width: sizer.w(16),
           ),
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: [
-              Text(
-                'Orange Panglazed',
-                style: designStyleText.bodyMedium!.copyWith(fontSize: 17),
-              ),
-              Text(
-                'Romano cheese',
-                style: designStyleText.bodyMedium!
-                    .copyWith(fontSize: 13, color: designColorScheme.secondary),
-              ),
-              Text(
-                '\$51,00',
-                style: designStyleText.bodyMedium?.copyWith(
-                    color: designColorScheme.secondary,
-                    fontSize: 15,
-                    fontWeight: FontWeight.bold),
-              ),
-            ],
+          SizedBox(
+            width: sizer.w(150),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                Text(
+                  menuModel.name,
+                  maxLines: 1,
+                  style: designStyleText.bodyMedium!.copyWith(fontSize: 17),
+                ),
+                Text(
+                  menuModel.hashtags.toString(),
+                  style: designStyleText.bodyMedium!.copyWith(
+                      fontSize: 13, color: designColorScheme.secondary),
+                ),
+                Text(
+                  '${menuModel.currency.toString()}${menuModel.price.toString()}',
+                  style: designStyleText.bodyMedium?.copyWith(
+                      color: designColorScheme.secondary,
+                      fontSize: 15,
+                      fontWeight: FontWeight.bold),
+                ),
+              ],
+            ),
           ),
-          Text(
-            '100.5',
-            style: designStyleText.bodyMedium!.copyWith(
-                fontSize: 17,
-                fontWeight: FontWeight.bold,
-                color: designColorScheme.onSecondary),
+          SizedBox(
+            width: sizer.w(35),
+            child: Text(
+              menuModel.quantity.toString(),
+              style: designStyleText.bodyMedium!.copyWith(
+                  fontSize: 17,
+                  fontWeight: FontWeight.bold,
+                  color: designColorScheme.onSecondary),
+              textAlign: TextAlign.right,
+            ),
           ),
         ],
       ),

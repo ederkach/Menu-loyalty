@@ -1,12 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:menu_loyalty/src/config/size_config.dart';
 
+import '../../../../data/models/cart_model/cart_model.dart';
 import 'check_out_list_item.dart';
 
 class CheckOutList extends StatefulWidget {
   const CheckOutList({
+    required this.cart,
     Key? key,
   }) : super(key: key);
+
+  final Cart cart;
 
   @override
   State<CheckOutList> createState() => _CheckOutListState();
@@ -28,7 +32,7 @@ class _CheckOutListState extends State<CheckOutList> {
     return Expanded(
       child: ListView.separated(
         scrollDirection: Axis.vertical,
-        itemCount: 10,
+        itemCount: widget.cart.menuItems.length,
         separatorBuilder: (BuildContext context, int index) => Divider(
           color: designColorScheme.background,
           height: sizer.hwt(30),
@@ -38,7 +42,9 @@ class _CheckOutListState extends State<CheckOutList> {
             onTap: (() {
               selectIndex(index);
             }),
-            child: const CheckOutListItem(),
+            child: CheckOutListItem(
+              menuModel: widget.cart.menuItems[index],
+            ),
           );
         },
       ),

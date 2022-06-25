@@ -66,7 +66,7 @@ class CategoryDishItem extends StatelessWidget {
                 ),
               ),
               Text(
-                'Romano cheese',
+                menuModel.hashtags.toString(),
                 style: designStyleText.bodyMedium!
                     .copyWith(fontSize: 13, color: designColorScheme.secondary),
               ),
